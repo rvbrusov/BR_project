@@ -1,0 +1,825 @@
+﻿Неделя;2026-W17
+Дата;Время;Имя;Возраст;Пол;SessionID;Событие;Экран;Тест;Этап;Действие;Длительность_мс;X;Y;Крен;Значение;Примечание
+25.04.2026;12:11:03;ай;11;Мужской;20260425_121103_910871;registration;start_page;;;submit;;;;;;Регистрационная форма принята. completed=-
+25.04.2026;12:11:03;ай;11;Мужской;20260425_121103_910871;menu_event;test_menu;;;open_menu;;;;;;next=A
+25.04.2026;12:11:05;ай;11;Мужской;20260425_121103_910871;menu_event;test_menu;test_a;;launch_requested;;;;;;Слежение за объектом
+25.04.2026;12:11:10;ай;11;Мужской;20260425_121103_910871;method_session;method_a;method_a;;launch;;;;;;"Крен управляется колесом мыши; фон неба и объект-самолёт активированы"
+25.04.2026;12:11:10;ай;11;Мужской;20260425_121103_910871;stage_event;method_a;method_a_stage;1;stage_start;;;;;;axes=X
+25.04.2026;12:11:41;ай;11;Мужской;20260425_121103_910871;stage_report;method_a;method_a_stage;1;stage_end;30012;3.5007;1.3377;1.1154;0;"axes=X; gamma=0.9559; h=0.0441; tr=1.1154"
+25.04.2026;12:11:41;ай;11;Мужской;20260425_121103_910871;stage_event;method_a;method_a_stage;2;stage_start;;;;;;axes=X,Y
+25.04.2026;12:12:22;ай;11;Мужской;20260425_121103_910871;stage_report;method_a;method_a_stage;2;stage_end;40006;5.3042;2.3709;1.2102;0;"axes=X,Y; gamma=1.3690; h=0.0650; tr=1.2102"
+25.04.2026;12:12:22;ай;11;Мужской;20260425_121103_910871;stage_event;method_a;method_a_stage;3;stage_start;;;;;;axes=X,Y,Z
+25.04.2026;12:12:56;ай;11;Мужской;20260425_121103_910871;stage_event;method_a;method_a_stage;3;crash;33317;489.538;51.957;9.647;1;"axes=X,Y,Z; y_tek=8.2187; y_sigma=51.9566; step=0.50s"
+25.04.2026;12:13:04;ай;11;Мужской;20260425_121103_910871;stage_event;method_a;method_a_stage;3;crash;41232;-446.258;73.645;-7.135;2;"axes=X,Y,Z; y_tek=11.5960; y_sigma=73.6453; step=0.50s"
+25.04.2026;12:13:08;ай;11;Мужской;20260425_121103_910871;stage_event;method_a;method_a_stage;3;crash;44670;-454.267;98.321;-20.628;3;"axes=X,Y,Z; y_tek=16.4195; y_sigma=98.3211; step=0.50s"
+25.04.2026;12:13:23;ай;11;Мужской;20260425_121103_910871;stage_report;method_a;method_a_stage;3;stage_end;60014;8.2733;2.4617;21.1696;3;"axes=X,Y,Z; gamma=1.7169; h=0.0266; tr=21.1696"
+25.04.2026;12:13:23;ай;11;Мужской;20260425_121103_910871;method_session;method_a;method_a;;completed;;;;;;json=method_a_results_20260425_121103_910871.json
+25.04.2026;12:13:25;ай;11;Мужской;20260425_121103_910871;summary;test_menu;method_a;;session_finished;;;;;3;Методика А завершена, данные добавлены в participants.csv и user_progress.json
+25.04.2026;12:13:29;ай;11;Мужской;20260425_121103_910871;menu_event;test_menu;test_a;;marked_completed;;;;;;Тест А завершён и сохранён.
+25.04.2026;13:11:45;цу;44;Мужской;20260425_131145_607374;registration;start_page;;;submit;;;;;;Регистрационная форма принята. completed=-
+25.04.2026;13:11:45;цу;44;Мужской;20260425_131145_607374;menu_event;test_menu;;;open_menu;;;;;;next=A
+25.04.2026;13:11:46;цу;44;Мужской;20260425_131145_607374;menu_event;test_menu;test_a;;launch_requested;;;;;;Слежение за объектом
+25.04.2026;13:11:49;цу;44;Мужской;20260425_131145_607374;method_session;method_a;method_a;;launch;;;;;;"Крен управляется колесом мыши; фон неба и объект-самолёт активированы"
+25.04.2026;13:11:49;цу;44;Мужской;20260425_131145_607374;stage_event;method_a;method_a_stage;1;stage_start;;;;;;axes=X
+25.04.2026;13:11:58;цу;44;Мужской;20260425_131145_607374;stage_event;method_a;method_a_stage;1;crash;7553;452.712;27.921;0.0;1;"axes=X; y_tek=14.1524; y_sigma=27.9211; step=0.50s"
+25.04.2026;13:12:11;цу;44;Мужской;20260425_131145_607374;stage_event;method_a;method_a_stage;1;crash;20457;-445.732;82.007;0.0;2;"axes=X; y_tek=13.4684; y_sigma=82.0073; step=0.50s"
+25.04.2026;13:12:14;цу;44;Мужской;20260425_131145_607374;stage_event;method_a;method_a_stage;1;crash;23952;450.368;85.162;0.0;3;"axes=X; y_tek=0.0000; y_sigma=85.1618; step=0.50s"
+25.04.2026;13:12:17;цу;44;Мужской;20260425_131145_607374;stage_event;method_a;method_a_stage;1;crash;26637;-446.799;93.466;0.0;4;"axes=X; y_tek=11.5814; y_sigma=93.4656; step=0.50s"
+25.04.2026;13:12:19;цу;44;Мужской;20260425_131145_607374;stage_report;method_a;method_a_stage;1;stage_end;29008;3.0482;3.4781;0.162;4;"axes=X; gamma=0.7974; h=0.2026; tr=0.1620"
+25.04.2026;13:12:19;цу;44;Мужской;20260425_131145_607374;stage_event;method_a;method_a_stage;2;stage_start;;;;;;axes=X,Y
+25.04.2026;13:12:29;цу;44;Мужской;20260425_131145_607374;stage_event;method_a;method_a_stage;2;crash;8575;-203.709;16.114;0.0;1;"axes=X,Y; y_tek=15.3197; y_sigma=16.1142; step=0.50s"
+25.04.2026;13:12:32;цу;44;Мужской;20260425_131145_607374;stage_event;method_a;method_a_stage;2;crash;11813;458.838;19.663;0.0;2;"axes=X,Y; y_tek=3.6777; y_sigma=19.6628; step=0.50s"
+25.04.2026;13:12:34;цу;44;Мужской;20260425_131145_607374;stage_event;method_a;method_a_stage;2;crash;13592;457.802;49.145;0.0;3;"axes=X,Y; y_tek=17.6774; y_sigma=49.1454; step=0.50s"
+25.04.2026;13:12:34;цу;44;Мужской;20260425_131145_607374;stage_event;method_a;method_a_stage;2;crash;14059;450.886;53.149;0.0;4;"axes=X,Y; y_tek=9.4181; y_sigma=53.1486; step=0.50s"
+25.04.2026;13:13:00;цу;44;Мужской;20260425_131145_607374;stage_report;method_a;method_a_stage;2;stage_end;40000;4.6265;2.0624;0.5833;4;"axes=X,Y; gamma=1.3754; h=0.0556; tr=0.5833"
+25.04.2026;13:13:00;цу;44;Мужской;20260425_131145_607374;stage_event;method_a;method_a_stage;3;stage_start;;;;;;axes=X,Y,Z
+25.04.2026;13:13:06;цу;44;Мужской;20260425_131145_607374;stage_event;method_a;method_a_stage;3;crash;4694;-117.096;98.126;-79.275;1;"axes=X,Y,Z; y_tek=67.9064; y_sigma=98.1260; step=0.50s"
+25.04.2026;13:14:01;цу;44;Мужской;20260425_131145_607374;stage_report;method_a;method_a_stage;3;stage_end;60014;9.9229;2.7143;30.5731;1;"axes=X,Y,Z; gamma=1.7321; h=0.0000; tr=30.5731"
+25.04.2026;13:14:01;цу;44;Мужской;20260425_131145_607374;method_session;method_a;method_a;;completed;;;;;;json=method_a_results_20260425_131145_607374.json
+25.04.2026;13:14:03;цу;44;Мужской;20260425_131145_607374;summary;test_menu;method_a;;session_finished;;;;;3;Методика А завершена, данные добавлены в participants.csv и user_progress.json
+25.04.2026;13:14:04;цу;44;Мужской;20260425_131145_607374;menu_event;test_menu;test_a;;marked_completed;;;;;;Тест А завершён и сохранён.
+25.04.2026;13:18:37;35;55;Мужской;20260425_131837_485032;registration;start_page;;;submit;;;;;;Регистрационная форма принята. completed=-
+25.04.2026;13:18:37;35;55;Мужской;20260425_131837_485032;menu_event;test_menu;;;open_menu;;;;;;next=A
+25.04.2026;13:18:38;35;55;Мужской;20260425_131837_485032;menu_event;test_menu;test_a;;launch_requested;;;;;;Слежение за объектом
+25.04.2026;13:18:40;35;55;Мужской;20260425_131837_485032;method_session;method_a;method_a;;launch;;;;;;"Крен управляется колесом мыши; фон неба и объект-самолёт активированы"
+25.04.2026;13:18:40;35;55;Мужской;20260425_131837_485032;stage_event;method_a;method_a_stage;1;stage_start;;;;;;axes=X
+25.04.2026;13:18:47;35;55;Мужской;20260425_131837_485032;stage_event;method_a;method_a_stage;1;crash;5586;449.725;14.585;0.0;1;"axes=X; y_tek=11.5449; y_sigma=14.5848; step=0.50s"
+25.04.2026;13:19:11;35;55;Мужской;20260425_131837_485032;stage_report;method_a;method_a_stage;1;stage_end;30002;3.3114;1.7077;0.8306;1;"axes=X; gamma=0.9406; h=0.0594; tr=0.8306"
+25.04.2026;13:19:11;35;55;Мужской;20260425_131837_485032;stage_event;method_a;method_a_stage;2;stage_start;;;;;;axes=X,Y
+25.04.2026;13:19:39;35;55;Мужской;20260425_131837_485032;stage_event;method_a;method_a_stage;2;crash;26282;-461.928;28.786;0.0;1;"axes=X,Y; y_tek=7.1215; y_sigma=28.7856; step=0.50s"
+25.04.2026;13:19:40;35;55;Мужской;20260425_131837_485032;stage_event;method_a;method_a_stage;2;crash;27582;-212.704;35.226;0.0;2;"axes=X,Y; y_tek=13.7341; y_sigma=35.2263; step=0.50s"
+25.04.2026;13:19:41;35;55;Мужской;20260425_131837_485032;stage_event;method_a;method_a_stage;2;crash;28431;449.29;39.013;0.0;3;"axes=X,Y; y_tek=7.9407; y_sigma=39.0134; step=0.50s"
+25.04.2026;13:19:52;35;55;Мужской;20260425_131837_485032;stage_report;method_a;method_a_stage;2;stage_end;40006;4.6684;1.5972;0.7275;3;"axes=X,Y; gamma=1.4113; h=0.0041; tr=0.7275"
+25.04.2026;13:19:52;35;55;Мужской;20260425_131837_485032;stage_event;method_a;method_a_stage;3;stage_start;;;;;;axes=X,Y,Z
+25.04.2026;13:20:53;35;55;Мужской;20260425_131837_485032;stage_report;method_a;method_a_stage;3;stage_end;60002;10.4113;2.3538;34.6788;0;"axes=X,Y,Z; gamma=1.7321; h=0.0000; tr=34.6788"
+25.04.2026;13:20:53;35;55;Мужской;20260425_131837_485032;method_session;method_a;method_a;;completed;;;;;;json=method_a_results_20260425_131837_485032.json
+25.04.2026;13:20:55;35;55;Мужской;20260425_131837_485032;summary;test_menu;method_a;;session_finished;;;;;3;Методика А завершена, данные добавлены в participants.csv и user_progress.json
+25.04.2026;13:21:01;35;55;Мужской;20260425_131837_485032;menu_event;test_menu;test_a;;marked_completed;;;;;;Тест А завершён и сохранён.
+25.04.2026;13:25:28;ук;44;Мужской;20260425_132528_915939;registration;start_page;;;submit;;;;;;Регистрационная форма принята. completed=-
+25.04.2026;13:25:28;ук;44;Мужской;20260425_132528_915939;menu_event;test_menu;;;open_menu;;;;;;next=A
+25.04.2026;13:25:29;ук;44;Мужской;20260425_132528_915939;menu_event;test_menu;test_a;;launch_requested;;;;;;Слежение за объектом
+25.04.2026;13:25:31;ук;44;Мужской;20260425_132528_915939;method_session;method_a;method_a;;launch;;;;;;"Крен управляется колесом мыши; фон неба и объект-самолёт активированы"
+25.04.2026;13:25:31;ук;44;Мужской;20260425_132528_915939;stage_event;method_a;method_a_stage;1;stage_start;;;;;;axes=X
+25.04.2026;13:25:43;ук;44;Мужской;20260425_132528_915939;stage_event;method_a;method_a_stage;1;crash;10225;-451.208;26.87;0.0;1;"axes=X; y_tek=10.1858; y_sigma=26.8700; step=0.50s"
+25.04.2026;13:25:44;ук;44;Мужской;20260425_132528_915939;stage_event;method_a;method_a_stage;1;crash;11620;453.875;29.513;0.0;2;"axes=X; y_tek=5.2857; y_sigma=29.5128; step=0.50s"
+25.04.2026;13:25:45;ук;44;Мужской;20260425_132528_915939;stage_event;method_a;method_a_stage;1;crash;12034;447.702;36.574;0.0;3;"axes=X; y_tek=14.1219; y_sigma=36.5738; step=0.50s"
+25.04.2026;13:25:45;ук;44;Мужской;20260425_132528_915939;stage_event;method_a;method_a_stage;1;crash;12317;-448.38;36.574;0.0;4;"axes=X; y_tek=14.1219; y_sigma=36.5738; step=0.50s"
+25.04.2026;13:26:02;ук;44;Мужской;20260425_132528_915939;stage_report;method_a;method_a_stage;1;stage_end;30005;3.1306;1.4223;0.2007;4;"axes=X; gamma=0.9615; h=0.0385; tr=0.2007"
+25.04.2026;13:26:02;ук;44;Мужской;20260425_132528_915939;stage_event;method_a;method_a_stage;2;stage_start;;;;;;axes=X,Y
+25.04.2026;13:26:34;ук;44;Мужской;20260425_132528_915939;stage_event;method_a;method_a_stage;2;crash;30261;-473.088;29.178;0.0;1;"axes=X,Y; y_tek=11.6331; y_sigma=29.1782; step=0.50s"
+25.04.2026;13:26:34;ук;44;Мужской;20260425_132528_915939;stage_event;method_a;method_a_stage;2;crash;30846;455.151;29.714;0.0;2;"axes=X,Y; y_tek=1.1134; y_sigma=29.7144; step=0.50s"
+25.04.2026;13:26:35;ук;44;Мужской;20260425_132528_915939;stage_event;method_a;method_a_stage;2;crash;31799;-459.297;40.036;0.0;3;"axes=X,Y; y_tek=12.1219; y_sigma=40.0363; step=0.50s"
+25.04.2026;13:26:36;ук;44;Мужской;20260425_132528_915939;stage_event;method_a;method_a_stage;2;crash;32418;472.843;40.036;0.0;4;"axes=X,Y; y_tek=0.0000; y_sigma=40.0363; step=0.50s"
+25.04.2026;13:26:38;ук;44;Мужской;20260425_132528_915939;stage_event;method_a;method_a_stage;2;crash;34243;447.737;57.281;0.0;5;"axes=X,Y; y_tek=10.6513; y_sigma=57.2806; step=0.50s"
+25.04.2026;13:26:43;ук;44;Мужской;20260425_132528_915939;stage_report;method_a;method_a_stage;2;stage_end;40008;4.7872;2.0175;0.4793;5;"axes=X,Y; gamma=1.3731; h=0.0590; tr=0.4793"
+25.04.2026;13:26:43;ук;44;Мужской;20260425_132528_915939;stage_event;method_a;method_a_stage;3;stage_start;;;;;;axes=X,Y,Z
+25.04.2026;13:27:34;ук;44;Мужской;20260425_132528_915939;stage_event;method_a;method_a_stage;3;crash;49760;-447.294;103.686;-36.906;1;"axes=X,Y,Z; y_tek=30.6985; y_sigma=103.6859; step=0.50s"
+25.04.2026;13:27:35;ук;44;Мужской;20260425_132528_915939;stage_event;method_a;method_a_stage;3;crash;50766;-126.357;103.987;-6.036;2;"axes=X,Y,Z; y_tek=1.8256; y_sigma=103.9875; step=0.50s"
+25.04.2026;13:27:36;ук;44;Мужской;20260425_132528_915939;stage_event;method_a;method_a_stage;3;crash;51714;455.888;105.523;-5.688;3;"axes=X,Y,Z; y_tek=10.3056; y_sigma=105.5225; step=0.50s"
+25.04.2026;13:27:37;ук;44;Мужской;20260425_132528_915939;stage_event;method_a;method_a_stage;3;crash;52122;451.748;107.413;-2.448;4;"axes=X,Y,Z; y_tek=10.1640; y_sigma=107.4131; step=0.50s"
+25.04.2026;13:27:38;ук;44;Мужской;20260425_132528_915939;stage_event;method_a;method_a_stage;3;crash;53823;-453.196;114.788;-10.206;5;"axes=X,Y,Z; y_tek=13.5586; y_sigma=114.7878; step=0.50s"
+25.04.2026;13:27:39;ук;44;Мужской;20260425_132528_915939;stage_event;method_a;method_a_stage;3;crash;54482;-457.908;114.989;-3.954;6;"axes=X,Y,Z; y_tek=0.8997; y_sigma=114.9886; step=0.50s"
+25.04.2026;13:27:40;ук;44;Мужской;20260425_132528_915939;stage_event;method_a;method_a_stage;3;crash;55591;-307.729;120.676;-6.654;7;"axes=X,Y,Z; y_tek=17.2652; y_sigma=120.6764; step=0.50s"
+25.04.2026;13:27:41;ук;44;Мужской;20260425_132528_915939;stage_event;method_a;method_a_stage;3;crash;56104;473.015;123.047;-3.078;8;"axes=X,Y,Z; y_tek=8.4851; y_sigma=123.0468; step=0.50s"
+25.04.2026;13:27:41;ук;44;Мужской;20260425_132528_915939;stage_event;method_a;method_a_stage;3;crash;56611;469.576;125.865;-3.042;9;"axes=X,Y,Z; y_tek=10.9043; y_sigma=125.8646; step=0.50s"
+25.04.2026;13:27:42;ук;44;Мужской;20260425_132528_915939;stage_event;method_a;method_a_stage;3;crash;57103;448.998;129.548;-2.952;10;"axes=X,Y,Z; y_tek=11.6284; y_sigma=129.5480; step=0.50s"
+25.04.2026;13:27:42;ук;44;Мужской;20260425_132528_915939;stage_event;method_a;method_a_stage;3;crash;57669;455.987;131.95;-3.396;11;"axes=X,Y,Z; y_tek=8.4017; y_sigma=131.9499; step=0.50s"
+25.04.2026;13:27:43;ук;44;Мужской;20260425_132528_915939;stage_event;method_a;method_a_stage;3;crash;58592;467.749;135.306;-5.538;12;"axes=X,Y,Z; y_tek=10.9285; y_sigma=135.3061; step=0.50s"
+25.04.2026;13:27:44;ук;44;Мужской;20260425_132528_915939;stage_event;method_a;method_a_stage;3;crash;59037;452.827;139.388;-2.67;13;"axes=X,Y,Z; y_tek=13.0745; y_sigma=139.3878; step=0.50s"
+25.04.2026;13:27:44;ук;44;Мужской;20260425_132528_915939;stage_event;method_a;method_a_stage;3;crash;59886;462.523;140.667;-5.094;14;"axes=X,Y,Z; y_tek=3.9789; y_sigma=140.6668; step=0.50s"
+25.04.2026;13:27:45;ук;44;Мужской;20260425_132528_915939;stage_report;method_a;method_a_stage;3;stage_end;60019;9.37;2.9569;0.0;14;"axes=X,Y,Z; gamma=1.7198; h=0.0214; tr=0.0000"
+25.04.2026;13:27:45;ук;44;Мужской;20260425_132528_915939;method_session;method_a;method_a;;completed;;;;;;json=method_a_results_20260425_132528_915939.json
+25.04.2026;13:27:46;ук;44;Мужской;20260425_132528_915939;summary;test_menu;method_a;;session_finished;;;;;3;Методика А завершена, данные добавлены в participants.csv и user_progress.json
+25.04.2026;13:27:49;ук;44;Мужской;20260425_132528_915939;menu_event;test_menu;test_a;;marked_completed;;;;;;Тест А завершён и сохранён.
+25.04.2026;13:33:04;ук;44;Мужской;20260425_133304_128379;registration;start_page;;;submit;;;;;;Регистрационная форма принята. completed=A
+25.04.2026;13:33:04;ук;44;Мужской;20260425_133304_128379;menu_event;test_menu;;;open_menu;;;;;;next=B
+25.04.2026;13:33:23;вп;33;Мужской;20260425_133323_816786;registration;start_page;;;submit;;;;;;Регистрационная форма принята. completed=-
+25.04.2026;13:33:23;вп;33;Мужской;20260425_133323_816786;menu_event;test_menu;;;open_menu;;;;;;next=A
+25.04.2026;13:33:27;вп;33;Мужской;20260425_133323_816786;menu_event;test_menu;test_a;;launch_requested;;;;;;Слежение за объектом
+25.04.2026;13:33:30;вп;33;Мужской;20260425_133323_816786;method_session;method_a;method_a;;launch;;;;;;"Крен управляется колесом мыши; фон неба и объект-самолёт активированы"
+25.04.2026;13:33:30;вп;33;Мужской;20260425_133323_816786;stage_event;method_a;method_a_stage;1;stage_start;;;;;;axes=X
+25.04.2026;13:34:01;вп;33;Мужской;20260425_133323_816786;stage_report;method_a;method_a_stage;1;stage_end;30015;3.501;1.3139;1.1362;0;"axes=X; gamma=0.9736; h=0.0264; tr=1.1362"
+25.04.2026;13:34:01;вп;33;Мужской;20260425_133323_816786;stage_event;method_a;method_a_stage;2;stage_start;;;;;;axes=X,Y
+25.04.2026;13:34:06;вп;33;Мужской;20260425_133323_816786;stage_event;method_a;method_a_stage;2;crash;4185;-450.696;8.141;0.0;1;"axes=X,Y; y_tek=9.1985; y_sigma=8.1407; step=0.50s"
+25.04.2026;13:34:08;вп;33;Мужской;20260425_133323_816786;stage_event;method_a;method_a_stage;2;crash;6387;-455.019;12.278;0.0;2;"axes=X,Y; y_tek=6.6413; y_sigma=12.2778; step=0.50s"
+25.04.2026;13:34:42;вп;33;Мужской;20260425_133323_816786;stage_event;method_a;method_a_stage;2;crash;39977;446.658;57.581;0.0;3;"axes=X,Y; y_tek=0.8266; y_sigma=57.5812; step=0.50s"
+25.04.2026;13:34:42;вп;33;Мужской;20260425_133323_816786;stage_report;method_a;method_a_stage;2;stage_end;40063;4.958;1.9707;0.7607;3;"axes=X,Y; gamma=1.3895; h=0.0353; tr=0.7607"
+25.04.2026;13:34:42;вп;33;Мужской;20260425_133323_816786;stage_event;method_a;method_a_stage;3;stage_start;;;;;;axes=X,Y,Z
+25.04.2026;13:35:42;вп;33;Мужской;20260425_133323_816786;stage_event;method_a;method_a_stage;3;crash;58845;275.27;72.688;20.854;1;"axes=X,Y,Z; y_tek=8.5314; y_sigma=72.6884; step=0.50s"
+25.04.2026;13:35:42;вп;33;Мужской;20260425_133323_816786;stage_event;method_a;method_a_stage;3;crash;58972;472.683;72.688;0.762;2;"axes=X,Y,Z; y_tek=8.5314; y_sigma=72.6884; step=0.50s"
+25.04.2026;13:35:43;вп;33;Мужской;20260425_133323_816786;stage_report;method_a;method_a_stage;3;stage_end;60002;10.293;1.8593;29.1419;2;"axes=X,Y,Z; gamma=1.7321; h=0.0000; tr=29.1419"
+25.04.2026;13:35:43;вп;33;Мужской;20260425_133323_816786;method_session;method_a;method_a;;completed;;;;;;json=method_a_results_20260425_133323_816786.json
+25.04.2026;13:35:45;вп;33;Мужской;20260425_133323_816786;summary;test_menu;method_a;;session_finished;;;;;3;Методика А завершена, данные добавлены в participants.csv и user_progress.json
+25.04.2026;13:35:47;вп;33;Мужской;20260425_133323_816786;menu_event;test_menu;test_a;;marked_completed;;;;;;Тест А завершён и сохранён.
+25.04.2026;15:12:15;ке;44;Мужской;20260425_151215_849599;registration;start_page;;;submit;;;;;;Регистрационная форма принята. completed=-
+25.04.2026;15:12:15;ке;44;Мужской;20260425_151215_849599;menu_event;test_menu;;;open_menu;;;;;;next=A
+25.04.2026;15:12:17;ке;44;Мужской;20260425_151215_849599;menu_event;test_menu;test_a;;launch_requested;;;;;;Слежение за объектом
+25.04.2026;15:12:20;ке;44;Мужской;20260425_151215_849599;method_session;method_a;method_a;;launch;;;;;;"Крен управляется колесом мыши; фон неба и объект-самолёт активированы"
+25.04.2026;15:12:20;ке;44;Мужской;20260425_151215_849599;stage_event;method_a;method_a_stage;1;stage_start;;;;;;axes=X
+25.04.2026;15:12:40;ке;44;Мужской;20260425_151215_849599;stage_event;method_a;method_a_stage;1;crash;18265;455.919;1.767;0.0;1;"axes=X; h_cur=0.6316; h_sum=1.7669; normalized=1"
+25.04.2026;15:12:41;ке;44;Мужской;20260425_151215_849599;stage_event;method_a;method_a_stage;1;crash;18977;445.74;2.038;0.0;2;"axes=X; h_cur=0.5421; h_sum=2.0379; normalized=1"
+25.04.2026;15:12:42;ке;44;Мужской;20260425_151215_849599;stage_event;method_a;method_a_stage;1;crash;20031;464.528;2.671;0.0;3;"axes=X; h_cur=0.9171; h_sum=2.6711; normalized=1"
+25.04.2026;15:12:43;ке;44;Мужской;20260425_151215_849599;stage_event;method_a;method_a_stage;1;crash;21028;465.015;3.157;0.0;4;"axes=X; h_cur=0.9717; h_sum=3.1569; normalized=1"
+25.04.2026;15:12:43;ке;44;Мужской;20260425_151215_849599;stage_event;method_a;method_a_stage;1;crash;21657;463.555;3.203;0.0;5;"axes=X; h_cur=0.0920; h_sum=3.2029; normalized=1"
+25.04.2026;15:12:44;ке;44;Мужской;20260425_151215_849599;stage_event;method_a;method_a_stage;1;crash;22918;458.155;3.38;0.0;6;"axes=X; h_cur=0.3547; h_sum=3.3803; normalized=1"
+25.04.2026;15:12:45;ке;44;Мужской;20260425_151215_849599;stage_event;method_a;method_a_stage;1;crash;23329;456.462;3.443;0.0;7;"axes=X; h_cur=0.1257; h_sum=3.4431; normalized=1"
+25.04.2026;15:12:45;ке;44;Мужской;20260425_151215_849599;stage_event;method_a;method_a_stage;1;crash;23679;-474.85;3.448;0.0;8;"axes=X; h_cur=0.0103; h_sum=3.4483; normalized=1"
+25.04.2026;15:12:46;ке;44;Мужской;20260425_151215_849599;stage_event;method_a;method_a_stage;1;crash;24077;-458.561;3.752;0.0;9;"axes=X; h_cur=0.6070; h_sum=3.7518; normalized=1"
+25.04.2026;15:12:46;ке;44;Мужской;20260425_151215_849599;stage_event;method_a;method_a_stage;1;crash;24450;512.034;3.752;0.0;10;"axes=X; h_cur=0.6070; h_sum=3.7518; normalized=1"
+25.04.2026;15:12:51;ке;44;Мужской;20260425_151215_849599;stage_report;method_a;method_a_stage;1;stage_end;30013;3.1377;0.152;0.0;10;"axes=X; gamma=0.9120; h=0.0880; tr=0.0000"
+25.04.2026;15:12:51;ке;44;Мужской;20260425_151215_849599;stage_event;method_a;method_a_stage;2;stage_start;;;;;;axes=X,Y
+25.04.2026;15:13:09;ке;44;Мужской;20260425_151215_849599;stage_event;method_a;method_a_stage;2;crash;16482;462.504;3.832;0.0;1;"axes=X,Y; h_cur=0.8611; h_sum=3.8319; normalized=1"
+25.04.2026;15:13:17;ке;44;Мужской;20260425_151215_849599;stage_event;method_a;method_a_stage;2;crash;24626;172.782;6.003;0.0;2;"axes=X,Y; h_cur=0.7156; h_sum=6.0030; normalized=1"
+25.04.2026;15:13:20;ке;44;Мужской;20260425_151215_849599;method_session;method_a;method_a;;aborted;;;;;1;Пользователь закрыл методику или нажал ESC
+25.04.2026;15:22:55;вае;33;Мужской;20260425_152255_096151;registration;start_page;;;submit;;;;;;Регистрационная форма принята. completed=-
+25.04.2026;15:22:55;вае;33;Мужской;20260425_152255_096151;menu_event;test_menu;;;open_menu;;;;;;next=A
+25.04.2026;15:22:56;вае;33;Мужской;20260425_152255_096151;menu_event;test_menu;test_a;;launch_requested;;;;;;Слежение за объектом
+25.04.2026;15:22:58;вае;33;Мужской;20260425_152255_096151;method_session;method_a;method_a;;launch;;;;;;"Крен управляется колесом мыши; фон неба и объект-самолёт активированы"
+25.04.2026;15:22:58;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;1;stage_start;;;;;;axes=X
+25.04.2026;15:23:13;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;1;crash;14630;445.913;5.159;0.0;1;"axes=X; Scur=1.0000; Ssum=5.1588; lambda=1.1667"
+25.04.2026;15:23:14;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;1;crash;15592;445.902;6.042;0.0;2;"axes=X; Scur=1.0000; Ssum=6.0421; lambda=1.0000"
+25.04.2026;15:23:15;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;1;crash;16536;458.467;7.247;0.0;3;"axes=X; Scur=1.0000; Ssum=7.2466; lambda=1.0000"
+25.04.2026;15:23:17;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;1;crash;17848;458.108;8.06;0.0;4;"axes=X; Scur=1.0000; Ssum=8.0603; lambda=1.0000"
+25.04.2026;15:23:19;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;1;crash;19970;-459.915;9.29;0.0;5;"axes=X; Scur=1.0000; Ssum=9.2902; lambda=1.0000"
+25.04.2026;15:23:29;вае;33;Мужской;20260425_152255_096151;stage_report;method_a;method_a_stage;1;stage_end;30005;1.0278;0.1962;0.0;5;"axes=X; gamma=0.8038; h=0.1962; tr=0.0000"
+25.04.2026;15:23:29;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;2;stage_start;;;;;;axes=X,Y
+25.04.2026;15:23:51;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;2;crash;21495;464.437;3.874;0.0;1;"axes=X,Y; Scur=1.0271; Ssum=3.8737; lambda=1.8856"
+25.04.2026;15:23:54;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;2;crash;24335;467.533;5.959;0.0;2;"axes=X,Y; Scur=1.1168; Ssum=5.9586; lambda=1.4142"
+25.04.2026;15:23:55;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;2;crash;24889;445.365;5.96;0.0;3;"axes=X,Y; Scur=1.0000; Ssum=5.9598; lambda=1.4142"
+25.04.2026;15:23:56;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;2;crash;26000;-472.276;7.159;0.0;4;"axes=X,Y; Scur=1.0478; Ssum=7.1586; lambda=1.4142"
+25.04.2026;15:23:56;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;2;crash;26553;-451.55;7.754;0.0;5;"axes=X,Y; Scur=1.0000; Ssum=7.7540; lambda=1.4142"
+25.04.2026;15:23:59;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;2;crash;28869;165.883;8.248;0.0;6;"axes=X,Y; Scur=1.0301; Ssum=8.2480; lambda=1.4142"
+25.04.2026;15:23:59;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;2;crash;29390;453.396;8.248;0.0;7;"axes=X,Y; Scur=1.0081; Ssum=8.2480; lambda=1.4142"
+25.04.2026;15:24:00;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;2;crash;29960;222.716;8.375;0.0;8;"axes=X,Y; Scur=1.0771; Ssum=8.3748; lambda=1.4142"
+25.04.2026;15:24:00;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;2;crash;30435;467.949;8.375;0.0;9;"axes=X,Y; Scur=1.0019; Ssum=8.3748; lambda=1.4142"
+25.04.2026;15:24:01;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;2;crash;30958;-477.732;8.506;0.0;10;"axes=X,Y; Scur=1.0000; Ssum=8.5060; lambda=1.4142"
+25.04.2026;15:24:02;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;2;crash;31841;468.283;8.952;0.0;11;"axes=X,Y; Scur=1.0044; Ssum=8.9516; lambda=1.4142"
+25.04.2026;15:24:03;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;2;crash;32728;-449.971;9.389;0.0;12;"axes=X,Y; Scur=1.0000; Ssum=9.3893; lambda=1.4142"
+25.04.2026;15:24:05;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;2;crash;34993;457.772;10.229;0.0;13;"axes=X,Y; Scur=1.4081; Ssum=10.2294; lambda=1.4142"
+25.04.2026;15:24:06;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;2;crash;35909;-235.667;10.769;0.0;14;"axes=X,Y; Scur=1.0906; Ssum=10.7694; lambda=1.4142"
+25.04.2026;15:24:07;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;2;crash;36808;257.435;11.209;0.0;15;"axes=X,Y; Scur=1.1153; Ssum=11.2093; lambda=1.4142"
+25.04.2026;15:24:10;вае;33;Мужской;20260425_152255_096151;stage_report;method_a;method_a_stage;2;stage_end;40003;1.4908;0.1997;0.0;15;"axes=X,Y; gamma=0.8003; h=0.1997; tr=0.0000"
+25.04.2026;15:24:10;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;3;stage_start;;;;;;axes=X,Y,Z
+25.04.2026;15:24:33;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;3;crash;21693;-460.319;14.922;-27.734;1;"axes=X,Y,Z; Scur=1.1597; Ssum=14.9221; lambda=2.3094"
+25.04.2026;15:24:33;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;3;crash;22407;-459.066;14.922;4.284;2;"axes=X,Y,Z; Scur=1.1013; Ssum=14.9221; lambda=1.7321"
+25.04.2026;15:24:34;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;3;crash;22818;447.479;14.938;2.466;3;"axes=X,Y,Z; Scur=1.0352; Ssum=14.9384; lambda=1.7321"
+25.04.2026;15:24:35;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;3;crash;23759;471.838;15.611;5.646;4;"axes=X,Y,Z; Scur=1.2094; Ssum=15.6112; lambda=1.7321"
+25.04.2026;15:24:35;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;3;crash;24417;-531.346;15.776;3.948;5;"axes=X,Y,Z; Scur=1.0212; Ssum=15.7762; lambda=1.7321"
+25.04.2026;15:24:36;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;3;crash;24704;470.467;15.776;1.722;6;"axes=X,Y,Z; Scur=1.0927; Ssum=15.7762; lambda=1.7321"
+25.04.2026;15:24:37;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;3;crash;25683;473.161;16.243;5.874;7;"axes=X,Y,Z; Scur=1.0005; Ssum=16.2429; lambda=1.7321"
+25.04.2026;15:24:38;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;3;crash;27067;-482.71;17.156;8.304;8;"axes=X,Y,Z; Scur=1.1696; Ssum=17.1563; lambda=1.7321"
+25.04.2026;15:24:38;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;3;crash;27378;446.796;17.156;1.866;9;"axes=X,Y,Z; Scur=1.0000; Ssum=17.1563; lambda=1.7321"
+25.04.2026;15:24:39;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;3;crash;28115;-458.857;17.72;4.422;10;"axes=X,Y,Z; Scur=1.0000; Ssum=17.7200; lambda=1.7321"
+25.04.2026;15:24:39;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;3;crash;28409;476.227;17.72;1.764;11;"axes=X,Y,Z; Scur=1.0000; Ssum=17.7200; lambda=1.7321"
+25.04.2026;15:24:39;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;3;crash;28506;469.842;18.253;0.582;12;"axes=X,Y,Z; Scur=1.0000; Ssum=18.2526; lambda=1.7321"
+25.04.2026;15:24:40;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;3;crash;28817;-467.263;18.253;1.866;13;"axes=X,Y,Z; Scur=1.0000; Ssum=18.2526; lambda=1.7321"
+25.04.2026;15:24:40;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;3;crash;29044;445.802;18.755;1.362;14;"axes=X,Y,Z; Scur=1.0015; Ssum=18.7551; lambda=1.7321"
+25.04.2026;15:24:41;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;3;crash;30465;-477.718;19.178;8.526;15;"axes=X,Y,Z; Scur=1.0037; Ssum=19.1779; lambda=1.7321"
+25.04.2026;15:24:42;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;3;crash;30790;509.97;19.243;1.95;16;"axes=X,Y,Z; Scur=1.0056; Ssum=19.2426; lambda=1.7321"
+25.04.2026;15:24:46;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;3;crash;34905;465.58;22.813;24.69;17;"axes=X,Y,Z; Scur=1.2854; Ssum=22.8134; lambda=1.7321"
+25.04.2026;15:24:50;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;3;crash;39592;-252.564;25.874;-28.122;18;"axes=X,Y,Z; Scur=0.6262; Ssum=25.8740; lambda=1.7321"
+25.04.2026;15:24:52;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;3;crash;40902;-452.792;26.588;-7.86;19;"axes=X,Y,Z; Scur=1.0275; Ssum=26.5881; lambda=1.7321"
+25.04.2026;15:24:52;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;3;crash;41500;-445.636;27.664;-3.588;20;"axes=X,Y,Z; Scur=1.0889; Ssum=27.6641; lambda=1.7321"
+25.04.2026;15:24:53;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;3;crash;42011;149.232;28.498;-3.066;21;"axes=X,Y,Z; Scur=1.0202; Ssum=28.4982; lambda=1.7321"
+25.04.2026;15:24:53;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;3;crash;42506;-29.997;29.203;-2.97;22;"axes=X,Y,Z; Scur=1.0000; Ssum=29.2026; lambda=1.7321"
+25.04.2026;15:24:55;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;3;crash;44088;33.171;30.267;-9.492;23;"axes=X,Y,Z; Scur=1.0000; Ssum=30.2668; lambda=1.7321"
+25.04.2026;15:24:56;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;3;crash;44687;86.375;30.384;-3.594;24;"axes=X,Y,Z; Scur=1.0005; Ssum=30.3841; lambda=1.7321"
+25.04.2026;15:24:56;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;3;crash;45197;-81.182;30.561;-3.06;25;"axes=X,Y,Z; Scur=1.0002; Ssum=30.5611; lambda=1.7321"
+25.04.2026;15:24:57;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;3;crash;46552;448.661;32.062;-8.13;26;"axes=X,Y,Z; Scur=1.0241; Ssum=32.0617; lambda=1.7321"
+25.04.2026;15:24:58;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;3;crash;47097;456.6;32.894;-3.264;27;"axes=X,Y,Z; Scur=1.1771; Ssum=32.8937; lambda=1.7321"
+25.04.2026;15:24:59;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;3;crash;47921;-453.149;33.373;-4.944;28;"axes=X,Y,Z; Scur=1.0098; Ssum=33.3731; lambda=1.7321"
+25.04.2026;15:24:59;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;3;crash;48469;450.16;33.501;-3.288;29;"axes=X,Y,Z; Scur=1.4050; Ssum=33.5014; lambda=1.7321"
+25.04.2026;15:25:00;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;3;crash;48720;-467.973;33.501;-1.506;30;"axes=X,Y,Z; Scur=1.0001; Ssum=33.5014; lambda=1.7321"
+25.04.2026;15:25:01;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;3;crash;49630;489.002;34.213;-4.056;31;"axes=X,Y,Z; Scur=1.4134; Ssum=34.2133; lambda=1.7321"
+25.04.2026;15:25:02;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;3;crash;50637;451.283;34.602;6.042;32;"axes=X,Y,Z; Scur=1.0429; Ssum=34.6020; lambda=1.7321"
+25.04.2026;15:25:02;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;3;crash;51260;-464.322;34.671;3.738;33;"axes=X,Y,Z; Scur=1.0000; Ssum=34.6706; lambda=1.7321"
+25.04.2026;15:25:03;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;3;crash;51621;457.244;34.671;2.166;34;"axes=X,Y,Z; Scur=1.0000; Ssum=34.6706; lambda=1.7321"
+25.04.2026;15:25:03;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;3;crash;51981;-462.878;34.671;2.16;35;"axes=X,Y,Z; Scur=1.0000; Ssum=34.6706; lambda=1.7321"
+25.04.2026;15:25:04;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;3;crash;52675;452.011;34.775;4.164;36;"axes=X,Y,Z; Scur=1.1090; Ssum=34.7751; lambda=1.7321"
+25.04.2026;15:25:04;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;3;crash;52871;-490.021;34.775;1.176;37;"axes=X,Y,Z; Scur=1.0000; Ssum=34.7751; lambda=1.7321"
+25.04.2026;15:25:04;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;3;crash;53150;445.918;34.775;1.674;38;"axes=X,Y,Z; Scur=1.0321; Ssum=34.7751; lambda=1.7321"
+25.04.2026;15:25:05;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;3;crash;53995;160.484;34.775;5.07;39;"axes=X,Y,Z; Scur=1.0267; Ssum=34.7751; lambda=1.7321"
+25.04.2026;15:25:05;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;3;crash;54322;-465.201;34.966;1.962;40;"axes=X,Y,Z; Scur=1.0000; Ssum=34.9664; lambda=1.7321"
+25.04.2026;15:25:06;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;3;crash;54606;517.178;35.223;1.704;41;"axes=X,Y,Z; Scur=1.0796; Ssum=35.2233; lambda=1.7321"
+25.04.2026;15:25:06;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;3;crash;54902;-458.409;35.223;1.776;42;"axes=X,Y,Z; Scur=1.0547; Ssum=35.2233; lambda=1.7321"
+25.04.2026;15:25:07;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;3;crash;55941;-475.368;35.974;6.234;43;"axes=X,Y,Z; Scur=1.0070; Ssum=35.9745; lambda=1.7321"
+25.04.2026;15:25:07;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;3;crash;56410;-326.765;36.097;2.814;44;"axes=X,Y,Z; Scur=1.2097; Ssum=36.0970; lambda=1.7321"
+25.04.2026;15:25:07;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;3;crash;56536;453.294;36.6;0.756;45;"axes=X,Y,Z; Scur=1.0000; Ssum=36.6002; lambda=1.7321"
+25.04.2026;15:25:08;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;3;crash;56647;455.904;36.6;0.666;46;"axes=X,Y,Z; Scur=1.0001; Ssum=36.6002; lambda=1.7321"
+25.04.2026;15:25:08;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;3;crash;57434;481.348;36.646;4.722;47;"axes=X,Y,Z; Scur=1.0298; Ssum=36.6465; lambda=1.7321"
+25.04.2026;15:25:09;вае;33;Мужской;20260425_152255_096151;stage_event;method_a;method_a_stage;3;crash;58508;-488.446;37.971;6.444;48;"axes=X,Y,Z; Scur=1.0272; Ssum=37.9705; lambda=1.7321"
+25.04.2026;15:25:11;вае;33;Мужской;20260425_152255_096151;stage_report;method_a;method_a_stage;3;stage_end;60010;1.7994;0.413;0.0;48;"axes=X,Y,Z; gamma=0.5870; h=0.4130; tr=0.0000"
+25.04.2026;15:25:11;вае;33;Мужской;20260425_152255_096151;method_session;method_a;method_a;;completed;;;;;;json=method_a_results_20260425_152255_096151.json
+25.04.2026;15:25:12;вае;33;Мужской;20260425_152255_096151;summary;test_menu;method_a;;session_finished;;;;;3;Методика А завершена, данные добавлены в participants.csv и user_progress.json
+25.04.2026;15:25:14;вае;33;Мужской;20260425_152255_096151;menu_event;test_menu;test_a;;marked_completed;;;;;;Тест А завершён и сохранён.
+25.04.2026;15:29:28;ку;44;Мужской;20260425_152928_138297;registration;start_page;;;submit;;;;;;Регистрационная форма принята. completed=-
+25.04.2026;15:29:28;ку;44;Мужской;20260425_152928_138297;menu_event;test_menu;;;open_menu;;;;;;next=A
+25.04.2026;15:29:29;ку;44;Мужской;20260425_152928_138297;menu_event;test_menu;test_a;;launch_requested;;;;;;Слежение за объектом
+25.04.2026;15:29:31;ку;44;Мужской;20260425_152928_138297;method_session;method_a;method_a;;launch;;;;;;"Крен управляется колесом мыши; фон неба и объект-самолёт активированы"
+25.04.2026;15:29:31;ку;44;Мужской;20260425_152928_138297;stage_event;method_a;method_a_stage;1;stage_start;;;;;;axes=X
+25.04.2026;15:29:39;ку;44;Мужской;20260425_152928_138297;stage_event;method_a;method_a_stage;1;crash;6665;457.625;5.983;0.0;1;"axes=X; Scur=1.0000; Ssum=5.9829; lambda=1.0000"
+25.04.2026;15:29:40;ку;44;Мужской;20260425_152928_138297;stage_event;method_a;method_a_stage;1;crash;7564;447.583;7.64;0.0;2;"axes=X; Scur=1.0000; Ssum=7.6403; lambda=1.0000"
+25.04.2026;15:29:40;ку;44;Мужской;20260425_152928_138297;stage_event;method_a;method_a_stage;1;crash;8414;455.711;7.971;0.0;3;"axes=X; Scur=1.0000; Ssum=7.9714; lambda=1.0000"
+25.04.2026;15:29:41;ку;44;Мужской;20260425_152928_138297;stage_event;method_a;method_a_stage;1;crash;9360;445.593;10.306;0.0;4;"axes=X; Scur=1.0000; Ssum=10.3055; lambda=1.0000"
+25.04.2026;15:29:42;ку;44;Мужской;20260425_152928_138297;stage_event;method_a;method_a_stage;1;crash;10307;-486.507;11.187;0.0;5;"axes=X; Scur=1.0000; Ssum=11.1870; lambda=1.0000"
+25.04.2026;15:29:43;ку;44;Мужской;20260425_152928_138297;stage_event;method_a;method_a_stage;1;crash;11120;-485.621;12.41;0.0;6;"axes=X; Scur=1.0000; Ssum=12.4098; lambda=1.0000"
+25.04.2026;15:29:47;ку;44;Мужской;20260425_152928_138297;stage_event;method_a;method_a_stage;1;crash;14833;461.842;15.569;0.0;7;"axes=X; Scur=1.0000; Ssum=15.5689; lambda=1.0000"
+25.04.2026;15:29:48;ку;44;Мужской;20260425_152928_138297;stage_event;method_a;method_a_stage;1;crash;15833;445.328;17.4;0.0;8;"axes=X; Scur=1.0000; Ssum=17.4003; lambda=1.0000"
+25.04.2026;15:29:49;ку;44;Мужской;20260425_152928_138297;stage_event;method_a;method_a_stage;1;crash;16565;446.501;19.402;0.0;9;"axes=X; Scur=1.0000; Ssum=19.4023; lambda=1.0000"
+25.04.2026;15:29:51;ку;44;Мужской;20260425_152928_138297;stage_event;method_a;method_a_stage;1;crash;19156;-446.352;21.693;0.0;10;"axes=X; Scur=1.0000; Ssum=21.6933; lambda=1.0000"
+25.04.2026;15:29:56;ку;44;Мужской;20260425_152928_138297;stage_event;method_a;method_a_stage;1;crash;23594;469.337;25.663;0.0;11;"axes=X; Scur=1.0000; Ssum=25.6628; lambda=1.0000"
+25.04.2026;15:30:01;ку;44;Мужской;20260425_152928_138297;stage_event;method_a;method_a_stage;1;crash;28784;452.528;30.465;0.0;12;"axes=X; Scur=1.0000; Ssum=30.4653; lambda=1.0000"
+25.04.2026;15:30:02;ку;44;Мужской;20260425_152928_138297;stage_report;method_a;method_a_stage;1;stage_end;30014;1.0;0.2667;0.0;12;"axes=X; gamma=0.7333; h=0.2667; tr=0.0000"
+25.04.2026;15:30:02;ку;44;Мужской;20260425_152928_138297;stage_event;method_a;method_a_stage;2;stage_start;;;;;;axes=X,Y
+25.04.2026;15:30:13;ку;44;Мужской;20260425_152928_138297;stage_event;method_a;method_a_stage;2;crash;10315;-448.003;11.578;0.0;1;"axes=X,Y; Scur=1.1072; Ssum=11.5778; lambda=1.6499"
+25.04.2026;15:30:14;ку;44;Мужской;20260425_152928_138297;stage_event;method_a;method_a_stage;2;crash;11069;-451.972;12.664;0.0;2;"axes=X,Y; Scur=1.0000; Ssum=12.6637; lambda=1.4142"
+25.04.2026;15:30:16;ку;44;Мужской;20260425_152928_138297;stage_event;method_a;method_a_stage;2;crash;13060;463.865;16.938;0.0;3;"axes=X,Y; Scur=1.0995; Ssum=16.9381; lambda=1.4142"
+25.04.2026;15:30:17;ку;44;Мужской;20260425_152928_138297;stage_event;method_a;method_a_stage;2;crash;14218;445.581;19.283;0.0;4;"axes=X,Y; Scur=1.2511; Ssum=19.2835; lambda=1.4142"
+25.04.2026;15:30:20;ку;44;Мужской;20260425_152928_138297;stage_event;method_a;method_a_stage;2;crash;16632;446.378;21.378;0.0;5;"axes=X,Y; Scur=1.0299; Ssum=21.3781; lambda=1.4142"
+25.04.2026;15:30:24;ку;44;Мужской;20260425_152928_138297;stage_event;method_a;method_a_stage;2;crash;21314;-197.538;35.872;0.0;6;"axes=X,Y; Scur=1.0538; Ssum=35.8722; lambda=1.4142"
+25.04.2026;15:30:32;ку;44;Мужской;20260425_152928_138297;stage_event;method_a;method_a_stage;2;crash;29377;-445.634;46.397;0.0;7;"axes=X,Y; Scur=1.0000; Ssum=46.3968; lambda=1.4142"
+25.04.2026;15:30:38;ку;44;Мужской;20260425_152928_138297;stage_event;method_a;method_a_stage;2;crash;35378;266.193;54.85;0.0;8;"axes=X,Y; Scur=1.1259; Ssum=54.8498; lambda=1.4142"
+25.04.2026;15:30:43;ку;44;Мужской;20260425_152928_138297;stage_report;method_a;method_a_stage;2;stage_end;40002;1.4172;0.2907;0.1005;8;"axes=X,Y; gamma=0.7093; h=0.2907; tr=0.1005"
+25.04.2026;15:30:43;ку;44;Мужской;20260425_152928_138297;stage_event;method_a;method_a_stage;3;stage_start;;;;;;axes=X,Y,Z
+25.04.2026;15:30:49;ку;44;Мужской;20260425_152928_138297;stage_event;method_a;method_a_stage;3;crash;4693;348.27;8.082;-28.158;1;"axes=X,Y,Z; Scur=1.0689; Ssum=8.0822; lambda=1.7321"
+25.04.2026;15:30:53;ку;44;Мужской;20260425_152928_138297;stage_event;method_a;method_a_stage;3;crash;9383;192.335;13.408;-28.14;2;"axes=X,Y,Z; Scur=0.4195; Ssum=13.4080; lambda=1.7321"
+25.04.2026;15:30:54;ку;44;Мужской;20260425_152928_138297;stage_event;method_a;method_a_stage;3;crash;9981;-461.686;14.004;-3.588;3;"axes=X,Y,Z; Scur=1.0000; Ssum=14.0042; lambda=1.7321"
+25.04.2026;15:30:55;ку;44;Мужской;20260425_152928_138297;stage_event;method_a;method_a_stage;3;crash;10688;484.418;14.367;-4.242;4;"axes=X,Y,Z; Scur=1.0003; Ssum=14.3672; lambda=1.7321"
+25.04.2026;15:30:56;ку;44;Мужской;20260425_152928_138297;stage_event;method_a;method_a_stage;3;crash;11760;459.101;15.841;-6.432;5;"axes=X,Y,Z; Scur=1.0068; Ssum=15.8412; lambda=1.7321"
+25.04.2026;15:31:02;ку;44;Мужской;20260425_152928_138297;stage_event;method_a;method_a_stage;3;crash;17968;-446.066;29.393;6.69;6;"axes=X,Y,Z; Scur=1.0108; Ssum=29.3926; lambda=1.7321"
+25.04.2026;15:31:08;ку;44;Мужской;20260425_152928_138297;stage_event;method_a;method_a_stage;3;crash;23975;-445.783;41.241;-10.938;7;"axes=X,Y,Z; Scur=1.0626; Ssum=41.2409; lambda=1.7321"
+25.04.2026;15:31:13;ку;44;Мужской;20260425_152928_138297;stage_event;method_a;method_a_stage;3;crash;28658;174.617;45.605;-28.098;8;"axes=X,Y,Z; Scur=0.8167; Ssum=45.6053; lambda=1.7321"
+25.04.2026;15:31:19;ку;44;Мужской;20260425_152928_138297;stage_event;method_a;method_a_stage;3;crash;34662;445.56;60.247;6.744;9;"axes=X,Y,Z; Scur=1.4142; Ssum=60.2472; lambda=1.7321"
+25.04.2026;15:31:27;ку;44;Мужской;20260425_152928_138297;stage_event;method_a;method_a_stage;3;crash;42783;-448.801;70.715;-19.05;10;"axes=X,Y,Z; Scur=1.0064; Ssum=70.7146; lambda=1.7321"
+25.04.2026;15:31:29;ку;44;Мужской;20260425_152928_138297;stage_event;method_a;method_a_stage;3;crash;45269;-28.868;75.013;90.199;11;"axes=X,Y,Z; Scur=1.3296; Ssum=75.0130; lambda=1.7321"
+25.04.2026;15:31:33;ку;44;Мужской;20260425_152928_138297;stage_event;method_a;method_a_stage;3;crash;49290;460.85;76.896;18.918;12;"axes=X,Y,Z; Scur=1.0110; Ssum=76.8957; lambda=1.7321"
+25.04.2026;15:31:35;ку;44;Мужской;20260425_152928_138297;stage_event;method_a;method_a_stage;3;crash;50931;450.421;81.606;9.846;13;"axes=X,Y,Z; Scur=1.1909; Ssum=81.6060; lambda=1.7321"
+25.04.2026;15:31:36;ку;44;Мужской;20260425_152928_138297;stage_event;method_a;method_a_stage;3;crash;51908;451.303;82.187;5.862;14;"axes=X,Y,Z; Scur=1.2033; Ssum=82.1873; lambda=1.7321"
+25.04.2026;15:31:37;ку;44;Мужской;20260425_152928_138297;stage_event;method_a;method_a_stage;3;crash;52715;-486.601;82.355;4.842;15;"axes=X,Y,Z; Scur=1.0093; Ssum=82.3546; lambda=1.7321"
+25.04.2026;15:31:38;ку;44;Мужской;20260425_152928_138297;stage_event;method_a;method_a_stage;3;crash;53876;455.226;82.355;6.966;16;"axes=X,Y,Z; Scur=1.0088; Ssum=82.3546; lambda=1.7321"
+25.04.2026;15:31:39;ку;44;Мужской;20260425_152928_138297;stage_event;method_a;method_a_stage;3;crash;54820;485.536;82.369;5.664;17;"axes=X,Y,Z; Scur=1.0000; Ssum=82.3685; lambda=1.7321"
+25.04.2026;15:31:39;ку;44;Мужской;20260425_152928_138297;stage_event;method_a;method_a_stage;3;crash;55031;446.112;83.866;1.266;18;"axes=X,Y,Z; Scur=1.0119; Ssum=83.8662; lambda=1.7321"
+25.04.2026;15:31:39;ку;44;Мужской;20260425_152928_138297;stage_event;method_a;method_a_stage;3;crash;55226;447.919;83.866;1.17;19;"axes=X,Y,Z; Scur=1.0004; Ssum=83.8662; lambda=1.7321"
+25.04.2026;15:31:41;ку;44;Мужской;20260425_152928_138297;stage_event;method_a;method_a_stage;3;crash;56613;66.922;85.775;8.316;20;"axes=X,Y,Z; Scur=1.0000; Ssum=85.7747; lambda=1.7321"
+25.04.2026;15:31:43;ку;44;Мужской;20260425_152928_138297;stage_event;method_a;method_a_stage;3;crash;59371;-111.243;90.792;16.548;21;"axes=X,Y,Z; Scur=1.0083; Ssum=90.7921; lambda=1.7321"
+25.04.2026;15:31:44;ку;44;Мужской;20260425_152928_138297;stage_report;method_a;method_a_stage;3;stage_end;60010;1.7321;0.2428;0.0;21;"axes=X,Y,Z; gamma=0.7572; h=0.2428; tr=0.0000"
+25.04.2026;15:31:44;ку;44;Мужской;20260425_152928_138297;method_session;method_a;method_a;;completed;;;;;;json=method_a_results_20260425_152928_138297.json
+25.04.2026;15:31:46;ку;44;Мужской;20260425_152928_138297;summary;test_menu;method_a;;session_finished;;;;;3;Методика А завершена, данные добавлены в participants.csv и user_progress.json
+25.04.2026;15:31:48;ку;44;Мужской;20260425_152928_138297;menu_event;test_menu;test_a;;marked_completed;;;;;;Тест А завершён и сохранён.
+25.04.2026;15:36:58;еап;44;Мужской;20260425_153658_390106;registration;start_page;;;submit;;;;;;Регистрационная форма принята. completed=-
+25.04.2026;15:36:58;еап;44;Мужской;20260425_153658_390106;menu_event;test_menu;;;open_menu;;;;;;next=A
+25.04.2026;15:36:59;еап;44;Мужской;20260425_153658_390106;menu_event;test_menu;test_a;;launch_requested;;;;;;Слежение за объектом
+25.04.2026;15:37:01;еап;44;Мужской;20260425_153658_390106;method_session;method_a;method_a;;launch;;;;;;"Крен управляется колесом мыши; фон неба и объект-самолёт активированы"
+25.04.2026;15:37:01;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;1;stage_start;;;;;;axes=X
+25.04.2026;15:37:09;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;1;crash;6894;484.657;6.001;0.0;1;"axes=X; Scur=1.0000; Ssum=6.0006; lambda=1.0000"
+25.04.2026;15:37:10;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;1;crash;7742;474.822;6.001;0.0;2;"axes=X; Scur=1.0000; Ssum=6.0006; lambda=1.0000"
+25.04.2026;15:37:14;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;1;crash;11515;469.293;9.219;0.0;3;"axes=X; Scur=1.0000; Ssum=9.2191; lambda=1.0000"
+25.04.2026;15:37:15;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;1;crash;11964;-472.758;9.219;0.0;4;"axes=X; Scur=1.0000; Ssum=9.2191; lambda=1.0000"
+25.04.2026;15:37:15;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;1;crash;12431;-497.3;9.576;0.0;5;"axes=X; Scur=1.0000; Ssum=9.5758; lambda=1.0000"
+25.04.2026;15:37:15;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;1;crash;12813;461.246;10.659;0.0;6;"axes=X; Scur=1.0000; Ssum=10.6592; lambda=1.0000"
+25.04.2026;15:37:17;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;1;crash;14398;469.29;12.278;0.0;7;"axes=X; Scur=1.0000; Ssum=12.2783; lambda=1.0000"
+25.04.2026;15:37:19;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;1;crash;16449;-476.23;12.75;0.0;8;"axes=X; Scur=1.0000; Ssum=12.7496; lambda=1.0000"
+25.04.2026;15:37:21;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;1;crash;18251;460.872;14.045;0.0;9;"axes=X; Scur=1.0000; Ssum=14.0447; lambda=1.0000"
+25.04.2026;15:37:22;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;1;crash;19079;-481.3;15.409;0.0;10;"axes=X; Scur=1.0000; Ssum=15.4093; lambda=1.0000"
+25.04.2026;15:37:22;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;1;crash;19701;486.345;16.134;0.0;11;"axes=X; Scur=1.0000; Ssum=16.1340; lambda=1.0000"
+25.04.2026;15:37:23;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;1;crash;20268;-478.959;16.315;0.0;12;"axes=X; Scur=1.0000; Ssum=16.3148; lambda=1.0000"
+25.04.2026;15:37:24;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;1;crash;21101;458.583;18.3;0.0;13;"axes=X; Scur=1.0000; Ssum=18.2997; lambda=1.0000"
+25.04.2026;15:37:25;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;1;crash;22783;-472.573;19.538;0.0;14;"axes=X; Scur=1.0000; Ssum=19.5380; lambda=1.0000"
+25.04.2026;15:37:27;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;1;crash;24189;-452.63;19.853;0.0;15;"axes=X; Scur=1.0000; Ssum=19.8531; lambda=1.0000"
+25.04.2026;15:37:27;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;1;crash;24927;509.925;19.853;0.0;16;"axes=X; Scur=1.0000; Ssum=19.8531; lambda=1.0000"
+25.04.2026;15:37:28;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;1;crash;25013;476.512;21.853;0.0;17;"axes=X; Scur=1.0000; Ssum=21.8531; lambda=1.0000"
+25.04.2026;15:37:28;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;1;crash;25280;-475.769;21.853;0.0;18;"axes=X; Scur=1.0000; Ssum=21.8531; lambda=1.0000"
+25.04.2026;15:37:29;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;1;crash;26173;472.019;22.656;0.0;19;"axes=X; Scur=1.0000; Ssum=22.6564; lambda=1.0000"
+25.04.2026;15:37:30;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;1;crash;27771;-466.828;24.038;0.0;20;"axes=X; Scur=1.0000; Ssum=24.0376; lambda=1.0000"
+25.04.2026;15:37:32;еап;44;Мужской;20260425_153658_390106;stage_report;method_a;method_a_stage;1;stage_end;30002;1.0;0.2298;0.0;20;"axes=X; gamma=0.7702; h=0.2298; tr=0.0000"
+25.04.2026;15:37:32;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;2;stage_start;;;;;;axes=X,Y
+25.04.2026;15:37:40;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;2;crash;6213;-446.098;9.288;0.0;1;"axes=X,Y; Scur=1.0337; Ssum=9.2877; lambda=1.4142"
+25.04.2026;15:37:43;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;2;crash;9266;447.189;9.693;0.0;2;"axes=X,Y; Scur=1.0316; Ssum=9.6932; lambda=1.4142"
+25.04.2026;15:37:43;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;2;crash;9770;-446.894;9.78;0.0;3;"axes=X,Y; Scur=1.0061; Ssum=9.7802; lambda=1.4142"
+25.04.2026;15:37:44;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;2;crash;10405;446.214;10.152;0.0;4;"axes=X,Y; Scur=1.0313; Ssum=10.1522; lambda=1.4142"
+25.04.2026;15:37:44;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;2;crash;10788;-468.682;10.152;0.0;5;"axes=X,Y; Scur=1.0000; Ssum=10.1522; lambda=1.4142"
+25.04.2026;15:37:45;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;2;crash;10975;-460.052;10.152;0.0;6;"axes=X,Y; Scur=1.0000; Ssum=10.1522; lambda=1.4142"
+25.04.2026;15:37:45;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;2;crash;11559;445.507;11.768;0.0;7;"axes=X,Y; Scur=1.0065; Ssum=11.7677; lambda=1.4142"
+25.04.2026;15:37:45;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;2;crash;11696;-445.861;11.768;0.0;8;"axes=X,Y; Scur=1.0000; Ssum=11.7677; lambda=1.4142"
+25.04.2026;15:37:46;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;2;crash;12290;511.391;13.005;0.0;9;"axes=X,Y; Scur=1.0000; Ssum=13.0049; lambda=1.4142"
+25.04.2026;15:37:46;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;2;crash;12624;-451.497;13.324;0.0;10;"axes=X,Y; Scur=1.0000; Ssum=13.3245; lambda=1.4142"
+25.04.2026;15:37:46;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;2;crash;12843;506.281;13.324;0.0;11;"axes=X,Y; Scur=1.0000; Ssum=13.3245; lambda=1.4142"
+25.04.2026;15:37:47;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;2;crash;13574;-457.751;14.393;0.0;12;"axes=X,Y; Scur=1.0005; Ssum=14.3929; lambda=1.4142"
+25.04.2026;15:37:47;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;2;crash;13758;510.376;14.393;0.0;13;"axes=X,Y; Scur=1.0012; Ssum=14.3929; lambda=1.4142"
+25.04.2026;15:37:48;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;2;crash;14078;-460.19;15.61;0.0;14;"axes=X,Y; Scur=1.0000; Ssum=15.6096; lambda=1.4142"
+25.04.2026;15:37:48;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;2;crash;14618;483.208;15.63;0.0;15;"axes=X,Y; Scur=1.0103; Ssum=15.6301; lambda=1.4142"
+25.04.2026;15:37:49;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;2;crash;14967;-481.806;15.63;0.0;16;"axes=X,Y; Scur=1.0000; Ssum=15.6301; lambda=1.4142"
+25.04.2026;15:37:49;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;2;crash;15623;-474.138;15.856;0.0;17;"axes=X,Y; Scur=1.0010; Ssum=15.8559; lambda=1.4142"
+25.04.2026;15:37:49;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;2;crash;15844;485.033;15.856;0.0;18;"axes=X,Y; Scur=1.0000; Ssum=15.8559; lambda=1.4142"
+25.04.2026;15:37:50;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;2;crash;16047;-482.016;17.273;0.0;19;"axes=X,Y; Scur=1.0000; Ssum=17.2732; lambda=1.4142"
+25.04.2026;15:37:51;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;2;crash;16998;464.346;17.43;0.0;20;"axes=X,Y; Scur=1.0000; Ssum=17.4301; lambda=1.4142"
+25.04.2026;15:37:55;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;2;crash;21676;-136.448;20.584;0.0;21;"axes=X,Y; Scur=1.0140; Ssum=20.5844; lambda=1.4142"
+25.04.2026;15:37:56;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;2;crash;22480;-39.901;20.594;0.0;22;"axes=X,Y; Scur=1.0000; Ssum=20.5937; lambda=1.4142"
+25.04.2026;15:37:57;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;2;crash;23569;-111.342;21.306;0.0;23;"axes=X,Y; Scur=1.0050; Ssum=21.3061; lambda=1.4142"
+25.04.2026;15:38:01;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;2;crash;27763;485.287;22.462;0.0;24;"axes=X,Y; Scur=1.0000; Ssum=22.4618; lambda=1.4142"
+25.04.2026;15:38:03;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;2;crash;29346;458.21;22.823;0.0;25;"axes=X,Y; Scur=1.0000; Ssum=22.8226; lambda=1.4142"
+25.04.2026;15:38:03;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;2;crash;29800;467.132;23.249;0.0;26;"axes=X,Y; Scur=1.0000; Ssum=23.2491; lambda=1.4142"
+25.04.2026;15:38:04;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;2;crash;30083;457.363;24.729;0.0;27;"axes=X,Y; Scur=1.0000; Ssum=24.7287; lambda=1.4142"
+25.04.2026;15:38:05;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;2;crash;31039;476.292;26.633;0.0;28;"axes=X,Y; Scur=1.0010; Ssum=26.6330; lambda=1.4142"
+25.04.2026;15:38:05;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;2;crash;31528;447.316;28.357;0.0;29;"axes=X,Y; Scur=1.0000; Ssum=28.3569; lambda=1.4142"
+25.04.2026;15:38:06;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;2;crash;32339;-448.716;29.198;0.0;30;"axes=X,Y; Scur=1.0000; Ssum=29.1977; lambda=1.4142"
+25.04.2026;15:38:06;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;2;crash;32940;-472.808;30.062;0.0;31;"axes=X,Y; Scur=1.0000; Ssum=30.0617; lambda=1.4142"
+25.04.2026;15:38:07;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;2;crash;33094;-447.871;31.049;0.0;32;"axes=X,Y; Scur=1.0000; Ssum=31.0486; lambda=1.4142"
+25.04.2026;15:38:07;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;2;crash;33478;488.796;31.049;0.0;33;"axes=X,Y; Scur=1.0000; Ssum=31.0486; lambda=1.4142"
+25.04.2026;15:38:07;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;2;crash;33633;455.633;32.419;0.0;34;"axes=X,Y; Scur=1.0000; Ssum=32.4192; lambda=1.4142"
+25.04.2026;15:38:08;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;2;crash;34908;-451.708;33.092;0.0;35;"axes=X,Y; Scur=1.1009; Ssum=33.0921; lambda=1.4142"
+25.04.2026;15:38:09;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;2;crash;35340;489.726;33.837;0.0;36;"axes=X,Y; Scur=1.0000; Ssum=33.8370; lambda=1.4142"
+25.04.2026;15:38:10;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;2;crash;36037;464.82;37.158;0.0;37;"axes=X,Y; Scur=1.0000; Ssum=37.1575; lambda=1.4142"
+25.04.2026;15:38:10;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;2;crash;36712;-482.043;37.158;0.0;38;"axes=X,Y; Scur=1.0070; Ssum=37.1575; lambda=1.4142"
+25.04.2026;15:38:10;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;2;crash;36880;-448.161;37.158;0.0;39;"axes=X,Y; Scur=1.0000; Ssum=37.1575; lambda=1.4142"
+25.04.2026;15:38:11;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;2;crash;37182;-446.876;37.621;0.0;40;"axes=X,Y; Scur=1.0000; Ssum=37.6215; lambda=1.4142"
+25.04.2026;15:38:11;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;2;crash;37470;446.512;37.621;0.0;41;"axes=X,Y; Scur=1.0000; Ssum=37.6215; lambda=1.4142"
+25.04.2026;15:38:11;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;2;crash;37621;474.645;38.847;0.0;42;"axes=X,Y; Scur=1.0000; Ssum=38.8472; lambda=1.4142"
+25.04.2026;15:38:12;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;2;crash;38319;-475.515;39.143;0.0;43;"axes=X,Y; Scur=1.0001; Ssum=39.1435; lambda=1.4142"
+25.04.2026;15:38:12;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;2;crash;38572;-461.207;40.732;0.0;44;"axes=X,Y; Scur=1.0000; Ssum=40.7325; lambda=1.4142"
+25.04.2026;15:38:12;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;2;crash;38688;-465.264;40.732;0.0;45;"axes=X,Y; Scur=1.0000; Ssum=40.7325; lambda=1.4142"
+25.04.2026;15:38:13;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;2;crash;39053;498.441;41.673;0.0;46;"axes=X,Y; Scur=1.0000; Ssum=41.6728; lambda=1.4142"
+25.04.2026;15:38:13;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;2;crash;39158;451.109;41.673;0.0;47;"axes=X,Y; Scur=1.0000; Ssum=41.6728; lambda=1.4142"
+25.04.2026;15:38:14;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;2;crash;39990;-445.783;42.205;0.0;48;"axes=X,Y; Scur=1.0000; Ssum=42.2050; lambda=1.4142"
+25.04.2026;15:38:14;еап;44;Мужской;20260425_153658_390106;stage_report;method_a;method_a_stage;2;stage_end;40079;1.4142;0.2081;0.0;48;"axes=X,Y; gamma=0.7919; h=0.2081; tr=0.0000"
+25.04.2026;15:38:14;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;stage_start;;;;;;axes=X,Y,Z
+25.04.2026;15:38:16;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;1195;-369.412;1.453;7.17;1;"axes=X,Y,Z; Scur=1.2779; Ssum=1.4526; lambda=1.7321"
+25.04.2026;15:38:16;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;1836;-187.634;1.505;3.852;2;"axes=X,Y,Z; Scur=1.0457; Ssum=1.5050; lambda=1.7321"
+25.04.2026;15:38:21;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;5940;447.124;5.691;-10.698;3;"axes=X,Y,Z; Scur=1.3652; Ssum=5.6908; lambda=1.7321"
+25.04.2026;15:38:22;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;7050;186.379;7.718;-6.66;4;"axes=X,Y,Z; Scur=1.0447; Ssum=7.7176; lambda=1.7321"
+25.04.2026;15:38:22;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;7663;-449.743;7.867;-3.678;5;"axes=X,Y,Z; Scur=1.2151; Ssum=7.8674; lambda=1.7321"
+25.04.2026;15:38:23;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;7993;-464.675;7.867;-1.98;6;"axes=X,Y,Z; Scur=1.0000; Ssum=7.8674; lambda=1.7321"
+25.04.2026;15:38:23;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;8188;-456.902;8.454;-1.17;7;"axes=X,Y,Z; Scur=1.0000; Ssum=8.4539; lambda=1.7321"
+25.04.2026;15:38:23;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;8670;-446.759;9.213;-2.892;8;"axes=X,Y,Z; Scur=1.0736; Ssum=9.2127; lambda=1.7321"
+25.04.2026;15:38:24;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;8895;-447.151;9.213;-1.35;9;"axes=X,Y,Z; Scur=1.1537; Ssum=9.2127; lambda=1.7321"
+25.04.2026;15:38:24;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;9118;463.313;9.951;-1.338;10;"axes=X,Y,Z; Scur=1.2479; Ssum=9.9506; lambda=1.7321"
+25.04.2026;15:38:24;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;9251;464.752;9.951;-0.798;11;"axes=X,Y,Z; Scur=1.0000; Ssum=9.9506; lambda=1.7321"
+25.04.2026;15:38:24;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;9397;470.525;9.951;-0.876;12;"axes=X,Y,Z; Scur=1.0000; Ssum=9.9506; lambda=1.7321"
+25.04.2026;15:38:24;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;9627;-489.444;10.266;-1.38;13;"axes=X,Y,Z; Scur=1.1369; Ssum=10.2664; lambda=1.7321"
+25.04.2026;15:38:25;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;10110;447.013;11.212;-2.898;14;"axes=X,Y,Z; Scur=1.1227; Ssum=11.2116; lambda=1.7321"
+25.04.2026;15:38:26;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;11214;-459.23;13.806;-6.624;15;"axes=X,Y,Z; Scur=1.0127; Ssum=13.8060; lambda=1.7321"
+25.04.2026;15:38:27;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;11933;453.399;13.964;-4.32;16;"axes=X,Y,Z; Scur=1.1684; Ssum=13.9638; lambda=1.7321"
+25.04.2026;15:38:27;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;12573;489.178;14.858;-3.84;17;"axes=X,Y,Z; Scur=1.0106; Ssum=14.8583; lambda=1.7321"
+25.04.2026;15:38:27;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;12717;-502.864;14.858;-0.864;18;"axes=X,Y,Z; Scur=1.0025; Ssum=14.8583; lambda=1.7321"
+25.04.2026;15:38:28;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;12997;469.199;14.858;-1.68;19;"axes=X,Y,Z; Scur=1.0000; Ssum=14.8583; lambda=1.7321"
+25.04.2026;15:38:28;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;13123;-457.037;15.488;-0.756;20;"axes=X,Y,Z; Scur=1.0024; Ssum=15.4883; lambda=1.7321"
+25.04.2026;15:38:28;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;13338;448.655;15.488;1.29;21;"axes=X,Y,Z; Scur=1.0000; Ssum=15.4883; lambda=1.7321"
+25.04.2026;15:38:29;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;13878;-462.996;16.189;3.24;22;"axes=X,Y,Z; Scur=1.0000; Ssum=16.1890; lambda=1.7321"
+25.04.2026;15:38:29;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;14054;447.258;16.751;1.056;23;"axes=X,Y,Z; Scur=1.0000; Ssum=16.7506; lambda=1.7321"
+25.04.2026;15:38:29;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;14764;-447.385;17.283;4.26;24;"axes=X,Y,Z; Scur=1.0036; Ssum=17.2827; lambda=1.7321"
+25.04.2026;15:38:30;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;14988;576.587;17.283;1.344;25;"axes=X,Y,Z; Scur=1.0000; Ssum=17.2827; lambda=1.7321"
+25.04.2026;15:38:30;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;15202;-473.713;17.647;1.284;26;"axes=X,Y,Z; Scur=1.0000; Ssum=17.6472; lambda=1.7321"
+25.04.2026;15:38:30;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;15446;491.981;17.647;1.464;27;"axes=X,Y,Z; Scur=1.0000; Ssum=17.6472; lambda=1.7321"
+25.04.2026;15:38:31;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;16004;-464.654;19.187;3.348;28;"axes=X,Y,Z; Scur=1.0002; Ssum=19.1873; lambda=1.7321"
+25.04.2026;15:38:31;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;16181;490.003;19.187;1.062;29;"axes=X,Y,Z; Scur=1.0000; Ssum=19.1873; lambda=1.7321"
+25.04.2026;15:38:32;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;17181;-367.472;19.926;6.0;30;"axes=X,Y,Z; Scur=1.2746; Ssum=19.9256; lambda=1.7321"
+25.04.2026;15:38:33;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;18252;7.612;20.791;6.426;31;"axes=X,Y,Z; Scur=1.0000; Ssum=20.7906; lambda=1.7321"
+25.04.2026;15:38:33;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;18746;42.649;20.791;2.964;32;"axes=X,Y,Z; Scur=1.0000; Ssum=20.7906; lambda=1.7321"
+25.04.2026;15:38:34;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;18908;455.951;20.791;0.972;33;"axes=X,Y,Z; Scur=1.3423; Ssum=20.7906; lambda=1.7321"
+25.04.2026;15:38:34;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;19067;-314.597;21.4;0.954;34;"axes=X,Y,Z; Scur=1.1915; Ssum=21.3995; lambda=1.7321"
+25.04.2026;15:38:34;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;19161;-522.295;21.4;0.564;35;"axes=X,Y,Z; Scur=1.0025; Ssum=21.3995; lambda=1.7321"
+25.04.2026;15:38:34;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;19818;500.171;22.415;3.15;36;"axes=X,Y,Z; Scur=1.0612; Ssum=22.4150; lambda=1.7321"
+25.04.2026;15:38:35;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;20012;-529.098;24.148;-1.164;37;"axes=X,Y,Z; Scur=1.0140; Ssum=24.1478; lambda=1.7321"
+25.04.2026;15:38:35;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;20273;514.952;24.148;-1.566;38;"axes=X,Y,Z; Scur=1.0000; Ssum=24.1478; lambda=1.7321"
+25.04.2026;15:38:35;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;20534;-468.728;25.037;-1.566;39;"axes=X,Y,Z; Scur=1.0018; Ssum=25.0370; lambda=1.7321"
+25.04.2026;15:38:35;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;20730;626.912;25.037;-1.176;40;"axes=X,Y,Z; Scur=1.0000; Ssum=25.0370; lambda=1.7321"
+25.04.2026;15:38:36;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;21487;474.653;26.063;-4.542;41;"axes=X,Y,Z; Scur=1.0526; Ssum=26.0634; lambda=1.7321"
+25.04.2026;15:38:36;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;21647;446.07;26.938;-0.96;42;"axes=X,Y,Z; Scur=1.0022; Ssum=26.9384; lambda=1.7321"
+25.04.2026;15:38:37;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;22212;-491.834;28.109;-3.39;43;"axes=X,Y,Z; Scur=1.0001; Ssum=28.1088; lambda=1.7321"
+25.04.2026;15:38:37;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;22507;455.34;30.093;-1.77;44;"axes=X,Y,Z; Scur=1.0403; Ssum=30.0928; lambda=1.7321"
+25.04.2026;15:38:38;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;23202;446.096;30.437;-4.17;45;"axes=X,Y,Z; Scur=1.0843; Ssum=30.4374; lambda=1.7321"
+25.04.2026;15:38:38;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;23728;-449.811;31.744;-3.156;46;"axes=X,Y,Z; Scur=1.0000; Ssum=31.7439; lambda=1.7321"
+25.04.2026;15:38:39;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;24190;459.499;32.341;-2.772;47;"axes=X,Y,Z; Scur=1.0023; Ssum=32.3411; lambda=1.7321"
+25.04.2026;15:38:40;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;25490;404.903;33.056;-7.8;48;"axes=X,Y,Z; Scur=1.3395; Ssum=33.0562; lambda=1.7321"
+25.04.2026;15:38:43;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;28332;445.971;41.373;-17.052;49;"axes=X,Y,Z; Scur=1.3119; Ssum=41.3729; lambda=1.7321"
+25.04.2026;15:38:48;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;33020;-267.158;45.577;-28.128;50;"axes=X,Y,Z; Scur=0.5672; Ssum=45.5770; lambda=1.7321"
+25.04.2026;15:38:52;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;37703;-73.246;51.049;-28.098;51;"axes=X,Y,Z; Scur=0.7706; Ssum=51.0493; lambda=1.7321"
+25.04.2026;15:38:58;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;43712;445.931;65.435;27.498;52;"axes=X,Y,Z; Scur=1.4310; Ssum=65.4349; lambda=1.7321"
+25.04.2026;15:39:01;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;46297;-454.295;66.114;15.504;53;"axes=X,Y,Z; Scur=1.0826; Ssum=66.1139; lambda=1.7321"
+25.04.2026;15:39:01;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;46707;511.786;66.688;2.46;54;"axes=X,Y,Z; Scur=1.2731; Ssum=66.6882; lambda=1.7321"
+25.04.2026;15:39:02;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;46868;466.357;66.688;0.966;55;"axes=X,Y,Z; Scur=1.0545; Ssum=66.6882; lambda=1.7321"
+25.04.2026;15:39:02;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;47094;-488.544;66.753;1.356;56;"axes=X,Y,Z; Scur=1.0090; Ssum=66.7529; lambda=1.7321"
+25.04.2026;15:39:02;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;47189;-538.567;66.753;0.57;57;"axes=X,Y,Z; Scur=1.0052; Ssum=66.7529; lambda=1.7321"
+25.04.2026;15:39:02;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;47414;491.612;66.753;1.35;58;"axes=X,Y,Z; Scur=1.0000; Ssum=66.7529; lambda=1.7321"
+25.04.2026;15:39:02;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;47579;-520.554;66.761;0.99;59;"axes=X,Y,Z; Scur=1.0000; Ssum=66.7611; lambda=1.7321"
+25.04.2026;15:39:02;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;47721;461.09;66.761;0.852;60;"axes=X,Y,Z; Scur=1.0000; Ssum=66.7611; lambda=1.7321"
+25.04.2026;15:39:03;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;47884;-494.953;66.761;0.978;61;"axes=X,Y,Z; Scur=1.0000; Ssum=66.7611; lambda=1.7321"
+25.04.2026;15:39:03;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;47979;448.108;66.761;0.57;62;"axes=X,Y,Z; Scur=1.0084; Ssum=66.7611; lambda=1.7321"
+25.04.2026;15:39:03;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;48472;486.696;67.533;2.958;63;"axes=X,Y,Z; Scur=1.0194; Ssum=67.5333; lambda=1.7321"
+25.04.2026;15:39:04;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;49187;-464.05;68.842;4.29;64;"axes=X,Y,Z; Scur=1.0412; Ssum=68.8423; lambda=1.7321"
+25.04.2026;15:39:04;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;49297;542.817;68.842;0.66;65;"axes=X,Y,Z; Scur=1.0034; Ssum=68.8423; lambda=1.7321"
+25.04.2026;15:39:04;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;49526;-493.862;70.33;1.374;66;"axes=X,Y,Z; Scur=1.0035; Ssum=70.3304; lambda=1.7321"
+25.04.2026;15:39:04;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;49653;484.661;70.33;0.762;67;"axes=X,Y,Z; Scur=1.0001; Ssum=70.3304; lambda=1.7321"
+25.04.2026;15:39:04;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;49748;570.132;70.33;0.57;68;"axes=X,Y,Z; Scur=1.0007; Ssum=70.3304; lambda=1.7321"
+25.04.2026;15:39:05;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;49843;-517.605;70.33;0.57;69;"axes=X,Y,Z; Scur=1.0049; Ssum=70.3304; lambda=1.7321"
+25.04.2026;15:39:05;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;49937;-699.445;70.33;0.564;70;"axes=X,Y,Z; Scur=1.0992; Ssum=70.3304; lambda=1.7321"
+25.04.2026;15:39:05;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;50049;501.495;71.385;0.672;71;"axes=X,Y,Z; Scur=1.0000; Ssum=71.3855; lambda=1.7321"
+25.04.2026;15:39:05;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;50143;817.998;71.385;0.564;72;"axes=X,Y,Z; Scur=1.0000; Ssum=71.3855; lambda=1.7321"
+25.04.2026;15:39:05;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;50252;-535.114;71.385;0.654;73;"axes=X,Y,Z; Scur=1.0326; Ssum=71.3855; lambda=1.7321"
+25.04.2026;15:39:06;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;50926;-461.756;71.993;4.044;74;"axes=X,Y,Z; Scur=1.0152; Ssum=71.9929; lambda=1.7321"
+25.04.2026;15:39:07;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;52620;-481.305;76.843;5.808;75;"axes=X,Y,Z; Scur=1.0989; Ssum=76.8426; lambda=1.7321"
+25.04.2026;15:39:08;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;53668;467.219;79.077;-6.288;76;"axes=X,Y,Z; Scur=1.0000; Ssum=79.0773; lambda=1.7321"
+25.04.2026;15:39:10;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;54852;461.618;81.4;-7.104;77;"axes=X,Y,Z; Scur=1.0485; Ssum=81.3997; lambda=1.7321"
+25.04.2026;15:39:10;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;55496;-452.044;82.233;-3.864;78;"axes=X,Y,Z; Scur=1.4114; Ssum=82.2327; lambda=1.7321"
+25.04.2026;15:39:11;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;55972;459.51;82.964;-2.856;79;"axes=X,Y,Z; Scur=1.0000; Ssum=82.9644; lambda=1.7321"
+25.04.2026;15:39:11;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;56406;-445.443;83.607;-2.604;80;"axes=X,Y,Z; Scur=1.0057; Ssum=83.6068; lambda=1.7321"
+25.04.2026;15:39:11;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;56601;466.888;83.842;-1.17;81;"axes=X,Y,Z; Scur=1.0528; Ssum=83.8418; lambda=1.7321"
+25.04.2026;15:39:13;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;58404;-466.935;84.756;-10.818;82;"axes=X,Y,Z; Scur=1.0001; Ssum=84.7558; lambda=1.7321"
+25.04.2026;15:39:14;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;59013;455.629;87.105;-3.654;83;"axes=X,Y,Z; Scur=1.0112; Ssum=87.1053; lambda=1.7321"
+25.04.2026;15:39:14;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;59143;459.734;87.105;-0.78;84;"axes=X,Y,Z; Scur=1.0000; Ssum=87.1053; lambda=1.7321"
+25.04.2026;15:39:14;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;59687;461.088;87.105;-3.264;85;"axes=X,Y,Z; Scur=1.0001; Ssum=87.1053; lambda=1.7321"
+25.04.2026;15:39:15;еап;44;Мужской;20260425_153658_390106;stage_event;method_a;method_a_stage;3;crash;59849;461.191;87.105;-0.972;86;"axes=X,Y,Z; Scur=1.0000; Ssum=87.1053; lambda=1.7321"
+25.04.2026;15:39:15;еап;44;Мужской;20260425_153658_390106;stage_report;method_a;method_a_stage;3;stage_end;60010;1.7321;0.2416;0.0;86;"axes=X,Y,Z; gamma=0.7584; h=0.2416; tr=0.0000"
+25.04.2026;15:39:15;еап;44;Мужской;20260425_153658_390106;method_session;method_a;method_a;;completed;;;;;;json=method_a_results_20260425_153658_390106.json
+25.04.2026;15:39:16;еап;44;Мужской;20260425_153658_390106;summary;test_menu;method_a;;session_finished;;;;;3;Методика А завершена, данные добавлены в participants.csv и user_progress.json
+25.04.2026;15:39:19;еап;44;Мужской;20260425_153658_390106;menu_event;test_menu;test_a;;marked_completed;;;;;;Тест А завершён и сохранён.
+25.04.2026;15:51:34;ке;55;Мужской;20260425_155134_797477;registration;start_page;;;submit;;;;;;Регистрационная форма принята. completed=-
+25.04.2026;15:51:34;ке;55;Мужской;20260425_155134_797477;menu_event;test_menu;;;open_menu;;;;;;next=A
+25.04.2026;15:51:36;ке;55;Мужской;20260425_155134_797477;menu_event;test_menu;test_a;;launch_requested;;;;;;Слежение за объектом
+25.04.2026;15:51:38;ке;55;Мужской;20260425_155134_797477;method_session;method_a;method_a;;launch;;;;;;"Крен управляется колесом мыши; фон неба и объект-самолёт активированы"
+25.04.2026;15:51:38;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;1;stage_start;;;;;;axes=X
+25.04.2026;15:52:06;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;1;crash;26460;455.279;12.618;0.0;1;"axes=X; Scur=1.0000; Ssum=12.6180; lambda=1.3333"
+25.04.2026;15:52:06;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;1;crash;27129;466.625;13.226;0.0;2;"axes=X; Scur=1.0000; Ssum=13.2257; lambda=1.0000"
+25.04.2026;15:52:07;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;1;crash;27930;454.711;13.226;0.0;3;"axes=X; Scur=1.0000; Ssum=13.2257; lambda=1.0000"
+25.04.2026;15:52:08;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;1;crash;28794;459.387;14.771;0.0;4;"axes=X; Scur=1.0000; Ssum=14.7706; lambda=1.0000"
+25.04.2026;15:52:08;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;1;crash;29195;459.463;15.874;0.0;5;"axes=X; Scur=1.0000; Ssum=15.8745; lambda=1.0000"
+25.04.2026;15:52:09;ке;55;Мужской;20260425_155134_797477;stage_report;method_a;method_a_stage;1;stage_end;30010;1.1278;0.1455;0.0;5;"axes=X; gamma=0.8545; h=0.1455; tr=0.0000"
+25.04.2026;15:52:09;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;2;stage_start;;;;;;axes=X,Y
+25.04.2026;15:52:21;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;2;crash;11118;474.933;7.916;0.0;1;"axes=X,Y; Scur=1.2526; Ssum=7.9157; lambda=1.6499"
+25.04.2026;15:52:22;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;2;crash;11907;-465.799;8.75;0.0;2;"axes=X,Y; Scur=1.1265; Ssum=8.7497; lambda=1.4142"
+25.04.2026;15:52:25;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;2;crash;14737;-344.018;15.45;0.0;3;"axes=X,Y; Scur=1.2364; Ssum=15.4498; lambda=1.4142"
+25.04.2026;15:52:35;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;2;crash;24454;-458.34;21.489;0.0;4;"axes=X,Y; Scur=1.1017; Ssum=21.4891; lambda=1.4142"
+25.04.2026;15:52:37;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;2;crash;26318;446.271;24.149;0.0;5;"axes=X,Y; Scur=1.2658; Ssum=24.1488; lambda=1.4142"
+25.04.2026;15:52:37;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;2;crash;26822;483.577;24.149;0.0;6;"axes=X,Y; Scur=1.0000; Ssum=24.1488; lambda=1.4142"
+25.04.2026;15:52:38;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;2;crash;27801;449.954;24.853;0.0;7;"axes=X,Y; Scur=1.0000; Ssum=24.8534; lambda=1.4142"
+25.04.2026;15:52:39;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;2;crash;28291;459.331;25.481;0.0;8;"axes=X,Y; Scur=1.0000; Ssum=25.4812; lambda=1.4142"
+25.04.2026;15:52:40;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;2;crash;29643;-462.626;27.075;0.0;9;"axes=X,Y; Scur=1.0213; Ssum=27.0750; lambda=1.4142"
+25.04.2026;15:52:41;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;2;crash;30374;-492.241;27.075;0.0;10;"axes=X,Y; Scur=1.0056; Ssum=27.0750; lambda=1.4142"
+25.04.2026;15:52:41;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;2;crash;30772;-460.058;27.292;0.0;11;"axes=X,Y; Scur=1.0000; Ssum=27.2922; lambda=1.4142"
+25.04.2026;15:52:42;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;2;crash;31309;446.349;27.516;0.0;12;"axes=X,Y; Scur=1.0000; Ssum=27.5162; lambda=1.4142"
+25.04.2026;15:52:42;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;2;crash;31643;461.977;28.382;0.0;13;"axes=X,Y; Scur=1.0000; Ssum=28.3821; lambda=1.4142"
+25.04.2026;15:52:42;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;2;crash;32211;-476.639;29.049;0.0;14;"axes=X,Y; Scur=1.0000; Ssum=29.0492; lambda=1.4142"
+25.04.2026;15:52:43;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;2;crash;32662;509.277;29.446;0.0;15;"axes=X,Y; Scur=1.0815; Ssum=29.4460; lambda=1.4142"
+25.04.2026;15:52:43;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;2;crash;33131;-479.482;29.446;0.0;16;"axes=X,Y; Scur=1.0000; Ssum=29.4460; lambda=1.4142"
+25.04.2026;15:52:44;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;2;crash;33649;458.639;29.446;0.0;17;"axes=X,Y; Scur=1.0000; Ssum=29.4460; lambda=1.4142"
+25.04.2026;15:52:45;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;2;crash;34614;-453.407;30.729;0.0;18;"axes=X,Y; Scur=1.0000; Ssum=30.7292; lambda=1.4142"
+25.04.2026;15:52:45;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;2;crash;35131;-480.798;31.185;0.0;19;"axes=X,Y; Scur=1.0000; Ssum=31.1852; lambda=1.4142"
+25.04.2026;15:52:46;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;2;crash;35632;475.622;31.283;0.0;20;"axes=X,Y; Scur=1.0019; Ssum=31.2830; lambda=1.4142"
+25.04.2026;15:52:47;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;2;crash;36913;-476.857;31.894;0.0;21;"axes=X,Y; Scur=1.0948; Ssum=31.8935; lambda=1.4142"
+25.04.2026;15:52:50;ке;55;Мужской;20260425_155134_797477;stage_report;method_a;method_a_stage;2;stage_end;40014;1.4231;0.174;0.0;21;"axes=X,Y; gamma=0.8260; h=0.1740; tr=0.0000"
+25.04.2026;15:52:50;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;3;stage_start;;;;;;axes=X,Y,Z
+25.04.2026;15:52:59;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;3;crash;7288;52.046;5.391;17.689;1;"axes=X,Y,Z; Scur=0.8234; Ssum=5.3906; lambda=1.7321"
+25.04.2026;15:53:00;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;3;crash;8431;-446.694;6.134;6.858;2;"axes=X,Y,Z; Scur=1.0351; Ssum=6.1337; lambda=1.7321"
+25.04.2026;15:53:01;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;3;crash;9472;-294.808;7.217;6.246;3;"axes=X,Y,Z; Scur=1.1634; Ssum=7.2171; lambda=1.7321"
+25.04.2026;15:53:01;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;3;crash;9846;471.683;7.3;2.244;4;"axes=X,Y,Z; Scur=1.0338; Ssum=7.3004; lambda=1.7321"
+25.04.2026;15:53:02;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;3;crash;11216;450.597;9.341;8.226;5;"axes=X,Y,Z; Scur=1.0000; Ssum=9.3413; lambda=1.7321"
+25.04.2026;15:53:03;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;3;crash;11758;471.424;9.892;3.252;6;"axes=X,Y,Z; Scur=1.0079; Ssum=9.8918; lambda=1.7321"
+25.04.2026;15:53:03;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;3;crash;12152;-457.361;11.214;2.364;7;"axes=X,Y,Z; Scur=1.0000; Ssum=11.2135; lambda=1.7321"
+25.04.2026;15:53:03;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;3;crash;12247;-496.768;11.214;0.57;8;"axes=X,Y,Z; Scur=1.0000; Ssum=11.2135; lambda=1.7321"
+25.04.2026;15:53:04;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;3;crash;12578;505.923;11.246;0.138;9;"axes=X,Y,Z; Scur=1.0000; Ssum=11.2460; lambda=1.7321"
+25.04.2026;15:53:05;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;3;crash;13436;486.64;12.131;-5.148;10;"axes=X,Y,Z; Scur=1.0318; Ssum=12.1309; lambda=1.7321"
+25.04.2026;15:53:05;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;3;crash;13666;-544.393;12.967;-1.38;11;"axes=X,Y,Z; Scur=1.0000; Ssum=12.9667; lambda=1.7321"
+25.04.2026;15:53:05;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;3;crash;13892;520.589;12.967;-1.356;12;"axes=X,Y,Z; Scur=1.0000; Ssum=12.9667; lambda=1.7321"
+25.04.2026;15:53:05;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;3;crash;14108;-469.073;13.18;-1.296;13;"axes=X,Y,Z; Scur=1.0000; Ssum=13.1795; lambda=1.7321"
+25.04.2026;15:53:06;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;3;crash;14321;473.211;13.18;-1.278;14;"axes=X,Y,Z; Scur=1.0000; Ssum=13.1795; lambda=1.7321"
+25.04.2026;15:53:07;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;3;crash;15407;448.163;15.961;-6.516;15;"axes=X,Y,Z; Scur=1.0000; Ssum=15.9611; lambda=1.7321"
+25.04.2026;15:53:07;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;3;crash;15586;-492.031;16.172;-1.074;16;"axes=X,Y,Z; Scur=1.0000; Ssum=16.1725; lambda=1.7321"
+25.04.2026;15:53:07;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;3;crash;16179;484.941;16.172;-3.558;17;"axes=X,Y,Z; Scur=1.0000; Ssum=16.1725; lambda=1.7321"
+25.04.2026;15:53:08;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;3;crash;16388;-505.526;16.172;-1.254;18;"axes=X,Y,Z; Scur=1.0000; Ssum=16.1725; lambda=1.7321"
+25.04.2026;15:53:08;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;3;crash;16630;497.073;16.172;-1.452;19;"axes=X,Y,Z; Scur=1.0000; Ssum=16.1725; lambda=1.7321"
+25.04.2026;15:53:08;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;3;crash;16840;-446.311;16.172;-1.26;20;"axes=X,Y,Z; Scur=1.0000; Ssum=16.1725; lambda=1.7321"
+25.04.2026;15:53:08;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;3;crash;17036;456.977;17.58;-1.176;21;"axes=X,Y,Z; Scur=1.0000; Ssum=17.5801; lambda=1.7321"
+25.04.2026;15:53:09;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;3;crash;17765;-460.948;18.115;-4.374;22;"axes=X,Y,Z; Scur=1.0003; Ssum=18.1148; lambda=1.7321"
+25.04.2026;15:53:09;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;3;crash;18041;448.69;19.829;-1.656;23;"axes=X,Y,Z; Scur=1.0000; Ssum=19.8288; lambda=1.7321"
+25.04.2026;15:53:10;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;3;crash;18969;-463.398;20.519;-5.568;24;"axes=X,Y,Z; Scur=1.0012; Ssum=20.5193; lambda=1.7321"
+25.04.2026;15:53:10;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;3;crash;19178;501.361;20.519;-1.254;25;"axes=X,Y,Z; Scur=1.0000; Ssum=20.5193; lambda=1.7321"
+25.04.2026;15:53:11;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;3;crash;20100;-445.466;20.519;-5.532;26;"axes=X,Y,Z; Scur=1.0000; Ssum=20.5193; lambda=1.7321"
+25.04.2026;15:53:12;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;3;crash;20308;475.656;20.519;-1.248;27;"axes=X,Y,Z; Scur=1.0000; Ssum=20.5193; lambda=1.7321"
+25.04.2026;15:53:12;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;3;crash;20474;-447.264;20.519;-0.996;28;"axes=X,Y,Z; Scur=1.0000; Ssum=20.5193; lambda=1.7321"
+25.04.2026;15:53:12;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;3;crash;20740;505.039;21.012;-1.596;29;"axes=X,Y,Z; Scur=1.0000; Ssum=21.0117; lambda=1.7321"
+25.04.2026;15:53:12;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;3;crash;20917;-499.735;21.012;-1.062;30;"axes=X,Y,Z; Scur=1.0000; Ssum=21.0117; lambda=1.7321"
+25.04.2026;15:53:12;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;3;crash;21160;469.315;21.158;-1.458;31;"axes=X,Y,Z; Scur=1.0000; Ssum=21.1585; lambda=1.7321"
+25.04.2026;15:53:13;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;3;crash;21336;-463.727;21.158;-1.056;32;"axes=X,Y,Z; Scur=1.0000; Ssum=21.1585; lambda=1.7321"
+25.04.2026;15:53:17;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;3;crash;26096;-91.227;28.847;11.1;33;"axes=X,Y,Z; Scur=1.0011; Ssum=28.8469; lambda=1.7321"
+25.04.2026;15:53:26;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;3;crash;34280;201.259;37.561;-28.044;34;"axes=X,Y,Z; Scur=0.4100; Ssum=37.5605; lambda=1.7321"
+25.04.2026;15:53:30;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;3;crash;38949;-246.898;42.378;-28.014;35;"axes=X,Y,Z; Scur=0.8976; Ssum=42.3783; lambda=1.7321"
+25.04.2026;15:53:35;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;3;crash;43632;-347.528;50.656;-28.098;36;"axes=X,Y,Z; Scur=1.0660; Ssum=50.6564; lambda=1.7321"
+25.04.2026;15:53:42;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;3;crash;50314;-266.564;65.221;22.8;37;"axes=X,Y,Z; Scur=1.1377; Ssum=65.2213; lambda=1.7321"
+25.04.2026;15:53:46;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;3;crash;55004;-79.925;70.3;28.134;38;"axes=X,Y,Z; Scur=0.7720; Ssum=70.2996; lambda=1.7321"
+25.04.2026;15:53:51;ке;55;Мужской;20260425_155134_797477;stage_event;method_a;method_a_stage;3;crash;59692;-347.899;78.344;28.128;39;"axes=X,Y,Z; Scur=1.0675; Ssum=78.3441; lambda=1.7321"
+25.04.2026;15:53:51;ке;55;Мужской;20260425_155134_797477;stage_report;method_a;method_a_stage;3;stage_end;60009;1.7321;0.2217;0.0;39;"axes=X,Y,Z; gamma=0.7783; h=0.2217; tr=0.0000"
+25.04.2026;15:53:51;ке;55;Мужской;20260425_155134_797477;method_session;method_a;method_a;;completed;;;;;;json=method_a_results_20260425_155134_797477.json
+25.04.2026;15:53:53;ке;55;Мужской;20260425_155134_797477;summary;test_menu;method_a;;session_finished;;;;;3;Методика А завершена, данные добавлены в participants.csv и user_progress.json
+25.04.2026;15:56:11;ке;55;Мужской;20260425_155134_797477;menu_event;test_menu;test_a;;marked_completed;;;;;;Тест А завершён и сохранён.
+25.04.2026;16:06:41;укцук;55;Мужской;20260425_160641_147170;registration;start_page;;;submit;;;;;;Регистрационная форма принята. completed=-
+25.04.2026;16:06:41;укцук;55;Мужской;20260425_160641_147170;menu_event;test_menu;;;open_menu;;;;;;next=A
+25.04.2026;16:06:42;укцук;55;Мужской;20260425_160641_147170;menu_event;test_menu;test_a;;launch_requested;;;;;;Слежение за объектом
+25.04.2026;16:06:44;укцук;55;Мужской;20260425_160641_147170;method_session;method_a;method_a;;launch;;;;;;"Крен управляется колесом мыши; фон неба и объект-самолёт активированы"
+25.04.2026;16:06:44;укцук;55;Мужской;20260425_160641_147170;stage_event;method_a;method_a_stage;1;stage_start;;;;;;axes=X
+25.04.2026;16:06:51;укцук;55;Мужской;20260425_160641_147170;stage_event;method_a;method_a_stage;1;crash;6727;452.051;5.736;0.0;1;"axes=X; Scur=1.0000; Ssum=5.7356; lambda=1.0000"
+25.04.2026;16:06:53;укцук;55;Мужской;20260425_160641_147170;stage_event;method_a;method_a_stage;1;crash;8544;455.248;8.901;0.0;2;"axes=X; Scur=1.0000; Ssum=8.9014; lambda=1.0000"
+25.04.2026;16:06:58;укцук;55;Мужской;20260425_160641_147170;stage_event;method_a;method_a_stage;1;crash;13256;447.823;11.361;0.0;3;"axes=X; Scur=1.0000; Ssum=11.3607; lambda=1.0000"
+25.04.2026;16:07:00;укцук;55;Мужской;20260425_160641_147170;stage_event;method_a;method_a_stage;1;crash;14924;453.174;13.541;0.0;4;"axes=X; Scur=1.0000; Ssum=13.5410; lambda=1.0000"
+25.04.2026;16:07:01;укцук;55;Мужской;20260425_160641_147170;stage_event;method_a;method_a_stage;1;crash;16203;462.485;14.138;0.0;5;"axes=X; Scur=1.0000; Ssum=14.1383; lambda=1.0000"
+25.04.2026;16:07:01;укцук;55;Мужской;20260425_160641_147170;stage_event;method_a;method_a_stage;1;stage_stop_crash_limit;16203;0.0;14.138;0.0;5;"Nreal=5; Ndop=5.0000"
+25.04.2026;16:07:01;укцук;55;Мужской;20260425_160641_147170;stage_report;method_a;method_a_stage;1;stage_end;16203;1.0;0.2209;0.0;5;"axes=X; gamma=0.7791; h=0.2209; tr=0.0000"
+25.04.2026;16:07:01;укцук;55;Мужской;20260425_160641_147170;stage_event;method_a;method_a_stage;2;stage_start;;;;;;axes=X,Y
+25.04.2026;16:07:07;укцук;55;Мужской;20260425_160641_147170;stage_event;method_a;method_a_stage;2;crash;4619;-450.679;9.95;0.0;1;"axes=X,Y; Scur=1.2194; Ssum=9.9498; lambda=1.4142"
+25.04.2026;16:07:08;укцук;55;Мужской;20260425_160641_147170;stage_event;method_a;method_a_stage;2;crash;5737;472.922;10.746;0.0;2;"axes=X,Y; Scur=1.2296; Ssum=10.7463; lambda=1.4142"
+25.04.2026;16:07:09;укцук;55;Мужской;20260425_160641_147170;stage_event;method_a;method_a_stage;2;crash;6787;62.2;11.918;0.0;3;"axes=X,Y; Scur=1.0000; Ssum=11.9180; lambda=1.4142"
+25.04.2026;16:07:09;укцук;55;Мужской;20260425_160641_147170;stage_event;method_a;method_a_stage;2;crash;7289;450.489;11.996;0.0;4;"axes=X,Y; Scur=1.0113; Ssum=11.9958; lambda=1.4142"
+25.04.2026;16:07:10;укцук;55;Мужской;20260425_160641_147170;stage_event;method_a;method_a_stage;2;crash;8287;-448.471;13.544;0.0;5;"axes=X,Y; Scur=1.0000; Ssum=13.5440; lambda=1.4142"
+25.04.2026;16:07:11;укцук;55;Мужской;20260425_160641_147170;stage_event;method_a;method_a_stage;2;crash;9030;450.798;15.367;0.0;6;"axes=X,Y; Scur=1.0469; Ssum=15.3670; lambda=1.4142"
+25.04.2026;16:07:12;укцук;55;Мужской;20260425_160641_147170;stage_event;method_a;method_a_stage;2;crash;10469;-448.157;16.196;0.0;7;"axes=X,Y; Scur=1.0549; Ssum=16.1964; lambda=1.4142"
+25.04.2026;16:07:13;укцук;55;Мужской;20260425_160641_147170;stage_event;method_a;method_a_stage;2;crash;11368;461.733;16.65;0.0;8;"axes=X,Y; Scur=1.0000; Ssum=16.6500; lambda=1.4142"
+25.04.2026;16:07:14;укцук;55;Мужской;20260425_160641_147170;stage_event;method_a;method_a_stage;2;crash;11818;-481.815;17.193;0.0;9;"axes=X,Y; Scur=1.0000; Ssum=17.1934; lambda=1.4142"
+25.04.2026;16:07:14;укцук;55;Мужской;20260425_160641_147170;stage_event;method_a;method_a_stage;2;stage_stop_crash_limit;11818;0.0;17.193;0.0;9;"Nreal=9; Ndop=8.8889"
+25.04.2026;16:07:14;укцук;55;Мужской;20260425_160641_147170;stage_report;method_a;method_a_stage;2;stage_end;11818;1.4142;0.3016;0.0;9;"axes=X,Y; gamma=0.6984; h=0.3016; tr=0.0000"
+25.04.2026;16:07:14;укцук;55;Мужской;20260425_160641_147170;stage_event;method_a;method_a_stage;3;stage_start;;;;;;axes=X,Y,Z
+25.04.2026;16:07:15;укцук;55;Мужской;20260425_160641_147170;stage_event;method_a;method_a_stage;3;crash;597;452.299;1.142;3.582;1;"axes=X,Y,Z; Scur=1.0000; Ssum=1.1423; lambda=1.7321"
+25.04.2026;16:07:17;укцук;55;Мужской;20260425_160641_147170;stage_event;method_a;method_a_stage;3;crash;2297;-448.704;1.758;10.206;2;"axes=X,Y,Z; Scur=1.2233; Ssum=1.7583; lambda=1.7321"
+25.04.2026;16:07:18;укцук;55;Мужской;20260425_160641_147170;stage_event;method_a;method_a_stage;3;crash;2843;-492.495;2.323;3.276;3;"axes=X,Y,Z; Scur=1.0490; Ssum=2.3230; lambda=1.7321"
+25.04.2026;16:07:18;укцук;55;Мужской;20260425_160641_147170;stage_event;method_a;method_a_stage;3;crash;3202;470.57;2.897;2.154;4;"axes=X,Y,Z; Scur=1.0082; Ssum=2.8974; lambda=1.7321"
+25.04.2026;16:07:18;укцук;55;Мужской;20260425_160641_147170;stage_event;method_a;method_a_stage;3;crash;3480;461.565;2.897;1.668;5;"axes=X,Y,Z; Scur=1.0000; Ssum=2.8974; lambda=1.7321"
+25.04.2026;16:07:18;укцук;55;Мужской;20260425_160641_147170;stage_event;method_a;method_a_stage;3;crash;3709;-482.332;2.979;1.374;6;"axes=X,Y,Z; Scur=1.0000; Ssum=2.9787; lambda=1.7321"
+25.04.2026;16:07:19;укцук;55;Мужской;20260425_160641_147170;stage_event;method_a;method_a_stage;3;crash;4172;445.349;2.979;2.778;7;"axes=X,Y,Z; Scur=1.0000; Ssum=2.9787; lambda=1.7321"
+25.04.2026;16:07:19;укцук;55;Мужской;20260425_160641_147170;stage_event;method_a;method_a_stage;3;crash;4450;-446.505;2.979;1.668;8;"axes=X,Y,Z; Scur=1.0000; Ssum=2.9787; lambda=1.7321"
+25.04.2026;16:07:20;укцук;55;Мужской;20260425_160641_147170;stage_event;method_a;method_a_stage;3;crash;4879;457.724;3.105;2.568;9;"axes=X,Y,Z; Scur=1.0000; Ssum=3.1048; lambda=1.7321"
+25.04.2026;16:07:20;укцук;55;Мужской;20260425_160641_147170;stage_event;method_a;method_a_stage;3;crash;5719;-470.677;4.068;5.04;10;"axes=X,Y,Z; Scur=1.0000; Ssum=4.0685; lambda=1.7321"
+25.04.2026;16:07:21;укцук;55;Мужской;20260425_160641_147170;stage_event;method_a;method_a_stage;3;crash;6018;-445.695;5.823;1.794;11;"axes=X,Y,Z; Scur=1.0000; Ssum=5.8230; lambda=1.7321"
+25.04.2026;16:07:21;укцук;55;Мужской;20260425_160641_147170;stage_event;method_a;method_a_stage;3;crash;6368;487.12;5.823;2.1;12;"axes=X,Y,Z; Scur=1.0056; Ssum=5.8230; lambda=1.7321"
+25.04.2026;16:07:21;укцук;55;Мужской;20260425_160641_147170;stage_event;method_a;method_a_stage;3;crash;6464;555.11;5.823;0.576;13;"axes=X,Y,Z; Scur=1.0000; Ssum=5.8230; lambda=1.7321"
+25.04.2026;16:07:22;укцук;55;Мужской;20260425_160641_147170;stage_event;method_a;method_a_stage;3;crash;7100;-458.117;6.526;3.816;14;"axes=X,Y,Z; Scur=1.0000; Ssum=6.5258; lambda=1.7321"
+25.04.2026;16:07:22;укцук;55;Мужской;20260425_160641_147170;stage_event;method_a;method_a_stage;3;stage_stop_crash_limit;7100;0.0;6.526;0.0;14;"Nreal=14; Ndop=13.3333"
+25.04.2026;16:07:22;укцук;55;Мужской;20260425_160641_147170;stage_report;method_a;method_a_stage;3;stage_end;7100;1.7321;0.1673;0.0;14;"axes=X,Y,Z; gamma=0.8327; h=0.1673; tr=0.0000"
+25.04.2026;16:07:22;укцук;55;Мужской;20260425_160641_147170;method_session;method_a;method_a;;completed;;;;;;json=method_a_results_20260425_160641_147170.json
+25.04.2026;16:07:23;укцук;55;Мужской;20260425_160641_147170;summary;test_menu;method_a;;session_finished;;;;;3;Методика А завершена, данные добавлены в participants.csv и user_progress.json
+25.04.2026;16:07:25;укцук;55;Мужской;20260425_160641_147170;menu_event;test_menu;test_a;;marked_completed;;;;;;Тест А завершён и сохранён.
+25.04.2026;19:32:56;аыв;22;Мужской;20260425_193256_640270;registration;start_page;;;submit;;;;;;Регистрационная форма принята. completed=-
+25.04.2026;19:32:56;аыв;22;Мужской;20260425_193256_640270;menu_event;test_menu;;;open_menu;;;;;;next=A
+25.04.2026;19:32:58;аыв;22;Мужской;20260425_193256_640270;menu_event;test_menu;test_a;;launch_requested;;;;;;Слежение за объектом
+25.04.2026;19:33:00;аыв;22;Мужской;20260425_193256_640270;method_session;method_a;method_a;;launch;;;;;;"Крен управляется колесом мыши; фон неба и объект-самолёт активированы"
+25.04.2026;19:33:00;аыв;22;Мужской;20260425_193256_640270;stage_event;method_a;method_a_stage;1;stage_start;;;;;;axes=X
+25.04.2026;19:33:05;аыв;22;Мужской;20260425_193256_640270;stage_event;method_a;method_a_stage;1;crash;4119;456.219;1.833;0.0;1;"axes=X; Scur=1.0000; Ssum=1.8332; lambda=1.0000"
+25.04.2026;19:33:13;аыв;22;Мужской;20260425_193256_640270;stage_event;method_a;method_a_stage;1;crash;12311;-445.365;3.992;0.0;2;"axes=X; Scur=1.0000; Ssum=3.9923; lambda=1.0000"
+25.04.2026;19:33:31;аыв;22;Мужской;20260425_193256_640270;stage_report;method_a;method_a_stage;1;stage_end;30016;2.0877;0.3407;0.8262;2;"axes=X; gamma=0.6593; h=0.3407; tr=0.8262"
+25.04.2026;19:33:31;аыв;22;Мужской;20260425_193256_640270;stage_event;method_a;method_a_stage;2;stage_start;;;;;;axes=X,Y
+25.04.2026;19:33:35;аыв;22;Мужской;20260425_193256_640270;stage_event;method_a;method_a_stage;2;crash;3649;448.29;3.214;0.0;1;"axes=X,Y; Scur=1.0082; Ssum=3.2136; lambda=1.4142"
+25.04.2026;19:33:40;аыв;22;Мужской;20260425_193256_640270;stage_event;method_a;method_a_stage;2;crash;8120;-468.27;13.812;0.0;2;"axes=X,Y; Scur=1.0753; Ssum=13.8125; lambda=1.4142"
+25.04.2026;19:34:12;аыв;22;Мужской;20260425_193256_640270;stage_report;method_a;method_a_stage;2;stage_end;40011;1.6263;0.0998;0.3294;2;"axes=X,Y; gamma=0.9002; h=0.0998; tr=0.3294"
+25.04.2026;19:34:12;аыв;22;Мужской;20260425_193256_640270;stage_event;method_a;method_a_stage;3;stage_start;;;;;;axes=X,Y,Z
+25.04.2026;19:34:17;аыв;22;Мужской;20260425_193256_640270;stage_event;method_a;method_a_stage;3;crash;3976;393.952;2.913;91.563;1;"axes=X,Y,Z; Scur=1.3201; Ssum=2.9128; lambda=1.7321"
+25.04.2026;19:34:24;аыв;22;Мужской;20260425_193256_640270;stage_event;method_a;method_a_stage;3;crash;11067;-28.497;10.988;-53.797;2;"axes=X,Y,Z; Scur=0.5475; Ssum=10.9885; lambda=1.7321"
+25.04.2026;19:34:27;аыв;22;Мужской;20260425_193256_640270;stage_event;method_a;method_a_stage;3;crash;14042;-497.894;15.143;56.908;3;"axes=X,Y,Z; Scur=1.1599; Ssum=15.1433; lambda=1.7321"
+25.04.2026;19:34:27;аыв;22;Мужской;20260425_193256_640270;stage_event;method_a;method_a_stage;3;crash;14397;456.05;15.143;1.746;4;"axes=X,Y,Z; Scur=1.0000; Ssum=15.1433; lambda=1.7321"
+25.04.2026;19:34:27;аыв;22;Мужской;20260425_193256_640270;stage_event;method_a;method_a_stage;3;crash;14493;585.055;15.143;-0.576;5;"axes=X,Y,Z; Scur=1.0000; Ssum=15.1433; lambda=1.7321"
+25.04.2026;19:34:28;аыв;22;Мужской;20260425_193256_640270;stage_event;method_a;method_a_stage;3;crash;14816;-446.16;15.768;-1.938;6;"axes=X,Y,Z; Scur=1.0000; Ssum=15.7680; lambda=1.7321"
+25.04.2026;19:34:28;аыв;22;Мужской;20260425_193256_640270;stage_event;method_a;method_a_stage;3;crash;15181;467.272;16.558;-2.19;7;"axes=X,Y,Z; Scur=1.0000; Ssum=16.5584; lambda=1.7321"
+25.04.2026;19:34:45;аыв;22;Мужской;20260425_193256_640270;stage_event;method_a;method_a_stage;3;crash;31943;-86.389;19.749;20.677;8;"axes=X,Y,Z; Scur=0.1383; Ssum=19.7486; lambda=2.0207"
+25.04.2026;19:34:57;аыв;22;Мужской;20260425_193256_640270;stage_event;method_a;method_a_stage;3;crash;43821;-445.861;22.181;20.973;9;"axes=X,Y,Z; Scur=1.0094; Ssum=22.1813; lambda=2.0207"
+25.04.2026;19:34:57;аыв;22;Мужской;20260425_193256_640270;stage_event;method_a;method_a_stage;3;crash;44296;447.607;22.181;2.85;10;"axes=X,Y,Z; Scur=1.0000; Ssum=22.1813; lambda=1.7321"
+25.04.2026;19:34:58;аыв;22;Мужской;20260425_193256_640270;stage_event;method_a;method_a_stage;3;crash;45346;-452.977;23.772;6.3;11;"axes=X,Y,Z; Scur=1.0102; Ssum=23.7715; lambda=1.7321"
+25.04.2026;19:34:59;аыв;22;Мужской;20260425_193256_640270;stage_event;method_a;method_a_stage;3;crash;46518;452.038;26.426;2.448;12;"axes=X,Y,Z; Scur=1.0000; Ssum=26.4256; lambda=1.7321"
+25.04.2026;19:35:13;аыв;22;Мужской;20260425_193256_640270;stage_report;method_a;method_a_stage;3;stage_end;60013;1.7874;0.0931;1.4588;12;"axes=X,Y,Z; gamma=0.9069; h=0.0931; tr=1.4588"
+25.04.2026;19:35:13;аыв;22;Мужской;20260425_193256_640270;method_session;method_a;method_a;;completed;;;;;;json=method_a_results_20260425_193256_640270.json
+25.04.2026;19:35:14;аыв;22;Мужской;20260425_193256_640270;summary;test_menu;method_a;;session_finished;;;;;3;Методика А завершена, данные добавлены в participants.csv и user_progress.json
+25.04.2026;19:35:16;аыв;22;Мужской;20260425_193256_640270;menu_event;test_menu;test_a;;marked_completed;;;;;;Тест А завершён и сохранён.
+25.04.2026;20:25:06;нене;11;Мужской;20260425_202506_069210;registration;start_page;;;submit;;;;;;Регистрационная форма принята. completed=-
+25.04.2026;20:25:06;нене;11;Мужской;20260425_202506_069210;menu_event;test_menu;;;open_menu;;;;;;next=A
+25.04.2026;20:25:07;нене;11;Мужской;20260425_202506_069210;menu_event;test_menu;test_a;;launch_requested;;;;;;Слежение за объектом
+25.04.2026;20:25:09;нене;11;Мужской;20260425_202506_069210;method_session;method_a;method_a;;launch;;;;;;"Крен управляется колесом мыши; фон неба и объект-самолёт активированы"
+25.04.2026;20:25:09;нене;11;Мужской;20260425_202506_069210;stage_event;method_a;method_a_stage;1;stage_start;;;;;;axes=X
+25.04.2026;20:25:40;нене;11;Мужской;20260425_202506_069210;stage_report;method_a;method_a_stage;1;stage_end;30006;2.3495;0.1265;2.0522;0;"axes=X; gamma=0.8735; h=0.1265; tr=2.0522"
+25.04.2026;20:25:40;нене;11;Мужской;20260425_202506_069210;stage_event;method_a;method_a_stage;2;stage_start;;;;;;axes=X,Y
+25.04.2026;20:25:49;нене;11;Мужской;20260425_202506_069210;stage_event;method_a;method_a_stage;2;crash;7399;-450.317;2.852;0.0;1;"axes=X,Y; Scur=1.0000; Ssum=2.8518; lambda=1.4142"
+25.04.2026;20:25:49;нене;11;Мужской;20260425_202506_069210;stage_event;method_a;method_a_stage;2;crash;8101;448.862;3.648;0.0;2;"axes=X,Y; Scur=1.0029; Ssum=3.6483; lambda=1.4142"
+25.04.2026;20:26:21;нене;11;Мужской;20260425_202506_069210;stage_report;method_a;method_a_stage;2;stage_end;40016;3.2513;0.1808;2.1311;2;"axes=X,Y; gamma=0.8192; h=0.1808; tr=2.1311"
+25.04.2026;20:26:21;нене;11;Мужской;20260425_202506_069210;stage_event;method_a;method_a_stage;3;stage_start;;;;;;axes=X,Y,Z
+25.04.2026;20:26:43;нене;11;Мужской;20260425_202506_069210;stage_event;method_a;method_a_stage;3;crash;21231;464.667;6.951;11.716;1;"axes=X,Y,Z; Scur=1.1153; Ssum=6.9509; lambda=2.3094"
+25.04.2026;20:27:22;нене;11;Мужской;20260425_202506_069210;stage_report;method_a;method_a_stage;3;stage_end;60008;4.1371;0.2099;3.1052;1;"axes=X,Y,Z; gamma=0.7901; h=0.2099; tr=3.1052"
+25.04.2026;20:27:22;нене;11;Мужской;20260425_202506_069210;method_session;method_a;method_a;;completed;;;;;;json=method_a_results_20260425_202506_069210.json
+25.04.2026;20:27:24;нене;11;Мужской;20260425_202506_069210;summary;test_menu;method_a;;session_finished;;;;;3;Методика А завершена, данные добавлены в participants.csv и user_progress.json
+25.04.2026;20:27:26;нене;11;Мужской;20260425_202506_069210;menu_event;test_menu;test_a;;marked_completed;;;;;;Тест А завершён и сохранён.
+25.04.2026;20:59:11;укцу;44;Мужской;20260425_205911_868227;registration;start_page;;;submit;;;;;;Регистрационная форма принята. completed=-
+25.04.2026;20:59:11;укцу;44;Мужской;20260425_205911_868227;menu_event;test_menu;;;open_menu;;;;;;next=A
+25.04.2026;20:59:13;укцу;44;Мужской;20260425_205911_868227;menu_event;test_menu;test_a;;launch_requested;;;;;;Слежение за объектом
+25.04.2026;20:59:40;укцу;44;Мужской;20260425_205911_868227;menu_event;test_menu;test_a;;launch_requested;;;;;;Слежение за объектом
+25.04.2026;21:01:54;ку;55;Мужской;20260425_210154_915395;registration;start_page;;;submit;;;;;;Регистрационная форма принята. completed=-
+25.04.2026;21:01:55;ку;55;Мужской;20260425_210154_915395;menu_event;test_menu;;;open_menu;;;;;;next=A
+25.04.2026;21:01:56;ку;55;Мужской;20260425_210154_915395;menu_event;test_menu;test_a;;launch_requested;;;;;;Слежение за объектом
+25.04.2026;21:02:03;ку;55;Мужской;20260425_210154_915395;method_session;method_a;method_a;;launch;;;;;;"Крен управляется колесом мыши; фон неба и объект-самолёт активированы"
+25.04.2026;21:02:03;ку;55;Мужской;20260425_210154_915395;stage_event;method_a;method_a_stage;1;stage_start;;;;;;axes=X
+25.04.2026;21:02:34;ку;55;Мужской;20260425_210154_915395;stage_report;method_a;method_a_stage;1;stage_end;30000;2.3499;0.268;1.7201;0;"axes=X; gamma=0.7320; h=0.2680; tr=1.7201"
+25.04.2026;21:02:34;ку;55;Мужской;20260425_210154_915395;stage_event;method_a;method_a_stage;2;stage_start;;;;;;axes=X,Y
+25.04.2026;21:02:55;ку;55;Мужской;20260425_210154_915395;stage_event;method_a;method_a_stage;2;crash;20458;-478.346;4.974;0.0;1;"axes=X,Y; Scur=1.0000; Ssum=4.9744; lambda=1.8856"
+25.04.2026;21:03:15;ку;55;Мужской;20260425_210154_915395;stage_report;method_a;method_a_stage;2;stage_end;40012;3.069;0.1767;2.2741;1;"axes=X,Y; gamma=0.8233; h=0.1767; tr=2.2741"
+25.04.2026;21:03:15;ку;55;Мужской;20260425_210154_915395;stage_event;method_a;method_a_stage;3;stage_start;;;;;;axes=X,Y,Z
+25.04.2026;21:03:21;ку;55;Мужской;20260425_210154_915395;stage_event;method_a;method_a_stage;3;crash;5390;-136.163;2.782;-90.059;1;"axes=X,Y,Z; Scur=1.0316; Ssum=2.7820; lambda=1.7321"
+25.04.2026;21:03:25;ку;55;Мужской;20260425_210154_915395;stage_event;method_a;method_a_stage;3;crash;9694;-478.593;7.101;81.369;2;"axes=X,Y,Z; Scur=1.6342; Ssum=7.1006; lambda=1.7321"
+25.04.2026;21:03:28;ку;55;Мужской;20260425_210154_915395;stage_event;method_a;method_a_stage;3;crash;12341;-82.574;8.581;94.054;3;"axes=X,Y,Z; Scur=1.0180; Ssum=8.5811; lambda=1.7321"
+25.04.2026;21:04:16;ку;55;Мужской;20260425_210154_915395;stage_report;method_a;method_a_stage;3;stage_end;60014;4.3484;0.3044;2.571;3;"axes=X,Y,Z; gamma=0.6956; h=0.3044; tr=2.5710"
+25.04.2026;21:04:16;ку;55;Мужской;20260425_210154_915395;method_session;method_a;method_a;;completed;;;;;;json=method_a_results_20260425_210154_915395.json
+25.04.2026;21:04:17;ку;55;Мужской;20260425_210154_915395;summary;test_menu;method_a;;session_finished;;;;;3;Методика А завершена, данные добавлены в participants.csv и user_progress.json
+25.04.2026;21:04:20;ку;55;Мужской;20260425_210154_915395;menu_event;test_menu;test_a;;marked_completed;;;;;;Тест А завершён и сохранён.
+25.04.2026;21:10:47;ке;44;Мужской;20260425_211047_841110;registration;start_page;;;submit;;;;;;Регистрационная форма принята. completed=-
+25.04.2026;21:10:47;ке;44;Мужской;20260425_211047_841110;menu_event;test_menu;;;open_menu;;;;;;next=A
+25.04.2026;21:10:49;ке;44;Мужской;20260425_211047_841110;menu_event;test_menu;test_a;;launch_requested;;;;;;Слежение за объектом
+25.04.2026;21:10:52;ке;44;Мужской;20260425_211047_841110;method_session;method_a;method_a;;launch;;;;;;"Крен управляется колесом мыши; фон неба и объект-самолёт активированы"
+25.04.2026;21:10:52;ке;44;Мужской;20260425_211047_841110;stage_event;method_a;method_a_stage;1;stage_start;;;;;;axes=X
+25.04.2026;21:11:22;ке;44;Мужской;20260425_211047_841110;stage_event;method_a;method_a_stage;1;crash;29032;470.718;6.73;0.0;1;"axes=X; Scur=1.0000; Ssum=6.7297; lambda=1.3333"
+25.04.2026;21:11:23;ке;44;Мужской;20260425_211047_841110;stage_report;method_a;method_a_stage;1;stage_end;30002;2.322;0.2499;1.3934;1;"axes=X; gamma=0.7501; h=0.2499; tr=1.3934"
+25.04.2026;21:11:23;ке;44;Мужской;20260425_211047_841110;stage_event;method_a;method_a_stage;2;stage_start;;;;;;axes=X,Y
+25.04.2026;21:12:04;ке;44;Мужской;20260425_211047_841110;stage_report;method_a;method_a_stage;2;stage_end;40012;3.5521;0.3034;2.4744;0;"axes=X,Y; gamma=0.6966; h=0.3034; tr=2.4744"
+25.04.2026;21:12:04;ке;44;Мужской;20260425_211047_841110;stage_event;method_a;method_a_stage;3;stage_start;;;;;;axes=X,Y,Z
+25.04.2026;21:12:27;ке;44;Мужской;20260425_211047_841110;stage_event;method_a;method_a_stage;3;crash;21943;-486.81;5.468;2.303;1;"axes=X,Y,Z; Scur=1.0165; Ssum=5.4682; lambda=2.3094"
+25.04.2026;21:12:28;ке;44;Мужской;20260425_211047_841110;stage_event;method_a;method_a_stage;3;crash;22763;-478.301;5.468;-4.92;2;"axes=X,Y,Z; Scur=1.0000; Ssum=5.4682; lambda=1.7321"
+25.04.2026;21:12:30;ке;44;Мужской;20260425_211047_841110;stage_event;method_a;method_a_stage;3;crash;24756;479.308;6.004;-11.958;3;"axes=X,Y,Z; Scur=1.0142; Ssum=6.0037; lambda=1.7321"
+25.04.2026;21:12:48;ке;44;Мужской;20260425_211047_841110;stage_event;method_a;method_a_stage;3;crash;42962;29.681;8.071;12.377;4;"axes=X,Y,Z; Scur=0.2064; Ssum=8.0707; lambda=2.0207"
+25.04.2026;21:12:54;ке;44;Мужской;20260425_211047_841110;stage_event;method_a;method_a_stage;3;crash;48649;82.008;11.593;51.699;5;"axes=X,Y,Z; Scur=0.5837; Ssum=11.5931; lambda=1.7321"
+25.04.2026;21:12:57;ке;44;Мужской;20260425_211047_841110;stage_event;method_a;method_a_stage;3;crash;51775;-116.067;13.79;85.688;6;"axes=X,Y,Z; Scur=0.9542; Ssum=13.7901; lambda=1.7321"
+25.04.2026;21:13:01;ке;44;Мужской;20260425_211047_841110;stage_event;method_a;method_a_stage;3;crash;55626;37.409;16.264;-58.547;7;"axes=X,Y,Z; Scur=0.6300; Ssum=16.2641; lambda=1.7321"
+25.04.2026;21:13:05;ке;44;Мужской;20260425_211047_841110;stage_report;method_a;method_a_stage;3;stage_end;60012;3.6751;0.3958;1.4435;7;"axes=X,Y,Z; gamma=0.6042; h=0.3958; tr=1.4435"
+25.04.2026;21:13:05;ке;44;Мужской;20260425_211047_841110;method_session;method_a;method_a;;completed;;;;;;json=method_a_results_20260425_211047_841110.json
+25.04.2026;21:13:07;ке;44;Мужской;20260425_211047_841110;summary;test_menu;method_a;;session_finished;;;;;3;Методика А завершена, данные добавлены в participants.csv и user_progress.json
+25.04.2026;21:13:09;ке;44;Мужской;20260425_211047_841110;menu_event;test_menu;test_a;;marked_completed;;;;;;Тест А завершён и сохранён.
+25.04.2026;21:24:41;аыв;66;Мужской;20260425_212441_037893;registration;start_page;;;submit;;;;;;Регистрационная форма принята. completed=-
+25.04.2026;21:24:41;аыв;66;Мужской;20260425_212441_037893;menu_event;test_menu;;;open_menu;;;;;;next=A
+25.04.2026;21:24:42;аыв;66;Мужской;20260425_212441_037893;menu_event;test_menu;test_a;;launch_requested;;;;;;Слежение за объектом
+25.04.2026;21:24:44;аыв;66;Мужской;20260425_212441_037893;method_session;method_a;method_a;;launch;;;;;;"Крен управляется колесом мыши; фон неба и объект-самолёт активированы"
+25.04.2026;21:24:44;аыв;66;Мужской;20260425_212441_037893;stage_event;method_a;method_a_stage;1;stage_start;;;;;;axes=X
+25.04.2026;21:24:56;аыв;66;Мужской;20260425_212441_037893;stage_event;method_a;method_a_stage;1;crash;10832;-500.213;6.693;0.0;1;"axes=X; Scur=1.0000; Ssum=6.6935; lambda=1.3333"
+25.04.2026;21:25:06;аыв;66;Мужской;20260425_212441_037893;stage_event;method_a;method_a_stage;1;crash;20501;487.33;10.547;0.0;2;"axes=X; Scur=1.0000; Ssum=10.5465; lambda=1.1667"
+25.04.2026;21:25:07;аыв;66;Мужской;20260425_212441_037893;method_session;method_a;method_a;;aborted;;;;;0;Пользователь закрыл методику или нажал ESC
+25.04.2026;21:25:50;аыв;66;Мужской;20260425_212441_037893;menu_event;test_menu;test_a;;launch_requested;;;;;;Слежение за объектом
+25.04.2026;21:25:52;аыв;66;Мужской;20260425_212441_037893;method_session;method_a;method_a;;launch;;;;;;"Крен управляется колесом мыши; фон неба и объект-самолёт активированы"
+25.04.2026;21:25:52;аыв;66;Мужской;20260425_212441_037893;stage_event;method_a;method_a_stage;1;stage_start;;;;;;axes=X
+25.04.2026;21:26:01;аыв;66;Мужской;20260425_212441_037893;method_session;method_a;method_a;;aborted;;;;;0;Пользователь закрыл методику или нажал ESC
+25.04.2026;21:29:02;ва;55;Мужской;20260425_212902_676230;registration;start_page;;;submit;;;;;;Регистрационная форма принята. completed=-
+25.04.2026;21:29:02;ва;55;Мужской;20260425_212902_676230;menu_event;test_menu;;;open_menu;;;;;;next=A
+25.04.2026;21:29:03;ва;55;Мужской;20260425_212902_676230;menu_event;test_menu;test_a;;launch_requested;;;;;;Слежение за объектом
+25.04.2026;21:29:05;ва;55;Мужской;20260425_212902_676230;method_session;method_a;method_a;;launch;;;;;;"Крен управляется колесом мыши; фон неба и объект-самолёт активированы"
+25.04.2026;21:29:05;ва;55;Мужской;20260425_212902_676230;stage_event;method_a;method_a_stage;1;stage_start;;;;;;axes=X
+25.04.2026;21:29:10;ва;55;Мужской;20260425_212902_676230;stage_event;method_a;method_a_stage;1;crash;4135;487.559;6.0;0.0;1;"axes=X; Scur=1.0000; Ssum=6.0000; lambda=1.0000"
+25.04.2026;21:31:06;ва;55;Мужской;20260425_212902_676230;stage_report;method_a;method_a_stage;1;stage_end;120007;5.5775;0.6087;2.0734;1;"axes=X; gamma=0.3913; h=0.6087; tr=2.0734"
+25.04.2026;21:31:06;ва;55;Мужской;20260425_212902_676230;stage_event;method_a;method_a_stage;2;stage_start;;;;;;axes=X,Y
+25.04.2026;21:31:30;ва;55;Мужской;20260425_212902_676230;stage_event;method_a;method_a_stage;2;crash;22848;-474.894;31.11;0.0;1;"axes=X,Y; Scur=1.4142; Ssum=31.1096; lambda=2.3570"
+25.04.2026;21:31:32;ва;55;Мужской;20260425_212902_676230;stage_event;method_a;method_a_stage;2;crash;24252;471.104;32.66;0.0;2;"axes=X,Y; Scur=1.0000; Ssum=32.6595; lambda=1.4142"
+25.04.2026;21:31:32;ва;55;Мужской;20260425_212902_676230;stage_event;method_a;method_a_stage;2;crash;24772;503.003;33.452;0.0;3;"axes=X,Y; Scur=1.0000; Ssum=33.4524; lambda=1.4142"
+25.04.2026;21:32:08;ва;55;Мужской;20260425_212902_676230;stage_event;method_a;method_a_stage;2;crash;60346;333.249;62.308;0.0;4;"axes=X,Y; Scur=1.4142; Ssum=62.3082; lambda=3.0641"
+25.04.2026;21:32:31;ва;55;Мужской;20260425_212902_676230;stage_event;method_a;method_a_stage;2;crash;83639;383.407;82.403;0.0;5;"axes=X,Y; Scur=1.4142; Ssum=82.4030; lambda=2.3570"
+25.04.2026;21:32:44;ва;55;Мужской;20260425_212902_676230;stage_event;method_a;method_a_stage;2;crash;96790;-470.527;108.439;0.0;6;"axes=X,Y; Scur=1.4142; Ssum=108.4393; lambda=1.8856"
+25.04.2026;21:32:50;ва;55;Мужской;20260425_212902_676230;stage_event;method_a;method_a_stage;2;crash;102674;-471.175;120.063;0.0;7;"axes=X,Y; Scur=1.4142; Ssum=120.0627; lambda=1.6499"
+25.04.2026;21:33:07;ва;55;Мужской;20260425_212902_676230;stage_report;method_a;method_a_stage;2;stage_end;120005;3.7259;1.3481;-0.9944;7;"axes=X,Y; gamma=-0.3481; h=1.3481; tr=-0.9944"
+25.04.2026;21:33:07;ва;55;Мужской;20260425_212902_676230;stage_event;method_a;method_a_stage;3;stage_start;;;;;;axes=X,Y,Z
+25.04.2026;21:33:47;ва;55;Мужской;20260425_212902_676230;stage_event;method_a;method_a_stage;3;crash;39085;326.813;63.074;-8.859;1;"axes=X,Y,Z; Scur=1.7321; Ssum=63.0745; lambda=3.7528"
+25.04.2026;21:34:28;ва;55;Мужской;20260425_212902_676230;stage_event;method_a;method_a_stage;3;crash;79733;203.104;122.135;-12.485;2;"axes=X,Y,Z; Scur=1.7321; Ssum=122.1351; lambda=4.0415"
+25.04.2026;21:34:55;ва;55;Мужской;20260425_212902_676230;stage_event;method_a;method_a_stage;3;crash;106974;272.316;159.388;10.27;3;"axes=X,Y,Z; Scur=1.7321; Ssum=159.3878; lambda=3.1754"
+25.04.2026;21:35:08;ва;55;Мужской;20260425_212902_676230;stage_report;method_a;method_a_stage;3;stage_end;120004;5.1551;1.7806;-3.7222;3;"axes=X,Y,Z; gamma=-0.7806; h=1.7806; tr=-3.7222"
+25.04.2026;21:35:08;ва;55;Мужской;20260425_212902_676230;method_session;method_a;method_a;;completed;;;;;;json=method_a_results_20260425_212902_676230.json
+25.04.2026;21:35:10;ва;55;Мужской;20260425_212902_676230;summary;test_menu;method_a;;session_finished;;;;;3;Методика А завершена, данные добавлены в participants.csv и user_progress.json
+25.04.2026;21:35:12;ва;55;Мужской;20260425_212902_676230;menu_event;test_menu;test_a;;marked_completed;;;;;;Тест А завершён и сохранён.
+25.04.2026;22:16:42;цук;33;Мужской;20260425_221642_871332;registration;start_page;;;submit;;;;;;Регистрационная форма принята. completed=-
+25.04.2026;22:16:43;цук;33;Мужской;20260425_221642_871332;menu_event;test_menu;;;open_menu;;;;;;next=A
+25.04.2026;22:16:44;цук;33;Мужской;20260425_221642_871332;menu_event;test_menu;test_a;;launch_requested;;;;;;Слежение за объектом
+25.04.2026;22:16:46;цук;33;Мужской;20260425_221642_871332;method_session;method_a;method_a;;launch;;;;;;"Крен управляется колесом мыши; фон неба и объект-самолёт активированы"
+25.04.2026;22:16:46;цук;33;Мужской;20260425_221642_871332;stage_event;method_a;method_a_stage;1;stage_start;;;;;;axes=X
+25.04.2026;22:17:05;цук;33;Мужской;20260425_221642_871332;stage_event;method_a;method_a_stage;1;crash;17885;-475.693;7.17;0.0;1;"axes=X; Scur=1.0000; Ssum=7.1704; lambda=1.5000"
+25.04.2026;22:17:07;цук;33;Мужской;20260425_221642_871332;stage_event;method_a;method_a_stage;1;crash;19440;-481.863;8.073;0.0;2;"axes=X; Scur=1.0000; Ssum=8.0728; lambda=1.0000"
+25.04.2026;22:17:07;цук;33;Мужской;20260425_221642_871332;stage_event;method_a;method_a_stage;1;crash;19924;475.72;8.073;0.0;3;"axes=X; Scur=1.0000; Ssum=8.0728; lambda=1.0000"
+25.04.2026;22:17:12;цук;33;Мужской;20260425_221642_871332;stage_event;method_a;method_a_stage;1;crash;24482;475.832;10.3;0.0;4;"axes=X; Scur=1.0000; Ssum=10.3003; lambda=1.0000"
+25.04.2026;22:17:47;цук;33;Мужской;20260425_221642_871332;stage_event;method_a;method_a_stage;1;crash;59729;482.849;20.86;0.0;5;"axes=X; Scur=1.0000; Ssum=20.8598; lambda=2.1667"
+25.04.2026;22:17:48;цук;33;Мужской;20260425_221642_871332;stage_event;method_a;method_a_stage;1;crash;60061;-474.193;21.677;0.0;6;"axes=X; Scur=1.0000; Ssum=21.6766; lambda=1.0000"
+25.04.2026;22:18:03;цук;33;Мужской;20260425_221642_871332;stage_event;method_a;method_a_stage;1;crash;75638;-473.355;25.739;0.0;7;"axes=X; Scur=1.0000; Ssum=25.7387; lambda=1.5000"
+25.04.2026;22:18:03;цук;33;Мужской;20260425_221642_871332;stage_event;method_a;method_a_stage;1;crash;75906;476.045;25.739;0.0;8;"axes=X; Scur=1.0000; Ssum=25.7387; lambda=1.0000"
+25.04.2026;22:18:35;цук;33;Мужской;20260425_221642_871332;stage_event;method_a;method_a_stage;1;crash;107723;-472.869;31.18;0.0;9;"axes=X; Scur=1.0000; Ssum=31.1801; lambda=2.0000"
+25.04.2026;22:18:36;цук;33;Мужской;20260425_221642_871332;stage_event;method_a;method_a_stage;1;crash;108655;477.766;32.752;0.0;10;"axes=X; Scur=1.0000; Ssum=32.7517; lambda=1.0000"
+25.04.2026;22:18:47;цук;33;Мужской;20260425_221642_871332;stage_report;method_a;method_a_stage;1;stage_end;120015;2.6677;0.2798;0.9607;10;"axes=X; gamma=0.7202; h=0.2798; tr=0.9607"
+25.04.2026;22:18:47;цук;33;Мужской;20260425_221642_871332;stage_event;method_a;method_a_stage;2;stage_start;;;;;;axes=X,Y
+25.04.2026;22:19:29;цук;33;Мужской;20260425_221642_871332;stage_event;method_a;method_a_stage;2;crash;40411;-489.76;11.239;0.0;1;"axes=X,Y; Scur=1.3289; Ssum=11.2385; lambda=3.2998"
+25.04.2026;22:19:40;цук;33;Мужской;20260425_221642_871332;stage_event;method_a;method_a_stage;2;crash;51297;-6.312;14.503;0.0;2;"axes=X,Y; Scur=1.0000; Ssum=14.5027; lambda=1.8856"
+25.04.2026;22:19:42;цук;33;Мужской;20260425_221642_871332;stage_event;method_a;method_a_stage;2;crash;53877;484.525;17.412;0.0;3;"axes=X,Y; Scur=1.0073; Ssum=17.4116; lambda=1.4142"
+25.04.2026;22:20:33;цук;33;Мужской;20260425_221642_871332;stage_event;method_a;method_a_stage;2;crash;105023;-477.574;30.023;0.0;4;"axes=X,Y; Scur=1.0576; Ssum=30.0227; lambda=3.7712"
+25.04.2026;22:20:48;цук;33;Мужской;20260425_221642_871332;stage_report;method_a;method_a_stage;2;stage_end;120009;4.423;0.3548;2.4734;4;"axes=X,Y; gamma=0.6452; h=0.3548; tr=2.4734"
+25.04.2026;22:20:48;цук;33;Мужской;20260425_221642_871332;stage_event;method_a;method_a_stage;3;stage_start;;;;;;axes=X,Y,Z
+25.04.2026;22:20:57;цук;33;Мужской;20260425_221642_871332;stage_event;method_a;method_a_stage;3;crash;7375;-475.765;2.358;-29.526;1;"axes=X,Y,Z; Scur=1.0408; Ssum=2.3582; lambda=2.0207"
+25.04.2026;22:21:51;цук;33;Мужской;20260425_221642_871332;stage_event;method_a;method_a_stage;3;crash;61891;309.22;17.737;-14.317;2;"axes=X,Y,Z; Scur=1.1660; Ssum=17.7374; lambda=4.6188"
+25.04.2026;22:21:52;цук;33;Мужской;20260425_221642_871332;stage_event;method_a;method_a_stage;3;crash;62202;-268.804;17.737;-1.866;3;"axes=X,Y,Z; Scur=1.1120; Ssum=17.7374; lambda=1.7321"
+25.04.2026;22:22:39;цук;33;Мужской;20260425_221642_871332;stage_event;method_a;method_a_stage;3;crash;109025;-479.902;28.394;-7.951;4;"axes=X,Y,Z; Scur=1.0006; Ssum=28.3944; lambda=4.3301"
+25.04.2026;22:22:49;цук;33;Мужской;20260425_221642_871332;stage_report;method_a;method_a_stage;3;stage_end;120012;5.7609;0.346;3.3909;4;"axes=X,Y,Z; gamma=0.6540; h=0.3460; tr=3.3909"
+25.04.2026;22:22:49;цук;33;Мужской;20260425_221642_871332;method_session;method_a;method_a;;completed;;;;;;json=method_a_results_20260425_221642_871332.json
+25.04.2026;22:22:51;цук;33;Мужской;20260425_221642_871332;summary;test_menu;method_a;;session_finished;;;;;3;Методика А завершена, данные добавлены в participants.csv и user_progress.json
+25.04.2026;22:22:55;цук;33;Мужской;20260425_221642_871332;menu_event;test_menu;test_a;;marked_completed;;;;;;Тест А завершён и сохранён.
+25.04.2026;22:31:18;34;44;Мужской;20260425_223118_723730;registration;start_page;;;submit;;;;;;Регистрационная форма принята. completed=-
+25.04.2026;22:31:18;34;44;Мужской;20260425_223118_723730;menu_event;test_menu;;;open_menu;;;;;;next=A
+25.04.2026;22:31:20;34;44;Мужской;20260425_223118_723730;menu_event;test_menu;test_a;;launch_requested;;;;;;Слежение за объектом
+25.04.2026;22:31:22;34;44;Мужской;20260425_223118_723730;method_session;method_a;method_a;;launch;;;;;;"Крен управляется колесом мыши; фон неба и объект-самолёт активированы"
+25.04.2026;22:31:22;34;44;Мужской;20260425_223118_723730;stage_event;method_a;method_a_stage;1;stage_start;;;;;;axes=X
+25.04.2026;22:31:52;34;44;Мужской;20260425_223118_723730;stage_event;method_a;method_a_stage;1;crash;28651;-452.951;3.262;0.0;1;"axes=X; Scur=1.0000; Ssum=3.2619; lambda=1.8333"
+25.04.2026;22:31:53;34;44;Мужской;20260425_223118_723730;stage_event;method_a;method_a_stage;1;crash;29954;-454.182;4.131;0.0;2;"axes=X; Scur=1.0000; Ssum=4.1309; lambda=1.0000"
+25.04.2026;22:31:54;34;44;Мужской;20260425_223118_723730;stage_event;method_a;method_a_stage;1;crash;30908;-445.463;4.506;0.0;3;"axes=X; Scur=1.0000; Ssum=4.5062; lambda=1.0000"
+25.04.2026;22:31:55;34;44;Мужской;20260425_223118_723730;stage_event;method_a;method_a_stage;1;crash;31621;442.875;5.458;0.0;4;"axes=X; Scur=1.0000; Ssum=5.4584; lambda=1.0000"
+25.04.2026;22:31:55;34;44;Мужской;20260425_223118_723730;stage_event;method_a;method_a_stage;1;crash;32085;471.058;6.29;0.0;5;"axes=X; Scur=1.0000; Ssum=6.2896; lambda=1.0000"
+25.04.2026;22:31:56;34;44;Мужской;20260425_223118_723730;stage_event;method_a;method_a_stage;1;crash;32550;446.711;7.088;0.0;6;"axes=X; Scur=1.0000; Ssum=7.0880; lambda=1.0000"
+25.04.2026;22:32:01;34;44;Мужской;20260425_223118_723730;method_session;method_a;method_a;;aborted;;;;;0;Пользователь закрыл методику или нажал ESC
+25.04.2026;22:37:11;ва;44;Мужской;20260425_223711_426394;registration;start_page;;;submit;;;;;;Регистрационная форма принята. completed=-
+25.04.2026;22:37:11;ва;44;Мужской;20260425_223711_426394;menu_event;test_menu;;;open_menu;;;;;;next=A
+25.04.2026;22:37:12;ва;44;Мужской;20260425_223711_426394;menu_event;test_menu;test_a;;launch_requested;;;;;;Слежение за объектом
+25.04.2026;22:37:15;ва;44;Мужской;20260425_223711_426394;method_session;method_a;method_a;;launch;;;;;;"Крен управляется колесом мыши; фон неба и объект-самолёт активированы"
+25.04.2026;22:37:15;ва;44;Мужской;20260425_223711_426394;stage_event;method_a;method_a_stage;1;stage_start;;;;;;axes=X
+25.04.2026;22:37:48;ва;44;Мужской;20260425_223711_426394;method_session;method_a;method_a;;aborted;;;;;0;Пользователь закрыл методику или нажал ESC
+26.04.2026;12:58:05;ыыва;22;Мужской;20260426_125805_432113;registration;start_page;;;submit;;;;;;Регистрационная форма принята. completed=-
+26.04.2026;12:58:05;ыыва;22;Мужской;20260426_125805_432113;menu_event;test_menu;;;open_menu;;;;;;next=A
+26.04.2026;12:58:07;ыыва;22;Мужской;20260426_125805_432113;menu_event;test_menu;test_a;;launch_requested;;;;;;Слежение за объектом
+26.04.2026;12:58:09;ыыва;22;Мужской;20260426_125805_432113;method_session;method_a;method_a;;launch;;;;;;"Крен управляется колесом мыши; фон неба и объект-самолёт активированы"
+26.04.2026;12:58:09;ыыва;22;Мужской;20260426_125805_432113;stage_event;method_a;method_a_stage;1;stage_start;;;;;;axes=X
+26.04.2026;12:58:28;ыыва;22;Мужской;20260426_125805_432113;stage_event;method_a;method_a_stage;1;crash;17464;443.802;4.05;0.0;1;"axes=X; Scur=1.0000; Ssum=4.0502; lambda=1.5000"
+26.04.2026;12:58:44;ыыва;22;Мужской;20260426_125805_432113;stage_event;method_a;method_a_stage;1;crash;33484;442.877;15.312;0.0;2;"axes=X; Scur=1.0000; Ssum=15.3115; lambda=1.5000"
+26.04.2026;12:58:49;ыыва;22;Мужской;20260426_125805_432113;stage_event;method_a;method_a_stage;1;crash;38785;442.422;20.188;0.0;3;"axes=X; Scur=1.0000; Ssum=20.1877; lambda=1.1667"
+26.04.2026;12:58:50;ыыва;22;Мужской;20260426_125805_432113;stage_report;method_a;method_a_stage;1;stage_end;40006;2.3246;0.5064;0.8377;3;"axes=X; gamma=0.4936; h=0.5064; tr=0.8377"
+26.04.2026;12:58:50;ыыва;22;Мужской;20260426_125805_432113;stage_event;method_a;method_a_stage;2;stage_start;;;;;;axes=X,Y
+26.04.2026;12:58:54;ыыва;22;Мужской;20260426_125805_432113;stage_event;method_a;method_a_stage;2;crash;2447;-517.634;1.088;0.0;1;"axes=X,Y; Scur=1.0000; Ssum=1.0878; lambda=1.4142"
+26.04.2026;12:58:59;ыыва;22;Мужской;20260426_125805_432113;stage_event;method_a;method_a_stage;2;crash;8047;-221.144;7.326;0.0;2;"axes=X,Y; Scur=1.1035; Ssum=7.3256; lambda=1.6499"
+26.04.2026;12:59:07;ыыва;22;Мужской;20260426_125805_432113;stage_event;method_a;method_a_stage;2;crash;15861;374.079;13.316;0.0;3;"axes=X,Y; Scur=1.3030; Ssum=13.3157; lambda=1.6499"
+26.04.2026;12:59:12;ыыва;22;Мужской;20260426_125805_432113;stage_event;method_a;method_a_stage;2;crash;21161;250.178;20.117;0.0;4;"axes=X,Y; Scur=1.1349; Ssum=20.1167; lambda=1.6499"
+26.04.2026;12:59:20;ыыва;22;Мужской;20260426_125805_432113;stage_event;method_a;method_a_stage;2;crash;28823;457.642;26.361;0.0;5;"axes=X,Y; Scur=1.0009; Ssum=26.3611; lambda=1.6499"
+26.04.2026;12:59:20;ыыва;22;Мужской;20260426_125805_432113;stage_event;method_a;method_a_stage;2;crash;29143;-442.375;26.376;0.0;6;"axes=X,Y; Scur=1.0003; Ssum=26.3755; lambda=1.4142"
+26.04.2026;12:59:30;ыыва;22;Мужской;20260426_125805_432113;stage_event;method_a;method_a_stage;2;crash;38330;444.12;30.312;0.0;7;"axes=X,Y; Scur=1.0041; Ssum=30.3125; lambda=1.6499"
+26.04.2026;12:59:31;ыыва;22;Мужской;20260426_125805_432113;stage_report;method_a;method_a_stage;2;stage_end;40001;2.9461;0.86;0.2393;7;"axes=X,Y; gamma=0.1400; h=0.8600; tr=0.2393"
+26.04.2026;12:59:31;ыыва;22;Мужской;20260426_125805_432113;stage_event;method_a;method_a_stage;3;stage_start;;;;;;axes=X,Y,Z
+26.04.2026;13:00:01;ыыва;22;Мужской;20260426_125805_432113;stage_event;method_a;method_a_stage;3;crash;28206;452.372;8.697;30.284;1;"axes=X,Y,Z; Scur=1.4368; Ssum=8.6965; lambda=3.1754"
+26.04.2026;13:00:12;ыыва;22;Мужской;20260426_125805_432113;stage_report;method_a;method_a_stage;3;stage_end;40024;4.5654;0.3567;2.8047;1;"axes=X,Y,Z; gamma=0.6433; h=0.3567; tr=2.8047"
+26.04.2026;13:00:12;ыыва;22;Мужской;20260426_125805_432113;method_session;method_a;method_a;;completed;;;;;;json=method_a_results_20260426_125805_432113.json
+26.04.2026;13:00:14;ыыва;22;Мужской;20260426_125805_432113;summary;test_menu;method_a;;session_finished;;;;;3;Методика А завершена, данные добавлены в participants.csv и user_progress.json
+26.04.2026;13:00:17;ыыва;22;Мужской;20260426_125805_432113;menu_event;test_menu;test_a;;marked_completed;;;;;;Тест А завершён и сохранён.
+26.04.2026;13:01:31;ке;55;Мужской;20260426_130131_087279;registration;start_page;;;submit;;;;;;Регистрационная форма принята. completed=A
+26.04.2026;13:01:31;ке;55;Мужской;20260426_130131_087279;menu_event;test_menu;;;open_menu;;;;;;next=B
+26.04.2026;13:01:36;ке;55;Мужской;20260426_130131_087279;menu_event;test_menu;test_a;;launch_requested;;;;;;Слежение за объектом
+26.04.2026;13:01:40;ке;55;Мужской;20260426_130131_087279;method_session;method_a;method_a;;launch;;;;;;"Крен управляется колесом мыши; фон неба и объект-самолёт активированы"
+26.04.2026;13:01:40;ке;55;Мужской;20260426_130131_087279;stage_event;method_a;method_a_stage;1;stage_start;;;;;;axes=X
+26.04.2026;13:02:21;ке;55;Мужской;20260426_130131_087279;stage_report;method_a;method_a_stage;1;stage_end;40003;3.1955;0.152;2.7098;0;"axes=X; gamma=0.8480; h=0.1520; tr=2.7098"
+26.04.2026;13:02:21;ке;55;Мужской;20260426_130131_087279;stage_event;method_a;method_a_stage;2;stage_start;;;;;;axes=X,Y
+26.04.2026;13:03:02;ке;55;Мужской;20260426_130131_087279;stage_report;method_a;method_a_stage;2;stage_end;40002;4.5251;0.2161;3.5475;0;"axes=X,Y; gamma=0.7839; h=0.2161; tr=3.5475"
+26.04.2026;13:03:02;ке;55;Мужской;20260426_130131_087279;stage_event;method_a;method_a_stage;3;stage_start;;;;;;axes=X,Y,Z
+26.04.2026;13:03:43;ке;55;Мужской;20260426_130131_087279;stage_report;method_a;method_a_stage;3;stage_end;40014;5.5405;0.2764;4.0091;0;"axes=X,Y,Z; gamma=0.7236; h=0.2764; tr=4.0091"
+26.04.2026;13:03:43;ке;55;Мужской;20260426_130131_087279;method_session;method_a;method_a;;completed;;;;;;json=method_a_results_20260426_130131_087279.json
+26.04.2026;13:03:45;ке;55;Мужской;20260426_130131_087279;summary;test_menu;method_a;;session_finished;;;;;3;Методика А завершена, данные добавлены в participants.csv и user_progress.json
+26.04.2026;13:03:48;ке;55;Мужской;20260426_130131_087279;menu_event;test_menu;test_a;;marked_completed;;;;;;Тест А завершён и сохранён.
+26.04.2026;15:47:42;пв;55;Мужской;20260426_154742_674505;registration;start_page;;;submit;;;;;;Регистрационная форма принята. completed=-
+26.04.2026;15:47:42;пв;55;Мужской;20260426_154742_674505;menu_event;test_menu;;;open_menu;;;;;;next=A
+26.04.2026;15:47:45;пв;55;Мужской;20260426_154742_674505;menu_event;test_menu;test_a;;launch_requested;;;;;;Слежение за объектом
+26.04.2026;15:47:48;пв;55;Мужской;20260426_154742_674505;method_session;method_a;method_a;;launch;;;;;;"Крен управляется колесом мыши; фон неба и объект-самолёт активированы"
+26.04.2026;15:47:48;пв;55;Мужской;20260426_154742_674505;stage_event;method_a;method_a_stage;1;stage_start;;;;;;axes=X
+26.04.2026;15:48:29;пв;55;Мужской;20260426_154742_674505;stage_report;method_a;method_a_stage;1;stage_end;40007;3.1994;0.133;2.7737;0;"axes=X; gamma=0.8670; h=0.1330; tr=2.7737"
+26.04.2026;15:48:29;пв;55;Мужской;20260426_154742_674505;stage_event;method_a;method_a_stage;2;stage_start;;;;;;axes=X,Y
+26.04.2026;15:49:10;пв;55;Мужской;20260426_154742_674505;stage_report;method_a;method_a_stage;2;stage_end;40000;4.5254;0.2429;3.4263;0;"axes=X,Y; gamma=0.7571; h=0.2429; tr=3.4263"
+26.04.2026;15:49:10;пв;55;Мужской;20260426_154742_674505;stage_event;method_a;method_a_stage;3;stage_start;;;;;;axes=X,Y,Z
+26.04.2026;15:49:20;пв;55;Мужской;20260426_154742_674505;stage_event;method_a;method_a_stage;3;crash;8048;247.454;2.641;4.768;1;"axes=X,Y,Z; Scur=1.1318; Ssum=2.6413; lambda=2.0207"
+26.04.2026;15:49:51;пв;55;Мужской;20260426_154742_674505;stage_report;method_a;method_a_stage;3;stage_end;40003;4.7699;0.304;3.1704;1;"axes=X,Y,Z; gamma=0.6960; h=0.3040; tr=3.1704"
+26.04.2026;15:49:51;пв;55;Мужской;20260426_154742_674505;method_session;method_a;method_a;;completed;;;;;;json=method_a_results_20260426_154742_674505.json
+26.04.2026;15:49:53;пв;55;Мужской;20260426_154742_674505;summary;test_menu;method_a;;session_finished;;;;;3;Методика А завершена, данные добавлены в participants.csv и user_progress.json
+26.04.2026;15:49:57;пв;55;Мужской;20260426_154742_674505;menu_event;test_menu;test_a;;marked_completed;;;;;;Тест А завершён и сохранён.
+26.04.2026;19:56:25;sf;33;Мужской;20260426_195625_317003;registration;start_page;;;submit;;;;;;Регистрационная форма принята. completed=-
+26.04.2026;19:56:25;sf;33;Мужской;20260426_195625_317003;menu_event;test_menu;;;open_menu;;;;;;next=A
+26.04.2026;19:56:30;sf;33;Мужской;20260426_195625_317003;menu_event;test_menu;test_a;;launch_requested;;;;;;Слежение за объектом
+26.04.2026;19:56:33;sf;33;Мужской;20260426_195625_317003;method_session;method_a;method_a;;launch;;;;;;"Крен управляется колесом мыши; фон неба и объект-самолёт активированы"
+26.04.2026;19:56:33;sf;33;Мужской;20260426_195625_317003;stage_event;method_a;method_a_stage;1;stage_start;;;;;;axes=X
+26.04.2026;19:57:14;sf;33;Мужской;20260426_195625_317003;stage_report;method_a;method_a_stage;1;stage_end;40009;3.1909;0.2717;2.3238;0;"axes=X; gamma=0.7283; h=0.2717; tr=2.3238"
+26.04.2026;19:57:14;sf;33;Мужской;20260426_195625_317003;stage_event;method_a;method_a_stage;2;stage_start;;;;;;axes=X,Y
+26.04.2026;19:57:21;sf;33;Мужской;20260426_195625_317003;stage_event;method_a;method_a_stage;2;crash;6479;-482.519;1.082;0.0;1;"axes=X,Y; Scur=1.2882; Ssum=1.0825; lambda=1.6499"
+26.04.2026;19:57:22;sf;33;Мужской;20260426_195625_317003;stage_event;method_a;method_a_stage;2;crash;7000;464.406;2.041;0.0;2;"axes=X,Y; Scur=1.0224; Ssum=2.0406; lambda=1.4142"
+26.04.2026;19:57:25;sf;33;Мужской;20260426_195625_317003;stage_event;method_a;method_a_stage;2;crash;9934;-456.335;3.473;0.0;3;"axes=X,Y; Scur=1.0044; Ssum=3.4730; lambda=1.4142"
+26.04.2026;19:57:41;sf;33;Мужской;20260426_195625_317003;stage_event;method_a;method_a_stage;2;crash;26537;-450.992;11.857;0.0;4;"axes=X,Y; Scur=1.0195; Ssum=11.8566; lambda=2.1213"
+26.04.2026;19:57:42;sf;33;Мужской;20260426_195625_317003;stage_event;method_a;method_a_stage;2;crash;26775;456.35;11.857;0.0;5;"axes=X,Y; Scur=1.0000; Ssum=11.8566; lambda=1.4142"
+26.04.2026;19:57:45;sf;33;Мужской;20260426_195625_317003;stage_event;method_a;method_a_stage;2;crash;30583;449.382;13.873;0.0;6;"axes=X,Y; Scur=1.0305; Ssum=13.8732; lambda=1.4142"
+26.04.2026;19:57:46;sf;33;Мужской;20260426_195625_317003;stage_event;method_a;method_a_stage;2;crash;31005;-456.53;14.588;0.0;7;"axes=X,Y; Scur=1.0087; Ssum=14.5884; lambda=1.4142"
+26.04.2026;19:57:54;sf;33;Мужской;20260426_195625_317003;stage_event;method_a;method_a_stage;2;crash;38972;-465.818;16.671;0.0;8;"axes=X,Y; Scur=1.0013; Ssum=16.6715; lambda=1.6499"
+26.04.2026;19:57:55;sf;33;Мужской;20260426_195625_317003;stage_report;method_a;method_a_stage;2;stage_end;40002;3.1051;0.5563;0.7164;8;"axes=X,Y; gamma=0.4437; h=0.5563; tr=0.7164"
+26.04.2026;19:57:55;sf;33;Мужской;20260426_195625_317003;stage_event;method_a;method_a_stage;3;stage_start;;;;;;axes=X,Y,Z
+26.04.2026;19:58:27;sf;33;Мужской;20260426_195625_317003;stage_event;method_a;method_a_stage;3;crash;31195;-447.441;19.466;-15.597;1;"axes=X,Y,Z; Scur=1.0024; Ssum=19.4665; lambda=3.4641"
+26.04.2026;19:58:36;sf;33;Мужской;20260426_195625_317003;stage_report;method_a;method_a_stage;3;stage_end;40005;4.7336;0.6515;1.5756;1;"axes=X,Y,Z; gamma=0.3485; h=0.6515; tr=1.5756"
+26.04.2026;19:58:36;sf;33;Мужской;20260426_195625_317003;method_session;method_a;method_a;;completed;;;;;;json=method_a_results_20260426_195625_317003.json
+26.04.2026;19:58:37;sf;33;Мужской;20260426_195625_317003;summary;test_menu;method_a;;session_finished;;;;;3;Методика А завершена, данные добавлены в participants.csv и user_progress.json
+26.04.2026;19:58:41;sf;33;Мужской;20260426_195625_317003;menu_event;test_menu;test_a;;marked_completed;;;;;;Тест А завершён и сохранён.
+26.04.2026;20:06:52;ку;43;Мужской;20260426_200652_777499;registration;start_page;;;submit;;;;;;Регистрационная форма принята. completed=-
+26.04.2026;20:06:53;ку;43;Мужской;20260426_200652_777499;menu_event;test_menu;;;open_menu;;;;;;next=A
+26.04.2026;20:06:54;ку;43;Мужской;20260426_200652_777499;menu_event;test_menu;test_a;;launch_requested;;;;;;Слежение за объектом
+26.04.2026;20:06:56;ку;43;Мужской;20260426_200652_777499;method_session;method_a;method_a;;launch;;;;;;"Крен управляется колесом мыши; фон неба и объект-самолёт активированы"
+26.04.2026;20:06:56;ку;43;Мужской;20260426_200652_777499;stage_event;method_a;method_a_stage;1;stage_start;;;;;;axes=X
+26.04.2026;20:07:11;ку;43;Мужской;20260426_200652_777499;stage_event;method_a;method_a_stage;1;crash;13194;455.129;3.413;0.0;1;"axes=X; Scur=1.0000; Ssum=3.4132; lambda=1.3333"
+26.04.2026;20:07:11;ку;43;Мужской;20260426_200652_777499;stage_event;method_a;method_a_stage;1;crash;14002;-469.309;5.039;0.0;2;"axes=X; Scur=1.0000; Ssum=5.0388; lambda=1.0000"
+26.04.2026;20:07:27;ку;43;Мужской;20260426_200652_777499;stage_event;method_a;method_a_stage;1;crash;29286;466.938;7.258;0.0;3;"axes=X; Scur=1.0000; Ssum=7.2578; lambda=1.5000"
+26.04.2026;20:07:35;ку;43;Мужской;20260426_200652_777499;stage_event;method_a;method_a_stage;1;crash;37784;445.689;13.767;0.0;4;"axes=X; Scur=1.0000; Ssum=13.7674; lambda=1.1667"
+26.04.2026;20:07:37;ку;43;Мужской;20260426_200652_777499;stage_report;method_a;method_a_stage;1;stage_end;40015;2.2533;0.3458;0.9437;4;"axes=X; gamma=0.6542; h=0.3458; tr=0.9437"
+26.04.2026;20:07:37;ку;43;Мужской;20260426_200652_777499;stage_event;method_a;method_a_stage;2;stage_start;;;;;;axes=X,Y
+26.04.2026;20:07:51;ку;43;Мужской;20260426_200652_777499;stage_event;method_a;method_a_stage;2;crash;12798;472.856;3.798;0.0;1;"axes=X,Y; Scur=1.0000; Ssum=3.7980; lambda=1.8856"
+26.04.2026;20:07:53;ку;43;Мужской;20260426_200652_777499;stage_event;method_a;method_a_stage;2;crash;14476;-103.802;5.547;0.0;2;"axes=X,Y; Scur=1.0032; Ssum=5.5470; lambda=1.4142"
+26.04.2026;20:08:11;ку;43;Мужской;20260426_200652_777499;stage_event;method_a;method_a_stage;2;crash;33021;461.121;7.62;0.0;3;"axes=X,Y; Scur=1.0000; Ssum=7.6198; lambda=2.1213"
+26.04.2026;20:08:14;ку;43;Мужской;20260426_200652_777499;stage_event;method_a;method_a_stage;2;crash;35268;451.225;8.798;0.0;4;"axes=X,Y; Scur=1.0037; Ssum=8.7979; lambda=1.4142"
+26.04.2026;20:08:15;ку;43;Мужской;20260426_200652_777499;stage_event;method_a;method_a_stage;2;crash;37034;-448.372;11.014;0.0;5;"axes=X,Y; Scur=1.0338; Ssum=11.0138; lambda=1.4142"
+26.04.2026;20:08:18;ку;43;Мужской;20260426_200652_777499;stage_report;method_a;method_a_stage;2;stage_end;40004;3.2582;0.3819;1.4097;5;"axes=X,Y; gamma=0.6181; h=0.3819; tr=1.4097"
+26.04.2026;20:08:18;ку;43;Мужской;20260426_200652_777499;stage_event;method_a;method_a_stage;3;stage_start;;;;;;axes=X,Y,Z
+26.04.2026;20:08:33;ку;43;Мужской;20260426_200652_777499;stage_event;method_a;method_a_stage;3;crash;13139;72.162;11.315;-90.109;1;"axes=X,Y,Z; Scur=1.0002; Ssum=11.3145; lambda=2.3094"
+26.04.2026;20:08:59;ку;43;Мужской;20260426_200652_777499;stage_report;method_a;method_a_stage;3;stage_end;40014;4.5016;0.4571;2.3338;1;"axes=X,Y,Z; gamma=0.5429; h=0.4571; tr=2.3338"
+26.04.2026;20:08:59;ку;43;Мужской;20260426_200652_777499;method_session;method_a;method_a;;completed;;;;;;json=method_a_results_20260426_200652_777499.json
+26.04.2026;20:09:01;ку;43;Мужской;20260426_200652_777499;summary;test_menu;method_a;;session_finished;;;;;3;Методика А завершена, данные добавлены в participants.csv и user_progress.json
+26.04.2026;20:09:05;ку;43;Мужской;20260426_200652_777499;menu_event;test_menu;test_a;;marked_completed;;;;;;Тест А завершён и сохранён.

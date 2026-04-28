@@ -1,0 +1,23 @@
+{
+  "total_test_s": 120.0,
+  "answer_time_s": {
+    "min": 25.0,
+    "medio": 35.0,
+    "max": 45.0
+  },
+  "adaptive_time_step_s": {
+    "min": 2.0,
+    "medio": 3.0,
+    "max": 4.0
+  },
+  "normative_correct": {
+    "min": 2.0,
+    "medio": 4.0,
+    "max": 4.0
+  },
+  "normative_times": {
+    "min": 25.0,
+    "medio": 35.0,
+    "max": 45.0
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "total_test_s": 120.0,
+  "stage_time_s": [
+    40.0,
+    40.0,
+    40.0
+  ],
+  "exposure_start_s": [
+    1.0,
+    2.0,
+    4.0
+  ],
+  "input_start_s": [
+    3.0,
+    6.0,
+    12.0
+  ],
+  "time_step_s": [
+    1.0,
+    1.0,
+    2.0
+  ],
+  "normative_cycle_times": [
+    4.0,
+    8.0,
+    16.0
+  ],
+  "normative_success": [
+    1.0,
+    1.0,
+    1.0
+  ]
+}

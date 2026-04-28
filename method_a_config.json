@@ -1,0 +1,81 @@
+{
+  "width": 1280,
+  "height": 800,
+  "fps": 60,
+  "target_half_cm": 3.0,
+  "work_extension_cm": 15.0,
+  "crash_extension_cm": 1.0,
+  "target_roll_deg": 5.0,
+  "work_roll_deg": 90.0,
+  "start_speed_xy_cm_s": 3.0,
+  "step_speed_xy_cm_s": 1.0,
+  "start_speed_z_deg_s": 10.0,
+  "step_speed_z_deg_s": 2.0,
+  "direction_change_min_s": 3.0,
+  "direction_change_max_s": 20.0,
+  "speedup_interval_s": 5.0,
+  "stage_time_limit_s": 40.0,
+  "stage_crash_limit": 3,
+  "crash_penalty_ratio": 0.05,
+  "auto_fit_to_screen": true,
+  "screen_side_margin_px": 90,
+  "screen_vertical_margin_px": 70,
+  "smax_stage_1": 5.0,
+  "smax_stage_2": 5.0,
+  "smax_stage_3": 300.0,
+  "px_per_cm": 38.0,
+  "mouse_gain_px": 1.15,
+  "roll_step_per_wheel_notch_deg": 4.0,
+  "error_gain": 5.0,
+  "bg_color": [
+    232,
+    232,
+    232
+  ],
+  "target_color": [
+    133,
+    214,
+    136
+  ],
+  "work_color": [
+    139,
+    195,
+    220
+  ],
+  "crash_color": [
+    214,
+    16,
+    0
+  ],
+  "obj_color": [
+    15,
+    49,
+    64
+  ],
+  "text_color": [
+    18,
+    24,
+    30
+  ],
+  "grid_color": [
+    15,
+    49,
+    64
+  ],
+  "stage_time_limit_stage_1_s": 40.0,
+  "stage_time_limit_stage_2_s": 40.0,
+  "stage_time_limit_stage_3_s": 40.0,
+  "y_lim_per_sec": 200.0,
+  "y_limit_t_norm_s": 180.0,
+  "n_dop_for_60s": 20.0,
+  "v_avg_norm_stage_1": 3.5,
+  "v_avg_norm_stage_2": 5.0,
+  "v_avg_norm_stage_3": 6.0,
+  "y_lim_x_per_sec": 0.7,
+  "y_lim_y_per_sec": 0.7,
+  "y_lim_z_per_sec": 0.7,
+  "calc_tick_s": 0.5,
+  "n_dop_x_for_180s": 40.0,
+  "n_dop_xy_for_180s": 60.0,
+  "n_dop_xyz_for_180s": 80.0
+}

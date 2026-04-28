@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.pyc
+
+build/
+dist/
+dist_final/
+
+_tmp_*.txt
+_tmp_*.json
+_tmp_*.xml
+
+.DS_Store
+Thumbs.db
