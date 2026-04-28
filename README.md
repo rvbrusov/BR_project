@@ -13,7 +13,7 @@
 ```powershell
 python -m venv .venv
 .venv\Scripts\Activate.ps1
-pip install pillow pygame
+pip install -r requirements.txt
 ```
 
 ## Запуск
