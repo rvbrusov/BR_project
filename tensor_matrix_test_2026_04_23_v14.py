@@ -10,7 +10,7 @@ from typing import Dict, List, Optional, Tuple
 
 ALPHABET = "ABCD"
 LETTER_TO_DIGIT: Dict[str, int] = {"A": 1, "B": 2, "C": 3, "D": 4}
-COLOR_NAMES: Dict[str, str] = {"A": "розовый", "B": "синий", "C": "зеленый", "D": "желтый"}
+COLOR_NAMES: Dict[str, str] = {"A": "красный", "B": "синий", "C": "желтый", "D": "черный"}
 ROWS = 3
 COLS = 4
 WHITE_ALLOWED_CELLS = [
@@ -23,11 +23,34 @@ CELL_WIDTH = 180
 CELL_HEIGHT = 110
 
 POCKET_COLORS: Dict[str, str] = {
-    "A": "#ef476f",
-    "B": "#118ab2",
-    "C": "#06d6a0",
-    "D": "#ffd166",
+    "A": "#c00000",
+    "B": "#000795",
+    "C": "#e9f201",
+    "D": "#000000",
 }
+POCKET_TEXT_COLORS: Dict[str, str] = {
+    "A": "#ffffff",
+    "B": "#ffffff",
+    "C": "#111111",
+    "D": "#ffffff",
+}
+
+
+def _clamp(v: float, lo: float, hi: float) -> float:
+    return max(lo, min(hi, v))
+
+
+def _shade_hex(color: str, factor: float) -> str:
+    c = color.lstrip("#")
+    if len(c) != 6:
+        return color
+    r = int(c[0:2], 16)
+    g = int(c[2:4], 16)
+    b = int(c[4:6], 16)
+    rr = int(_clamp(r * factor, 0, 255))
+    gg = int(_clamp(g * factor, 0, 255))
+    bb = int(_clamp(b * factor, 0, 255))
+    return f"#{rr:02x}{gg:02x}{bb:02x}"
 
 POS_PATTERNS = {
     2: ["11", "12"],
@@ -466,7 +489,7 @@ class TensorMatrixApp:
                 height=2,
                 font=("Arial", 12, "bold"),
                 bg=POCKET_COLORS[pocket],
-                fg="#1f1f1f",
+                fg=POCKET_TEXT_COLORS.get(pocket, "#1f1f1f"),
                 activebackground=POCKET_COLORS[pocket],
             ).pack(side="left", padx=5)
 
@@ -645,19 +668,90 @@ class TensorMatrixApp:
         y0 = y_center - square / 2
         return [(x0 + i * (square + h_gap), y0) for i in range(count)], square
 
+    def _draw_shield(
+        self,
+        canvas: tk.Canvas,
+        x0: float,
+        y0: float,
+        size: int,
+        fill_color: str,
+        outline_color: str,
+        border: int = 1,
+    ) -> None:
+        x1 = x0 + size
+        y1 = y0 + size
+        w = float(size)
+        h = float(size)
+        cx = (x0 + x1) / 2.0
+        top_y = y0 + 0.03 * h
+        mid_y = y0 + 0.72 * h
+        tip_y = y1 - 0.04 * h
+
+        body = [
+            (x0 + 0.06 * w, top_y),
+            (x1 - 0.06 * w, top_y),
+            (x1 - 0.06 * w, mid_y),
+            (cx, tip_y),
+            (x0 + 0.06 * w, mid_y),
+        ]
+        canvas.create_polygon(body, fill=fill_color, outline=outline_color, width=border, smooth=False)
+
+        light = _shade_hex(fill_color, 1.18)
+        dark = _shade_hex(fill_color, 0.78)
+        canvas.create_polygon(
+            cx,
+            y0 + 0.10 * h,
+            x0 + 0.12 * w,
+            y0 + 0.30 * h,
+            x1 - 0.12 * w,
+            y0 + 0.30 * h,
+            fill=light,
+            outline="",
+        )
+        canvas.create_polygon(
+            x0 + 0.12 * w,
+            y0 + 0.30 * h,
+            cx,
+            y0 + 0.52 * h,
+            x0 + 0.12 * w,
+            mid_y - 0.01 * h,
+            fill=dark,
+            outline="",
+        )
+        canvas.create_polygon(
+            x1 - 0.12 * w,
+            y0 + 0.30 * h,
+            cx,
+            y0 + 0.52 * h,
+            x1 - 0.12 * w,
+            mid_y - 0.01 * h,
+            fill=_shade_hex(fill_color, 0.92),
+            outline="",
+        )
+        canvas.create_polygon(
+            x0 + 0.12 * w,
+            mid_y - 0.01 * h,
+            cx,
+            y0 + 0.52 * h,
+            x1 - 0.12 * w,
+            mid_y - 0.01 * h,
+            fill=_shade_hex(fill_color, 0.86),
+            outline="",
+        )
+
     def _draw_code(self, canvas: tk.Canvas, code: str) -> None:
         canvas.delete("all")
         positions, square = self._slot_positions(len(code))
         for idx, ch in enumerate(code):
             x0, y0 = positions[idx]
-            canvas.create_rectangle(
+            self._draw_shield(
+                canvas,
                 x0,
                 y0,
-                x0 + square,
-                y0 + square,
-                fill=POCKET_COLORS.get(ch, "#d0d0d0"),
-                outline="#444444",
-                width=1,
+                square,
+                fill_color=POCKET_COLORS.get(ch, "#d0d0d0"),
+                outline_color="#1f2e40",
+                border=1,
             )
 
     def _draw_correct_preview(self, code: str) -> None:
@@ -665,14 +759,14 @@ class TensorMatrixApp:
         positions, square = self._slot_positions(len(code))
         for idx, ch in enumerate(code):
             x0, y0 = positions[idx]
-            self.correct_preview_canvas.create_rectangle(
+            self._draw_shield(
+                self.correct_preview_canvas,
                 x0,
                 y0,
-                x0 + square,
-                y0 + square,
-                fill=POCKET_COLORS.get(ch, "#d0d0d0"),
-                outline="#444444",
-                width=1,
+                square,
+                fill_color=POCKET_COLORS.get(ch, "#d0d0d0"),
+                outline_color="#1f2e40",
+                border=1,
             )
 
     def _clear_correct_preview(self) -> None:
@@ -691,7 +785,15 @@ class TensorMatrixApp:
             fill_color = POCKET_COLORS.get(chosen, "#ffffff") if chosen else "#ffffff"
             outline_color = "#2b2b2b" if idx == self.selected_slot else "#9fa6ad"
             border = 2 if idx == self.selected_slot else 1
-            canvas.create_rectangle(x0, y0, x0 + square, y0 + square, fill=fill_color, outline=outline_color, width=border)
+            self._draw_shield(
+                canvas,
+                x0,
+                y0,
+                square,
+                fill_color=fill_color,
+                outline_color=outline_color,
+                border=border,
+            )
 
     def on_cell_click(self, row: int, col: int, event: tk.Event) -> None:
         if row != self.missing_r or col != self.missing_c or not self.correct_answer:
