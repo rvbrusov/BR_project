@@ -10,7 +10,7 @@ from typing import Dict, List, Optional, Tuple
 
 ALPHABET = "ABCD"
 LETTER_TO_DIGIT: Dict[str, int] = {"A": 1, "B": 2, "C": 3, "D": 4}
-COLOR_NAMES: Dict[str, str] = {"A": "розовый", "B": "синий", "C": "зеленый", "D": "желтый"}
+COLOR_NAMES: Dict[str, str] = {"A": "красный", "B": "синий", "C": "желтый", "D": "черный"}
 ROWS = 3
 COLS = 4
 WHITE_ALLOWED_CELLS = [
@@ -23,11 +23,18 @@ CELL_WIDTH = 180
 CELL_HEIGHT = 110
 
 POCKET_COLORS: Dict[str, str] = {
-    "A": "#ef476f",
-    "B": "#118ab2",
-    "C": "#06d6a0",
-    "D": "#ffd166",
+    "A": "#c00000",
+    "B": "#000795",
+    "C": "#e9f201",
+    "D": "#000000",
 }
+INSTRUCTION_TEXT = (
+    "Вам будут показаны 12 щитов, закрашенных по определенной логике.\n"
+    "Один щит пустой.\n"
+    "Ваша задача - понять, какие цвета должны быть использованы для этого щита и закрасить их. "
+    "Для этого нажмите на белое поле щита, а потом - на цвет, который считаете подходящим.\n"
+    "Когда закончите - нажмите кнопку \"Далее\"."
+)
 
 POS_PATTERNS = {
     2: ["11", "12"],
@@ -60,28 +67,6 @@ NONPOS_PATTERNS_X = {
     4: ["".join(p) for p in permutations("1234")],
 }
 FORBIDDEN_X_PATTERNS = {"122", "112", "221"}
-
-
-def _clamp(value: float, low: float, high: float) -> float:
-    return max(low, min(high, value))
-
-
-def _shade_hex(hex_color: str, factor: float) -> str:
-    text = hex_color.strip()
-    if text.startswith("#"):
-        text = text[1:]
-    if len(text) != 6:
-        return hex_color
-    try:
-        r = int(text[0:2], 16)
-        g = int(text[2:4], 16)
-        b = int(text[4:6], 16)
-    except ValueError:
-        return hex_color
-    rr = int(_clamp(round(r * factor), 0, 255))
-    gg = int(_clamp(round(g * factor), 0, 255))
-    bb = int(_clamp(round(b * factor), 0, 255))
-    return f"#{rr:02x}{gg:02x}{bb:02x}"
 
 
 @dataclass
@@ -373,9 +358,17 @@ class TensorMatrixApp:
         self.master.title("Генератор матриц 4x3 (цветные квадраты)")
         screen_w = self.master.winfo_screenwidth()
         screen_h = self.master.winfo_screenheight()
-        self.master.geometry(f"{int(screen_w * 0.92)}x{int(screen_h * 0.9)}+20+20")
+        self.master.geometry(f"{screen_w}x{screen_h}+0+0")
         self.master.minsize(860, 680)
         self.master.configure(bg="#f2f2f2")
+        self.is_fullscreen = True
+        try:
+            self.master.state("zoomed")
+        except Exception:
+            pass
+        self.master.attributes("-fullscreen", True)
+        self.master.bind("<F11>", self._toggle_fullscreen)
+        self.master.bind("<Escape>", self._exit_fullscreen)
 
         self.current_l = 0
         self.current_cells: Optional[List[List[str]]] = None
@@ -390,6 +383,7 @@ class TensorMatrixApp:
         self.current_errors = 0
         self.current_started_at = time.monotonic()
         self.task_counter = 0
+        self.intro_visible = True
         self.results_file = Path(__file__).resolve().parent / "data" / "tensor_matrix_results.csv"
         self._ensure_results_file()
 
@@ -542,19 +536,6 @@ class TensorMatrixApp:
         btn_frame = tk.Frame(master, bg="#f2f2f2")
         btn_frame.pack(side="bottom", fill="x", padx=16, pady=(8, 14))
 
-        self.start_btn = tk.Button(
-            btn_frame,
-            text="Начать тестирование",
-            font=("Arial", 13, "bold"),
-            width=18,
-            height=2,
-            command=self.start_test,
-            bg="#4CAF50",
-            fg="white",
-            activebackground="#449d48",
-        )
-        self.start_btn.pack(side="left")
-
         self.exit_btn = tk.Button(
             btn_frame,
             text="Выход",
@@ -568,7 +549,82 @@ class TensorMatrixApp:
         )
         self.exit_btn.pack(side="right")
 
+        self._build_intro_overlay()
+
+    def _build_intro_overlay(self) -> None:
+        self.intro_overlay = tk.Frame(self.master, bg="#f3f0d6")
+        self.intro_overlay.place(relx=0.0, rely=0.0, relwidth=1.0, relheight=1.0)
+
+        outer = tk.Frame(self.intro_overlay, bg="#f3f0d6")
+        outer.pack(fill="both", expand=True, padx=24, pady=24)
+
+        center_panel = tk.Frame(
+            outer,
+            bg="#ece7c9",
+            highlightthickness=1,
+            highlightbackground="#d6d0b3",
+        )
+        center_panel.pack(fill="both", expand=True)
+
+        instruction = tk.Label(
+            center_panel,
+            text=INSTRUCTION_TEXT,
+            bg="#ece7c9",
+            fg="#111111",
+            font=("Arial", 18, "bold"),
+            justify="center",
+            wraplength=860,
+        )
+        instruction.place(relx=0.5, rely=0.5, anchor="center")
+
+        btns = tk.Frame(outer, bg="#f3f0d6")
+        btns.pack(fill="x", pady=(18, 0))
+
+        tk.Button(
+            btns,
+            text="Начать тестирование",
+            command=self.start_or_continue,
+            bg="#42d95b",
+            activebackground="#35b74a",
+            fg="white",
+            relief="raised",
+            bd=3,
+            cursor="hand2",
+            font=("Arial", 14, "bold"),
+            width=24,
+            height=2,
+        ).pack(side="left")
+
+        tk.Button(
+            btns,
+            text="Выход",
+            command=self.master.destroy,
+            bg="#d64a4a",
+            activebackground="#b93c3c",
+            fg="white",
+            relief="raised",
+            bd=3,
+            cursor="hand2",
+            font=("Arial", 14, "bold"),
+            width=12,
+            height=2,
+        ).pack(side="right")
+
+    def start_or_continue(self) -> None:
+        if self.intro_visible:
+            self.intro_overlay.place_forget()
+            self.intro_visible = False
         self.start_test()
+
+    def _toggle_fullscreen(self, event: Optional[tk.Event] = None) -> str:
+        self.is_fullscreen = not self.is_fullscreen
+        self.master.attributes("-fullscreen", self.is_fullscreen)
+        return "break"
+
+    def _exit_fullscreen(self, event: Optional[tk.Event] = None) -> str:
+        self.is_fullscreen = False
+        self.master.attributes("-fullscreen", False)
+        return "break"
 
     def _show_popup(self, text: str, bg: str, fg: str = "white", duration_ms: int = 1800) -> None:
         popup = tk.Toplevel(self.master)
@@ -631,15 +687,20 @@ class TensorMatrixApp:
             )
 
     def _shield_layout(self, count: int, width: int = CELL_WIDTH, height: int = CELL_HEIGHT) -> Tuple[Dict[str, float], List[List[Tuple[float, float]]]]:
-        x0 = 12.0
-        y0 = 5.0
-        x1 = float(width) - 12.0
-        y1 = float(height) - 6.0
-        w = x1 - x0
-        h = y1 - y0
+        ref_w = 300.0
+        ref_h = 380.0
+        pad = 3.0
+        scale = min((float(width) - 2.0 * pad) / ref_w, (float(height) - 2.0 * pad) / ref_h)
+        scale = max(scale, 0.1)
+        draw_w = ref_w * scale
+        draw_h = ref_h * scale
+        x0 = (float(width) - draw_w) / 2.0
+        y0 = (float(height) - draw_h) / 2.0
+        x1 = x0 + draw_w
+        y1 = y0 + draw_h
         cx = (x0 + x1) / 2.0
 
-        border = max(5.0, w * 0.055)
+        border = 10.0 * scale
         ix0 = x0 + border
         iy0 = y0 + border
         ix1 = x1 - border
@@ -647,44 +708,47 @@ class TensorMatrixApp:
         iw = ix1 - ix0
         ih = iy1 - iy0
         mid_x = (ix0 + ix1) / 2.0
-        gap = max(4.0, iw * 0.03)
-
-        panel_top = iy0 + ih * 0.02
-        panel_bottom = iy0 + ih * 0.63
-        split_y = panel_top + (panel_bottom - panel_top) * 0.5
-        bottom_top = iy0 + ih * 0.68
-        notch_y = iy0 + ih * 0.84
-        tip_y = iy1 - ih * 0.02
-
-        left_l = ix0 + iw * 0.01
-        left_r = mid_x - gap / 2.0
-        right_l = mid_x + gap / 2.0
-        right_r = ix1 - iw * 0.01
+        notch_y = iy0 + 305.0 * scale
+        tip_y = iy1 - 6.0 * scale
+        trim = 5.0 * scale
+        body_bottom_y = notch_y - trim
+        split_y = iy0 + (body_bottom_y - iy0) * 0.60
+        mt = (mid_x, iy0)
+        ms = (mid_x, split_y)
+        tl = (ix0, iy0)
+        tr = (ix1, iy0)
+        bl = (ix0, body_bottom_y)
+        br = (ix1, body_bottom_y)
+        tip = (cx, tip_y)
 
         regions: List[List[Tuple[float, float]]] = []
         if count <= 2:
             regions = [
-                [(left_l, panel_top), (left_r, panel_top), (left_r, panel_bottom), (left_l, panel_bottom)],
-                [(right_l, panel_top), (right_r, panel_top), (right_r, panel_bottom), (right_l, panel_bottom)],
+                [tl, mt, tip, bl],
+                [mt, tr, br, tip],
             ]
         elif count == 3:
             regions = [
-                [(left_l, panel_top), (left_r, panel_top), (left_r, panel_bottom), (left_l, panel_bottom)],
-                [(right_l, panel_top), (right_r, panel_top), (right_r, panel_bottom), (right_l, panel_bottom)],
-                [(ix0 + iw * 0.03, bottom_top), (ix1 - iw * 0.03, bottom_top), (ix1 - iw * 0.12, notch_y), (cx, tip_y), (ix0 + iw * 0.12, notch_y)],
+                [tl, mt, ms, (ix0, split_y)],
+                [mt, tr, (ix1, split_y), ms],
+                [(ix0, split_y), (ix1, split_y), br, tip, bl],
             ]
         else:
             regions = [
-                [(left_l, panel_top), (left_r, panel_top), (left_r, split_y), (left_l, split_y)],
-                [(right_l, panel_top), (right_r, panel_top), (right_r, split_y), (right_l, split_y)],
-                [(left_l, split_y), (left_r, split_y), (left_r, panel_bottom), (left_l, panel_bottom)],
-                [(right_l, split_y), (right_r, split_y), (right_r, panel_bottom), (right_l, panel_bottom)],
+                [tl, mt, ms, (ix0, split_y)],
+                [mt, tr, (ix1, split_y), ms],
+                [(ix0, split_y), ms, tip, bl],
+                [ms, (ix1, split_y), br, tip],
             ]
 
         geom = {
             "x0": x0, "y0": y0, "x1": x1, "y1": y1, "cx": cx,
             "ix0": ix0, "iy0": iy0, "ix1": ix1, "iy1": iy1,
-            "bottom_top": bottom_top, "notch_y": notch_y, "tip_y": tip_y,
+            "notch_y": notch_y,
+            "tip_y": tip_y,
+            "trim": trim,
+            "line_w": max(1.0, round(2.0 * scale, 2)),
+            "select_w": max(2.0, round(4.0 * scale, 2)),
         }
         return geom, regions
 
@@ -707,8 +771,8 @@ class TensorMatrixApp:
         count = max(2, min(4, len(code_values)))
         geom, regions = self._shield_layout(count, width, height)
 
-        frame_color = "#042f44"
-        inner_bg = "#1e3a48"
+        frame_color = "#052f44"
+        inner_bg = "#2d4957"
         outer = [
             (geom["x0"], geom["y0"]),
             (geom["x1"], geom["y0"]),
@@ -719,60 +783,23 @@ class TensorMatrixApp:
         inner = [
             (geom["ix0"], geom["iy0"]),
             (geom["ix1"], geom["iy0"]),
-            (geom["ix1"], geom["notch_y"] - 5.0),
+            (geom["ix1"], geom["notch_y"] - geom["trim"]),
             (geom["cx"], geom["tip_y"]),
-            (geom["ix0"], geom["notch_y"] - 5.0),
+            (geom["ix0"], geom["notch_y"] - geom["trim"]),
         ]
-        canvas.create_polygon(outer, fill=frame_color, outline=frame_color, width=1)
+        canvas.create_polygon(outer, fill=frame_color, outline=frame_color, width=geom["line_w"])
         canvas.create_polygon(inner, fill=inner_bg, outline="", width=0)
-
-        # Bottom decorative chevron (fixed dark style like in references).
-        canvas.create_polygon(
-            geom["ix0"] + 6.0,
-            geom["bottom_top"],
-            geom["ix1"] - 6.0,
-            geom["bottom_top"],
-            geom["ix1"] - 16.0,
-            geom["notch_y"] - 2.0,
-            geom["cx"],
-            geom["tip_y"],
-            geom["ix0"] + 16.0,
-            geom["notch_y"] - 2.0,
-            fill="#2a4552",
-            outline="",
-        )
 
         for idx, poly in enumerate(regions):
             value = code_values[idx] if idx < len(code_values) else None
             base = POCKET_COLORS.get(value, "#ffffff") if value else "#ffffff"
             canvas.create_polygon(poly, fill=base, outline="", width=0)
-            if value:
-                # Light/dark facets inside each shield sector.
-                xs = [p[0] for p in poly]
-                ys = [p[1] for p in poly]
-                mx = sum(xs) / len(xs)
-                my = sum(ys) / len(ys)
-                canvas.create_polygon(
-                    xs[0], ys[0],
-                    xs[1], ys[1],
-                    mx, my,
-                    fill=_shade_hex(base, 1.16),
-                    outline="",
-                )
-                canvas.create_polygon(
-                    xs[-1], ys[-1],
-                    xs[0], ys[0],
-                    mx, my,
-                    fill=_shade_hex(base, 0.82),
-                    outline="",
-                )
             if selected_idx is not None and idx == selected_idx:
-                canvas.create_polygon(poly, fill="", outline="#ffffff", width=2)
+                canvas.create_polygon(poly, fill="", outline="#ffffff", width=geom["select_w"])
 
-        # Divider lines to emphasize the regions layout.
         for poly in regions:
-            canvas.create_polygon(poly, fill="", outline="#10384b", width=1)
-        canvas.create_polygon(inner, fill="", outline="#0b3448", width=1)
+            canvas.create_polygon(poly, fill="", outline="#0a3348", width=geom["line_w"])
+        canvas.create_polygon(inner, fill="", outline="#0a3348", width=geom["line_w"])
         return regions
 
     def _draw_code(self, canvas: tk.Canvas, code: str) -> None:
