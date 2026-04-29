@@ -30704,6 +30704,203 @@ def _fixed218_apply_researcher_layout_2(self):
 StartPageApp.apply_researcher_layout = _fixed218_apply_researcher_layout_2
 
 
+# ====== FIXED257: explicit Rцели/Rавар settings for X/Y/Z from formul.docx ======
+from dataclasses import dataclass as _fixed257_dataclass
+
+_FIXED257_BASE_METHOD_A_CLASS = MethodAConfig
+
+
+@_fixed257_dataclass
+class MethodAConfigFixed257(_FIXED257_BASE_METHOD_A_CLASS):
+    # formul.docx defaults:
+    # RцелиX=3, RаварX=18, RцелиY=3, RаварY=18, RцелиZ=18, RаварZ=90
+    r_goal_x_cm: float = 3.0
+    r_crash_x_cm: float = 18.0
+    r_goal_y_cm: float = 3.0
+    r_crash_y_cm: float = 18.0
+    r_goal_z_deg: float = 18.0
+    r_crash_z_deg: float = 90.0
+
+
+MethodAConfig = MethodAConfigFixed257
+globals()['MethodAConfig'] = MethodAConfigFixed257
+
+
+def _fixed257_read_raw_json(path: str | Path) -> dict:
+    raw = {}
+    p = Path(path)
+    if p.exists():
+        try:
+            loaded = json.loads(p.read_text(encoding='utf-8'))
+            if isinstance(loaded, dict):
+                raw = dict(loaded)
+        except Exception:
+            raw = {}
+    return raw
+
+
+def _fixed257_apply_axis_limits(cfg: MethodAConfigFixed257, raw: dict | None = None) -> MethodAConfigFixed257:
+    raw = raw if isinstance(raw, dict) else {}
+    has_explicit = any(
+        key in raw
+        for key in ('r_goal_x_cm', 'r_crash_x_cm', 'r_goal_y_cm', 'r_crash_y_cm', 'r_goal_z_deg', 'r_crash_z_deg')
+    )
+
+    legacy_goal_xy = float(getattr(cfg, 'target_half_cm', 3.0) or 3.0)
+    legacy_crash_xy = legacy_goal_xy + float(getattr(cfg, 'work_extension_cm', 15.0) or 15.0)
+    legacy_goal_z = float(getattr(cfg, 'target_roll_deg', 18.0) or 18.0)
+    legacy_crash_z = float(getattr(cfg, 'work_roll_deg', 90.0) or 90.0)
+
+    if not has_explicit:
+        cfg.r_goal_x_cm = legacy_goal_xy
+        cfg.r_goal_y_cm = legacy_goal_xy
+        cfg.r_crash_x_cm = legacy_crash_xy
+        cfg.r_crash_y_cm = legacy_crash_xy
+        cfg.r_goal_z_deg = legacy_goal_z
+        cfg.r_crash_z_deg = legacy_crash_z
+    else:
+        cfg.r_goal_x_cm = float(raw.get('r_goal_x_cm', getattr(cfg, 'r_goal_x_cm', legacy_goal_xy)) or legacy_goal_xy)
+        cfg.r_goal_y_cm = float(raw.get('r_goal_y_cm', getattr(cfg, 'r_goal_y_cm', legacy_goal_xy)) or legacy_goal_xy)
+        cfg.r_crash_x_cm = float(raw.get('r_crash_x_cm', getattr(cfg, 'r_crash_x_cm', legacy_crash_xy)) or legacy_crash_xy)
+        cfg.r_crash_y_cm = float(raw.get('r_crash_y_cm', getattr(cfg, 'r_crash_y_cm', legacy_crash_xy)) or legacy_crash_xy)
+        cfg.r_goal_z_deg = float(raw.get('r_goal_z_deg', getattr(cfg, 'r_goal_z_deg', legacy_goal_z)) or legacy_goal_z)
+        cfg.r_crash_z_deg = float(raw.get('r_crash_z_deg', getattr(cfg, 'r_crash_z_deg', legacy_crash_z)) or legacy_crash_z)
+
+    cfg.r_goal_x_cm = max(1e-6, float(cfg.r_goal_x_cm))
+    cfg.r_goal_y_cm = max(1e-6, float(cfg.r_goal_y_cm))
+    cfg.r_goal_z_deg = max(1e-6, float(cfg.r_goal_z_deg))
+    cfg.r_crash_x_cm = max(cfg.r_goal_x_cm + 1e-6, float(cfg.r_crash_x_cm))
+    cfg.r_crash_y_cm = max(cfg.r_goal_y_cm + 1e-6, float(cfg.r_crash_y_cm))
+    cfg.r_crash_z_deg = max(cfg.r_goal_z_deg + 1e-6, float(cfg.r_crash_z_deg))
+
+    # Keep legacy fields synchronized for compatibility with previous geometry code.
+    cfg.target_half_cm = float((cfg.r_goal_x_cm + cfg.r_goal_y_cm) * 0.5)
+    cfg.work_extension_cm = float(max(cfg.r_crash_x_cm - cfg.r_goal_x_cm, cfg.r_crash_y_cm - cfg.r_goal_y_cm))
+    cfg.target_roll_deg = float(cfg.r_goal_z_deg)
+    cfg.work_roll_deg = float(cfg.r_crash_z_deg)
+    return cfg
+
+
+try:
+    _fixed257_prev_load_config = _fixed212_prev_load_config
+except Exception:
+    _fixed257_prev_load_config = load_config
+
+
+def load_config(path: str | Path = 'method_a_config.json', screen_w: int | None = None, screen_h: int | None = None) -> MethodAConfigFixed257:
+    base_cfg = _fixed257_prev_load_config(path=path, screen_w=screen_w, screen_h=screen_h)
+    raw = _fixed257_read_raw_json(path)
+
+    inherited_kwargs = {}
+    for fld in _fixed199_fields(MethodAConfigFixed257):
+        if hasattr(base_cfg, fld.name):
+            inherited_kwargs[fld.name] = getattr(base_cfg, fld.name)
+        elif fld.name in raw:
+            inherited_kwargs[fld.name] = raw.get(fld.name)
+
+    cfg = MethodAConfigFixed257(**inherited_kwargs)
+    cfg = _fixed257_apply_axis_limits(cfg, raw)
+    return cfg
+
+
+globals()['load_config'] = load_config
+
+try:
+    _fixed257_prev_load_researcher_cfg = _fixed212_prev_load_researcher_cfg
+except Exception:
+    _fixed257_prev_load_researcher_cfg = getattr(StartPageApp, 'load_researcher_cfg', None)
+
+
+def _fixed257_load_researcher_cfg(self, cls, filename):
+    if callable(_fixed257_prev_load_researcher_cfg):
+        cfg = _fixed257_prev_load_researcher_cfg(self, cls, filename)
+    else:
+        cfg = _load_json_dataclass(self.base_dir / filename, cls)
+
+    if str(filename).lower() == 'method_a_config.json':
+        raw = _fixed257_read_raw_json(self.base_dir / filename)
+        inherited_kwargs = {}
+        for fld in _fixed199_fields(MethodAConfigFixed257):
+            if hasattr(cfg, fld.name):
+                inherited_kwargs[fld.name] = getattr(cfg, fld.name)
+            elif fld.name in raw:
+                inherited_kwargs[fld.name] = raw.get(fld.name)
+        cfg = MethodAConfigFixed257(**inherited_kwargs)
+        cfg = _fixed257_apply_axis_limits(cfg, raw)
+    return cfg
+
+
+StartPageApp.load_researcher_cfg = _fixed257_load_researcher_cfg
+
+
+def _fixed257_axis_snapshot(self, state: DriftState, stage_no: int) -> dict[str, float]:
+    stage = self.stage_defs[int(stage_no)]
+    px_per_cm = max(1e-6, float(getattr(self.cfg, 'px_per_cm', 38.0) or 38.0))
+    goal_x = max(1e-6, float(getattr(self.cfg, 'r_goal_x_cm', getattr(self.cfg, 'target_half_cm', 3.0)) or 3.0))
+    goal_y = max(1e-6, float(getattr(self.cfg, 'r_goal_y_cm', getattr(self.cfg, 'target_half_cm', 3.0)) or 3.0))
+    crash_x = max(goal_x + 1e-6, float(getattr(self.cfg, 'r_crash_x_cm', goal_x + float(getattr(self.cfg, 'work_extension_cm', 15.0) or 15.0)) or (goal_x + 15.0)))
+    crash_y = max(goal_y + 1e-6, float(getattr(self.cfg, 'r_crash_y_cm', goal_y + float(getattr(self.cfg, 'work_extension_cm', 15.0) or 15.0)) or (goal_y + 15.0)))
+    goal_z = max(1e-6, float(getattr(self.cfg, 'r_goal_z_deg', getattr(self.cfg, 'target_roll_deg', 18.0)) or 18.0))
+    crash_z = max(goal_z + 1e-6, float(getattr(self.cfg, 'r_crash_z_deg', getattr(self.cfg, 'work_roll_deg', 90.0)) or 90.0))
+
+    x_cm = abs(float(getattr(state, 'x_px', 0.0))) / px_per_cm if stage.get('x') else 0.0
+    y_cm = abs(float(getattr(state, 'y_px', 0.0))) / px_per_cm if stage.get('y') else 0.0
+    z_deg = abs(float(getattr(state, 'roll_deg', 0.0))) if stage.get('z') else 0.0
+
+    e_x = _fixed73e_clip(max(0.0, x_cm - goal_x), 0.0, crash_x - goal_x) if stage.get('x') else 0.0
+    e_y = _fixed73e_clip(max(0.0, y_cm - goal_y), 0.0, crash_y - goal_y) if stage.get('y') else 0.0
+    e_z = _fixed73e_clip(max(0.0, z_deg - goal_z), 0.0, crash_z - goal_z) if stage.get('z') else 0.0
+
+    return {
+        'x_cm': x_cm, 'y_cm': y_cm, 'z_deg': z_deg,
+        'e_x': e_x, 'e_y': e_y, 'e_z': e_z,
+        'goal_x': goal_x if stage.get('x') else 0.0,
+        'goal_y': goal_y if stage.get('y') else 0.0,
+        'goal_z': goal_z if stage.get('z') else 0.0,
+        'crash_x': crash_x if stage.get('x') else 0.0,
+        'crash_y': crash_y if stage.get('y') else 0.0,
+        'crash_z': crash_z if stage.get('z') else 0.0,
+    }
+
+
+globals()['_fixed200_axis_snapshot'] = _fixed257_axis_snapshot
+
+try:
+    meta_a = RESEARCH_FIELD_META.get('A')
+    if isinstance(meta_a, dict):
+        meta_a.update({
+            'r_goal_x_cm': {'label': 'Rцели X, см', 'help': 'Порог целевой зоны по оси X (задаётся явно).'},
+            'r_crash_x_cm': {'label': 'Rавар X, см', 'help': 'Аварийный порог по оси X (задаётся явно).'},
+            'r_goal_y_cm': {'label': 'Rцели Y, см', 'help': 'Порог целевой зоны по оси Y (задаётся явно).'},
+            'r_crash_y_cm': {'label': 'Rавар Y, см', 'help': 'Аварийный порог по оси Y (задаётся явно).'},
+            'r_goal_z_deg': {'label': 'Rцели Z, °', 'help': 'Порог целевой зоны по крену Z (задаётся явно).'},
+            'r_crash_z_deg': {'label': 'Rавар Z, °', 'help': 'Аварийный порог по крену Z (задаётся явно).'},
+        })
+        meta_a.pop('target_half_cm', None)
+        meta_a.pop('work_extension_cm', None)
+        meta_a.pop('target_roll_deg', None)
+        meta_a.pop('work_roll_deg', None)
+
+    RESEARCH_SECTION_META['A'] = [
+        ('Лимиты энтропии', ['y_lim_x_per_sec', 'y_lim_y_per_sec', 'y_lim_z_per_sec']),
+        ('Окно и обновление', ['width', 'height', 'fps', 'px_per_cm']),
+        ('Rцели и Rавар', ['r_goal_x_cm', 'r_crash_x_cm', 'r_goal_y_cm', 'r_crash_y_cm', 'r_goal_z_deg', 'r_crash_z_deg']),
+        ('Динамика объекта', ['start_speed_xy_cm_s', 'step_speed_xy_cm_s', 'start_speed_z_deg_s', 'step_speed_z_deg_s', 'direction_change_min_s', 'direction_change_max_s', 'speedup_interval_s', 'error_gain']),
+        ('Этапы', ['stage_time_limit_stage_1_s', 'stage_time_limit_stage_2_s', 'stage_time_limit_stage_3_s']),
+        ('Формулы (docx)', ['n_dop_for_60s', 'v_avg_norm_stage_1', 'v_avg_norm_stage_2', 'v_avg_norm_stage_3', 'n_dop_x_for_180s', 'n_dop_xy_for_180s', 'n_dop_xyz_for_180s', 'calc_tick_s']),
+        ('Управление и оформление', ['mouse_gain_px', 'roll_step_per_wheel_notch_deg', 'bg_color', 'target_color', 'work_color', 'crash_color', 'obj_color', 'text_color', 'grid_color']),
+    ]
+
+    RESEARCH_CONFIG_SPECS = [
+        ('A', 'Тест А · Слежение за объектом', MethodAConfigFixed257, 'method_a_config.json'),
+        ('B', 'Тест B · Запоминание фигур в матрице', MethodBConfig, 'method_b_config.json'),
+        ('C', 'Тест C · Счёт в заданном темпе', MethodCConfig, 'method_c_config.json'),
+        ('D', 'Тест D · Закономерности между фигурами', MethodDConfig, 'method_d_config.json'),
+    ]
+except Exception:
+    pass
+
+
 # ====== FIXED220: config schema versioning + auto-reset of legacy config files ======
 _FIXED220_CONFIG_SCHEMA_VERSION = 'fixed221_config_schema_2026_04_26_v2'
 _FIXED220_CONFIG_VERSION_FILE = 'config_schema_version.txt'
