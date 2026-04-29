@@ -47,3 +47,22 @@ git add .
 git commit -m "Описание изменений"
 git push
 ```
+
+## Публикация EXE через GitHub Releases
+
+В репозитории настроен workflow `.github/workflows/release-exe.yml`.
+
+Как выпустить новую сборку:
+
+```powershell
+git tag v254
+git push origin v254
+```
+
+После пуша тега GitHub Actions:
+- соберет последний `fixed*_portable_upx_onefile.spec` на `windows-latest`;
+- создаст/обновит релиз для тега;
+- прикрепит `.exe` к релизу.
+
+Постоянная страница загрузок:
+- `https://github.com/rvbrusov/BR_project/releases`
