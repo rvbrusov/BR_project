@@ -5,7 +5,7 @@
   "target_half_cm": 3.0,
   "work_extension_cm": 15.0,
   "crash_extension_cm": 1.0,
-  "target_roll_deg": 5.0,
+  "target_roll_deg": 18.0,
   "work_roll_deg": 90.0,
   "start_speed_xy_cm_s": 3.0,
   "step_speed_xy_cm_s": 1.0,
