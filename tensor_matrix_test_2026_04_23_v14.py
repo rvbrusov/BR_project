@@ -62,6 +62,28 @@ NONPOS_PATTERNS_X = {
 FORBIDDEN_X_PATTERNS = {"122", "112", "221"}
 
 
+def _clamp(value: float, low: float, high: float) -> float:
+    return max(low, min(high, value))
+
+
+def _shade_hex(hex_color: str, factor: float) -> str:
+    text = hex_color.strip()
+    if text.startswith("#"):
+        text = text[1:]
+    if len(text) != 6:
+        return hex_color
+    try:
+        r = int(text[0:2], 16)
+        g = int(text[2:4], 16)
+        b = int(text[4:6], 16)
+    except ValueError:
+        return hex_color
+    rr = int(_clamp(round(r * factor), 0, 255))
+    gg = int(_clamp(round(g * factor), 0, 255))
+    bb = int(_clamp(round(b * factor), 0, 255))
+    return f"#{rr:02x}{gg:02x}{bb:02x}"
+
+
 @dataclass
 class RuleSpec:
     axis: str
@@ -608,72 +630,156 @@ class TensorMatrixApp:
                 ]
             )
 
-    def _slot_positions(self, count: int, width: int = CELL_WIDTH, height: int = CELL_HEIGHT) -> Tuple[List[Tuple[float, float]], int]:
-        square = 28
-        h_gap = 10
-        v_gap = 8
-        x_center = width / 2
-        y_center = height / 2
+    def _shield_layout(self, count: int, width: int = CELL_WIDTH, height: int = CELL_HEIGHT) -> Tuple[Dict[str, float], List[List[Tuple[float, float]]]]:
+        x0 = 12.0
+        y0 = 5.0
+        x1 = float(width) - 12.0
+        y1 = float(height) - 6.0
+        w = x1 - x0
+        h = y1 - y0
+        cx = (x0 + x1) / 2.0
 
-        if count == 2:
-            total_w = 2 * square + h_gap
-            x0 = (width - total_w) / 2
-            y0 = y_center - square / 2
-            return [(x0, y0), (x0 + square + h_gap, y0)], square
+        border = max(5.0, w * 0.055)
+        ix0 = x0 + border
+        iy0 = y0 + border
+        ix1 = x1 - border
+        iy1 = y1 - border
+        iw = ix1 - ix0
+        ih = iy1 - iy0
+        mid_x = (ix0 + ix1) / 2.0
+        gap = max(4.0, iw * 0.03)
 
-        if count == 3:
-            total_w = 2 * square + h_gap
-            x0 = (width - total_w) / 2
-            y_top = y_center - square - v_gap / 2
-            y_bottom = y_center + v_gap / 2
-            return [(x0, y_top), (x0 + square + h_gap, y_top), (x_center - square / 2, y_bottom)], square
+        panel_top = iy0 + ih * 0.02
+        panel_bottom = iy0 + ih * 0.63
+        split_y = panel_top + (panel_bottom - panel_top) * 0.5
+        bottom_top = iy0 + ih * 0.68
+        notch_y = iy0 + ih * 0.84
+        tip_y = iy1 - ih * 0.02
 
-        if count == 4:
-            total_w = 2 * square + h_gap
-            x0 = (width - total_w) / 2
-            y_top = y_center - square - v_gap / 2
-            y_bottom = y_center + v_gap / 2
-            return [
-                (x0, y_top),
-                (x0 + square + h_gap, y_top),
-                (x0, y_bottom),
-                (x0 + square + h_gap, y_bottom),
-            ], square
+        left_l = ix0 + iw * 0.01
+        left_r = mid_x - gap / 2.0
+        right_l = mid_x + gap / 2.0
+        right_r = ix1 - iw * 0.01
 
-        total_w = count * square + (count - 1) * h_gap
-        x0 = (width - total_w) / 2
-        y0 = y_center - square / 2
-        return [(x0 + i * (square + h_gap), y0) for i in range(count)], square
+        regions: List[List[Tuple[float, float]]] = []
+        if count <= 2:
+            regions = [
+                [(left_l, panel_top), (left_r, panel_top), (left_r, panel_bottom), (left_l, panel_bottom)],
+                [(right_l, panel_top), (right_r, panel_top), (right_r, panel_bottom), (right_l, panel_bottom)],
+            ]
+        elif count == 3:
+            regions = [
+                [(left_l, panel_top), (left_r, panel_top), (left_r, panel_bottom), (left_l, panel_bottom)],
+                [(right_l, panel_top), (right_r, panel_top), (right_r, panel_bottom), (right_l, panel_bottom)],
+                [(ix0 + iw * 0.03, bottom_top), (ix1 - iw * 0.03, bottom_top), (ix1 - iw * 0.12, notch_y), (cx, tip_y), (ix0 + iw * 0.12, notch_y)],
+            ]
+        else:
+            regions = [
+                [(left_l, panel_top), (left_r, panel_top), (left_r, split_y), (left_l, split_y)],
+                [(right_l, panel_top), (right_r, panel_top), (right_r, split_y), (right_l, split_y)],
+                [(left_l, split_y), (left_r, split_y), (left_r, panel_bottom), (left_l, panel_bottom)],
+                [(right_l, split_y), (right_r, split_y), (right_r, panel_bottom), (right_l, panel_bottom)],
+            ]
+
+        geom = {
+            "x0": x0, "y0": y0, "x1": x1, "y1": y1, "cx": cx,
+            "ix0": ix0, "iy0": iy0, "ix1": ix1, "iy1": iy1,
+            "bottom_top": bottom_top, "notch_y": notch_y, "tip_y": tip_y,
+        }
+        return geom, regions
+
+    def _point_in_polygon(self, x: float, y: float, poly: List[Tuple[float, float]]) -> bool:
+        inside = False
+        j = len(poly) - 1
+        for i in range(len(poly)):
+            xi, yi = poly[i]
+            xj, yj = poly[j]
+            intersects = ((yi > y) != (yj > y)) and (x < (xj - xi) * (y - yi) / max(1e-9, (yj - yi)) + xi)
+            if intersects:
+                inside = not inside
+            j = i
+        return inside
+
+    def _draw_shield_code(self, canvas: tk.Canvas, code_values: List[Optional[str]], selected_idx: Optional[int] = None) -> List[List[Tuple[float, float]]]:
+        canvas.delete("all")
+        width = int(canvas.cget("width"))
+        height = int(canvas.cget("height"))
+        count = max(2, min(4, len(code_values)))
+        geom, regions = self._shield_layout(count, width, height)
+
+        frame_color = "#042f44"
+        inner_bg = "#1e3a48"
+        outer = [
+            (geom["x0"], geom["y0"]),
+            (geom["x1"], geom["y0"]),
+            (geom["x1"], geom["notch_y"]),
+            (geom["cx"], geom["y1"]),
+            (geom["x0"], geom["notch_y"]),
+        ]
+        inner = [
+            (geom["ix0"], geom["iy0"]),
+            (geom["ix1"], geom["iy0"]),
+            (geom["ix1"], geom["notch_y"] - 5.0),
+            (geom["cx"], geom["tip_y"]),
+            (geom["ix0"], geom["notch_y"] - 5.0),
+        ]
+        canvas.create_polygon(outer, fill=frame_color, outline=frame_color, width=1)
+        canvas.create_polygon(inner, fill=inner_bg, outline="", width=0)
+
+        # Bottom decorative chevron (fixed dark style like in references).
+        canvas.create_polygon(
+            geom["ix0"] + 6.0,
+            geom["bottom_top"],
+            geom["ix1"] - 6.0,
+            geom["bottom_top"],
+            geom["ix1"] - 16.0,
+            geom["notch_y"] - 2.0,
+            geom["cx"],
+            geom["tip_y"],
+            geom["ix0"] + 16.0,
+            geom["notch_y"] - 2.0,
+            fill="#2a4552",
+            outline="",
+        )
+
+        for idx, poly in enumerate(regions):
+            value = code_values[idx] if idx < len(code_values) else None
+            base = POCKET_COLORS.get(value, "#ffffff") if value else "#ffffff"
+            canvas.create_polygon(poly, fill=base, outline="", width=0)
+            if value:
+                # Light/dark facets inside each shield sector.
+                xs = [p[0] for p in poly]
+                ys = [p[1] for p in poly]
+                mx = sum(xs) / len(xs)
+                my = sum(ys) / len(ys)
+                canvas.create_polygon(
+                    xs[0], ys[0],
+                    xs[1], ys[1],
+                    mx, my,
+                    fill=_shade_hex(base, 1.16),
+                    outline="",
+                )
+                canvas.create_polygon(
+                    xs[-1], ys[-1],
+                    xs[0], ys[0],
+                    mx, my,
+                    fill=_shade_hex(base, 0.82),
+                    outline="",
+                )
+            if selected_idx is not None and idx == selected_idx:
+                canvas.create_polygon(poly, fill="", outline="#ffffff", width=2)
+
+        # Divider lines to emphasize the regions layout.
+        for poly in regions:
+            canvas.create_polygon(poly, fill="", outline="#10384b", width=1)
+        canvas.create_polygon(inner, fill="", outline="#0b3448", width=1)
+        return regions
 
     def _draw_code(self, canvas: tk.Canvas, code: str) -> None:
-        canvas.delete("all")
-        positions, square = self._slot_positions(len(code))
-        for idx, ch in enumerate(code):
-            x0, y0 = positions[idx]
-            canvas.create_rectangle(
-                x0,
-                y0,
-                x0 + square,
-                y0 + square,
-                fill=POCKET_COLORS.get(ch, "#d0d0d0"),
-                outline="#444444",
-                width=1,
-            )
+        self._draw_shield_code(canvas, [ch for ch in code], selected_idx=None)
 
     def _draw_correct_preview(self, code: str) -> None:
-        self.correct_preview_canvas.delete("all")
-        positions, square = self._slot_positions(len(code))
-        for idx, ch in enumerate(code):
-            x0, y0 = positions[idx]
-            self.correct_preview_canvas.create_rectangle(
-                x0,
-                y0,
-                x0 + square,
-                y0 + square,
-                fill=POCKET_COLORS.get(ch, "#d0d0d0"),
-                outline="#444444",
-                width=1,
-            )
+        self._draw_shield_code(self.correct_preview_canvas, [ch for ch in code], selected_idx=None)
 
     def _clear_correct_preview(self) -> None:
         self.correct_preview_label.config(text="")
@@ -683,24 +789,16 @@ class TensorMatrixApp:
         if self.missing_r < 0 or self.missing_c < 0 or not self.correct_answer:
             return
         canvas = self.cell_canvases[self.missing_r][self.missing_c]
-        canvas.delete("all")
-        positions, square = self._slot_positions(len(self.correct_answer))
-        for idx in range(len(self.correct_answer)):
-            x0, y0 = positions[idx]
-            chosen = self.user_answer[idx] if idx < len(self.user_answer) else None
-            fill_color = POCKET_COLORS.get(chosen, "#ffffff") if chosen else "#ffffff"
-            outline_color = "#2b2b2b" if idx == self.selected_slot else "#9fa6ad"
-            border = 2 if idx == self.selected_slot else 1
-            canvas.create_rectangle(x0, y0, x0 + square, y0 + square, fill=fill_color, outline=outline_color, width=border)
+        self._draw_shield_code(canvas, self.user_answer, selected_idx=self.selected_slot)
 
     def on_cell_click(self, row: int, col: int, event: tk.Event) -> None:
         if row != self.missing_r or col != self.missing_c or not self.correct_answer:
             return
-        positions, square = self._slot_positions(len(self.correct_answer))
+        canvas = self.cell_canvases[self.missing_r][self.missing_c]
+        _, regions = self._shield_layout(len(self.correct_answer), int(canvas.cget("width")), int(canvas.cget("height")))
         self.selected_slot = None
-        for idx in range(len(self.correct_answer)):
-            x0, y0 = positions[idx]
-            if x0 <= event.x <= x0 + square and y0 <= event.y <= y0 + square:
+        for idx, poly in enumerate(regions):
+            if self._point_in_polygon(float(event.x), float(event.y), poly):
                 self.selected_slot = idx
                 break
         self._draw_missing_cell()
