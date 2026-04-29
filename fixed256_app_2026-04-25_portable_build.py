@@ -29383,6 +29383,25 @@ def _fixed207_export_pdf_all_results_text(self, payload: dict) -> str:
         for row in row_maps:
             table_data.append([Paragraph(str(row.get(c, '')), cell_style) for c in chunk])
 
+        # Return average-values row directly inside the table, like on-screen "СРЕДНЕЕ".
+        avg_map = rep.get('second_metrics_avg', {}) if isinstance(rep.get('second_metrics_avg', {}), dict) else {}
+        if (not avg_map) and row_maps:
+            try:
+                avg_map = _fixed254_stage_table_column_averages(rep.get('second_metrics', []) or [], stage_no)
+            except Exception:
+                avg_map = {}
+        if isinstance(avg_map, dict) and avg_map:
+            avg_cells = []
+            for ci, c in enumerate(chunk):
+                if ci == 0:
+                    avg_cells.append(Paragraph('СРЕДНЕЕ', head_style))
+                else:
+                    try:
+                        avg_cells.append(Paragraph(f"{float(avg_map.get(c, 0.0) or 0.0):.4f}", cell_style))
+                    except Exception:
+                        avg_cells.append(Paragraph("0.0000", cell_style))
+            table_data.append(avg_cells)
+
         avail_w = landscape(A4)[0] - 32.0
         col_widths = _fixed207_table_col_widths_one_page(chunk, avail_w)
         scale = avail_w / max(1e-6, sum(col_widths))
@@ -29395,6 +29414,7 @@ def _fixed207_export_pdf_all_results_text(self, payload: dict) -> str:
                     ('GRID', (0, 0), (-1, -1), 0.25, colors.HexColor('#c8d4e4')),
                     ('BACKGROUND', (0, 0), (-1, 0), colors.HexColor('#eef4fb')),
                     ('TEXTCOLOR', (0, 0), (-1, 0), colors.HexColor('#102744')),
+                    ('BACKGROUND', (0, -1), (-1, -1), colors.HexColor('#f6f9fd')),
                     ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
                     ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
                     ('LEFTPADDING', (0, 0), (-1, -1), 1),
