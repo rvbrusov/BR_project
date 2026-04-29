@@ -5,12 +5,6 @@
   "target_half_cm": 3.0,
   "work_extension_cm": 15.0,
   "crash_extension_cm": 1.0,
-  "r_goal_x_cm": 3.0,
-  "r_crash_x_cm": 18.0,
-  "r_goal_y_cm": 3.0,
-  "r_crash_y_cm": 18.0,
-  "r_goal_z_deg": 18.0,
-  "r_crash_z_deg": 90.0,
   "target_roll_deg": 18.0,
   "work_roll_deg": 90.0,
   "start_speed_xy_cm_s": 3.0,
@@ -83,5 +77,14 @@
   "calc_tick_s": 0.5,
   "n_dop_x_for_180s": 40.0,
   "n_dop_xy_for_180s": 60.0,
-  "n_dop_xyz_for_180s": 80.0
+  "n_dop_xyz_for_180s": 80.0,
+  "r_goal_x_cm": 3.0,
+  "r_crash_x_cm": 18.0,
+  "r_goal_y_cm": 3.0,
+  "r_crash_y_cm": 18.0,
+  "r_goal_z_deg": 18.0,
+  "r_crash_z_deg": 90.0,
+  "s_norm_x": 0.0,
+  "s_norm_xy": 0.0,
+  "s_norm_xyz": 0.0
 }

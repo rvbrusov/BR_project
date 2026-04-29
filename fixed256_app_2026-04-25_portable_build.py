@@ -27417,6 +27417,7 @@ def _fixed199_method_a_stage_metric_rows(report: dict) -> list[tuple[str, str]]:
     r_crash = _num(report.get('tracking_error_crash', 0.0), 0.0)
     entropy_h = abs(_num(report.get('entropy_h', 0.0), 0.0))
     gamma = _num(report.get('success_gamma', 0.0), 0.0)
+    s_norm_stage = _num(report.get('s_norm_stage', 0.0), 0.0)
     n_real = _num(report.get('n_real_doc', report.get('crashes', 0.0)), 0.0)
     n_dop = _num(report.get('crash_limit_doc', 0.0), 0.0)
     n_avar = _num(report.get('crash_coeff_n_avar', 0.0), 0.0)
@@ -27487,8 +27488,9 @@ def _fixed199_method_a_stage_metric_rows(report: dict) -> list[tuple[str, str]]:
         ('Rтек.ср', f"{r_avg:.4f} {r_unit}"),
         ('Rаварии', f"{r_crash:.4f} {r_unit}"),
         ('H = (Rцели - Rтек.ср)/(Rцели - Rаварии)', f"{entropy_h:.4f}"),
-        ('Y(слеж) = 1 - H', f"{gamma:.4f}"),
-        ('Υслеж = 1 - H', f"{gamma:.4f}"),
+        ('Sнорм (этап)', f"{s_norm_stage:.4f}"),
+        ('Yслеж = (1 - Sср)/(1 - Sнорм)', f"{gamma:.4f}"),
+        ('Υслеж (результат)', f"{gamma:.4f}"),
         ('Nреал', f"{n_real:.2f}"),
         (n_dop_label, f"{n_dop:.2f}"),
         (n_avar_label, f"{n_avar:.4f}"),
@@ -27569,7 +27571,7 @@ def _fixed199_show_method_a_results(self, payload: dict):
 
     info_text = (
         'Формулы по текущей версии: Υпредел = Υlim × T; '
-        'Y(слеж) = 1 - H; '
+        'Yслеж = (1 - Sср)/(1 - Sнорм); '
         'NдопX = NдопX180 × T / 180; NдопXY = NдопX180 × T / 120; NдопXYZ = NдопX180 × T / 90; '
         'для этапа 1: Nавар = 1 - (Nx × 180)/(NдопX × T); '
         'для этапов 2/3: Nавар = 1 - (Nреал/Nдоп); '
@@ -30144,6 +30146,17 @@ def _fixed209_clip01(v: float) -> float:
     return max(0.0, min(1.0, float(v)))
 
 
+def _fixed258_s_norm_for_stage(self, stage_no: int) -> float:
+    st = int(stage_no)
+    if st == 1:
+        raw = float(getattr(self.cfg, 's_norm_x', 0.0) or 0.0)
+    elif st == 2:
+        raw = float(getattr(self.cfg, 's_norm_xy', 0.0) or 0.0)
+    else:
+        raw = float(getattr(self.cfg, 's_norm_xyz', 0.0) or 0.0)
+    return max(0.0, min(0.999999, raw))
+
+
 def _fixed211_n_dop_x180(self) -> float:
     return max(1e-6, float(getattr(self.cfg, 'n_dop_x_for_180s', 50.0) or 50.0))
 
@@ -30545,7 +30558,6 @@ def _fixed209_finalize_stage_report(
         # Stage 1 can produce signed intermediate S; for final indicators
         # use non-negative normalized magnitude.
         s_avg_norm = _fixed209_clip01(abs(float(s_avg)))
-        gamma = _fixed209_clip01(1.0 - float(s_avg_norm))
         n_dop_formula_text = 'NдопX = NдопX180 × T / 180'
         n_avar = 1.0 - (float(n_real) * 180.0) / max(1e-6, float(n_dop_180) * float(t_fact))
         n_avar = _fixed209_clip01(n_avar)
@@ -30553,7 +30565,6 @@ def _fixed209_finalize_stage_report(
     else:
         # Strict doc formulas for stages 2/3 (no clipping).
         s_avg_norm = float(s_avg)
-        gamma = 1.0 - float(s_avg_norm)
         n_avar = 1.0 - (float(n_real) / float(n_dop))
         if int(stage_no) == 2:
             n_dop_formula_text = 'NдопXY = NдопX180 × T / 120'
@@ -30561,6 +30572,11 @@ def _fixed209_finalize_stage_report(
         else:
             n_dop_formula_text = 'NдопXYZ = NдопX180 × T / 90'
             n_avar_formula_text = 'βаварXYZ = 1 - (NXYZ/NдопXYZ)'
+
+    # User/doc formula: Yслеж(stage) = (1 - Sср(stage)) / (1 - Sнорм(stage)).
+    s_norm_stage = _fixed258_s_norm_for_stage(self, stage_no)
+    s_avg_for_y = _fixed209_clip01(float(s_avg_norm))
+    gamma = _fixed209_clip01((1.0 - float(s_avg_for_y)) / max(1e-6, (1.0 - float(s_norm_stage))))
 
     v_avg_norm = float(_fixed200_normative_speed_value(self, stage_no))
     # λср is already reduced by normative speed, so reference ratio equals λср.
@@ -30574,6 +30590,9 @@ def _fixed209_finalize_stage_report(
     report.entropy_h = float(s_avg_norm)
     report.entropy_h_raw = float(s_avg)
     report.entropy_h_doc = float(s_avg_norm)
+    report.s_norm_stage = float(s_norm_stage)
+    report.y_slezh_formula_value = float(gamma)
+    report.y_slezh_formula_text = 'Yслеж = (1 - Sср) / (1 - Sнорм)'
     report.crash_coeff_n_avar = float(n_avar)
     report.n_dop_formula_text = str(n_dop_formula_text)
     report.n_avar_formula_text = str(n_avar_formula_text)
@@ -30630,7 +30649,7 @@ def _fixed209_finalize_stage_report(
     report.calculation_version = _FIXED209_METHOD_A_CALC_VERSION
     report.runtime_rule_note = (
         'FIXED238(slezh_final): step=0.5s; lambda_avg=Sum(lambda_i*step)/Tfact; '
-        'gamma=1-Sum(S_i*step)/Tfact; '
+        'Sср=Sum(S_i*step)/Tfact; Yслеж=(1-Sср)/(1-Sнорм_этапа); '
         'NdopX=T*NdopX180/180, NdopXY=T*NdopX180/120, NdopXYZ=T*NdopX180/90; '
         'Nавар(stage1)=1-(Nx*180)/(NдопX*T), Nавар(stage2/3)=1-(Nreal/Ndop_stage); '
         't=lambda_avg*gamma*Nавар.'
@@ -30955,6 +30974,10 @@ class MethodAConfigFixed257(_FIXED257_BASE_METHOD_A_CLASS):
     r_crash_y_cm: float = 18.0
     r_goal_z_deg: float = 18.0
     r_crash_z_deg: float = 90.0
+    # Sнорм для формулы Yслеж = (1 - Sср) / (1 - Sнорм)
+    s_norm_x: float = 0.0
+    s_norm_xy: float = 0.0
+    s_norm_xyz: float = 0.0
 
 
 MethodAConfig = MethodAConfigFixed257
@@ -31013,6 +31036,19 @@ def _fixed257_apply_axis_limits(cfg: MethodAConfigFixed257, raw: dict | None = N
     cfg.work_extension_cm = float(max(cfg.r_crash_x_cm - cfg.r_goal_x_cm, cfg.r_crash_y_cm - cfg.r_goal_y_cm))
     cfg.target_roll_deg = float(cfg.r_goal_z_deg)
     cfg.work_roll_deg = float(cfg.r_crash_z_deg)
+
+    try:
+        cfg.s_norm_x = max(0.0, min(0.999999, float(raw.get('s_norm_x', getattr(cfg, 's_norm_x', 0.0)))))
+    except Exception:
+        cfg.s_norm_x = 0.0
+    try:
+        cfg.s_norm_xy = max(0.0, min(0.999999, float(raw.get('s_norm_xy', getattr(cfg, 's_norm_xy', 0.0)))))
+    except Exception:
+        cfg.s_norm_xy = 0.0
+    try:
+        cfg.s_norm_xyz = max(0.0, min(0.999999, float(raw.get('s_norm_xyz', getattr(cfg, 's_norm_xyz', 0.0)))))
+    except Exception:
+        cfg.s_norm_xyz = 0.0
     return cfg
 
 
@@ -31110,6 +31146,9 @@ try:
             'r_crash_y_cm': {'label': 'Rавар Y, см', 'help': 'Аварийный порог по оси Y (задаётся явно).'},
             'r_goal_z_deg': {'label': 'Rцели Z, °', 'help': 'Порог целевой зоны по крену Z (задаётся явно).'},
             'r_crash_z_deg': {'label': 'Rавар Z, °', 'help': 'Аварийный порог по крену Z (задаётся явно).'},
+            's_norm_x': {'label': 'Sнорм X', 'help': 'Норматив S для этапа X в формуле Yслеж = (1 - Sср)/(1 - Sнорм).'},
+            's_norm_xy': {'label': 'Sнорм XY', 'help': 'Норматив S для этапа XY в формуле Yслеж = (1 - Sср)/(1 - Sнорм).'},
+            's_norm_xyz': {'label': 'Sнорм XYZ', 'help': 'Норматив S для этапа XYZ в формуле Yслеж = (1 - Sср)/(1 - Sнорм).'},
         })
         meta_a.pop('target_half_cm', None)
         meta_a.pop('work_extension_cm', None)
@@ -31120,6 +31159,7 @@ try:
         ('Лимиты энтропии', ['y_lim_x_per_sec', 'y_lim_y_per_sec', 'y_lim_z_per_sec']),
         ('Окно и обновление', ['width', 'height', 'fps', 'px_per_cm']),
         ('Rцели и Rавар', ['r_goal_x_cm', 'r_crash_x_cm', 'r_goal_y_cm', 'r_crash_y_cm', 'r_goal_z_deg', 'r_crash_z_deg']),
+        ('Sнорм для Yслеж', ['s_norm_x', 's_norm_xy', 's_norm_xyz']),
         ('Динамика объекта', ['start_speed_xy_cm_s', 'step_speed_xy_cm_s', 'start_speed_z_deg_s', 'step_speed_z_deg_s', 'direction_change_min_s', 'direction_change_max_s', 'speedup_interval_s', 'error_gain']),
         ('Этапы', ['stage_time_limit_stage_1_s', 'stage_time_limit_stage_2_s', 'stage_time_limit_stage_3_s']),
         ('Формулы (docx)', ['n_dop_for_60s', 'v_avg_norm_stage_1', 'v_avg_norm_stage_2', 'v_avg_norm_stage_3', 'n_dop_x_for_180s', 'n_dop_xy_for_180s', 'n_dop_xyz_for_180s', 'calc_tick_s']),
