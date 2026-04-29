@@ -17913,7 +17913,7 @@ def _fixed95_method_c_build_ui(self):
     )
     self.big_label.pack_forget()
 
-    entry_font_size = big_font_size
+    entry_font_size = max(34, int(74 * scale))
     entry_width = 6
     self.entry = tk.Entry(
         content,
@@ -18068,7 +18068,7 @@ def _fixed96_method_c_build_ui(self):
     )
     self.big_label.pack_forget()
 
-    entry_font_size = big_font_size
+    entry_font_size = max(34, int(74 * scale))
     entry_width = 6
     self.entry = tk.Entry(
         content,
