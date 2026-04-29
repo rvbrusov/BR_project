@@ -29185,8 +29185,8 @@ StartPageApp.build_method_a_payload = _fixed206_build_method_a_payload
 StartPageApp.show_method_a_results = _fixed206_show_method_a_results
 
 
-# ====== FIXED207: Method A PDF includes ALL result pages (full scroll capture) ======
-_FIXED207_METHOD_A_CALC_VERSION = 'fixed207_pdf_all_results_scroll_capture_v1'
+# ====== FIXED207: Method A PDF includes ALL result pages (text-first with scroll chunks) ======
+_FIXED207_METHOD_A_CALC_VERSION = 'fixed207_pdf_text_tables_scroll_chunks_v2'
 
 
 def _fixed207_build_method_a_payload(self, session: SessionInfo, result: dict) -> dict:
@@ -29207,7 +29207,235 @@ def _fixed207_find_results_canvas(top: tk.Toplevel) -> tk.Canvas | None:
         return None
 
 
-def _fixed207_export_pdf_all_results(self, top: tk.Toplevel, payload: dict) -> str:
+def _fixed207_resolve_method_a_reports(payload: dict, base_dir: Path) -> list[dict]:
+    reports = payload.get('reports', [])
+    if isinstance(reports, list) and reports:
+        return [r for r in reports if isinstance(r, dict)]
+    result_path = payload.get('result_path', '')
+    if not result_path:
+        return []
+    try:
+        rp = Path(result_path)
+        if not rp.is_absolute():
+            rp = base_dir / rp
+        if rp.exists():
+            loaded = json.loads(rp.read_text(encoding='utf-8'))
+            if isinstance(loaded, list):
+                return [r for r in loaded if isinstance(r, dict)]
+    except Exception:
+        return []
+    return []
+
+
+def _fixed207_try_register_cyrillic_font():
+    try:
+        from reportlab.pdfbase import pdfmetrics
+        from reportlab.pdfbase.ttfonts import TTFont
+    except Exception:
+        return 'Helvetica'
+    preferred = 'ArialUnicodeRU'
+    try:
+        pdfmetrics.getFont(preferred)
+        return preferred
+    except Exception:
+        pass
+    candidates = [
+        Path('C:/Windows/Fonts/arial.ttf'),
+        Path('C:/Windows/Fonts/ARIAL.TTF'),
+        Path('C:/Windows/Fonts/calibri.ttf'),
+        Path('C:/Windows/Fonts/Calibri.ttf'),
+    ]
+    for path in candidates:
+        try:
+            if path.exists():
+                pdfmetrics.registerFont(TTFont(preferred, str(path)))
+                return preferred
+        except Exception:
+            continue
+    return 'Helvetica'
+
+
+def _fixed207_stage_table_schema(stage_no: int) -> tuple[list[str], dict[str, str]]:
+    cols = [
+        't_s',
+        'x_cm', 'y_cm', 'z_deg',
+        'goal_x', 'goal_y', 'goal_z',
+        'crash_x', 'crash_y', 'crash_z',
+        'vx', 'vy', 'vz', 'v_current', 'v_control_x', 'v_control_y', 'v_control_z', 'v_control_total',
+        'lambda_x', 'lambda_y', 'lambda_z', 'lambda_total',
+        's_x', 's_y', 's_z',
+        'h_current', 'h_sigma_x', 'h_sigma_y', 'h_sigma_z', 'h_sigma',
+        'crashes', 'y_pred', 'n_dop_t',
+    ]
+    heads = {
+        't_s': 't, c',
+        'x_cm': 'Rтек.X', 'y_cm': 'Rтек.Y', 'z_deg': 'Rтек.Z',
+        'goal_x': 'Rцели.X', 'goal_y': 'Rцели.Y', 'goal_z': 'Rцели.Z',
+        'crash_x': 'Rавар.X', 'crash_y': 'Rавар.Y', 'crash_z': 'Rавар.Z',
+        'vx': 'Vx', 'vy': 'Vy', 'vz': 'Vz', 'v_current': 'Vтек',
+        'v_control_x': 'Vупр.X', 'v_control_y': 'Vупр.Y', 'v_control_z': 'Vупр.Z', 'v_control_total': 'Vупр.Σ',
+        'lambda_x': 'λx', 'lambda_y': 'λy', 'lambda_z': 'λz', 'lambda_total': 'λтек',
+        's_x': '|Sx|' if int(stage_no) in (2, 3) else 'Sx',
+        's_y': '|Sy|' if int(stage_no) in (2, 3) else 'Sy',
+        's_z': '|Sz|' if int(stage_no) in (2, 3) else 'Sz',
+        'h_current': 'Υтек', 'h_sigma_x': 'ΥΣx', 'h_sigma_y': 'ΥΣy', 'h_sigma_z': 'ΥΣz', 'h_sigma': 'ΥΣ',
+        'crashes': 'NX', 'y_pred': 'Υпред', 'n_dop_t': 'Nдоп',
+    }
+    return cols, heads
+
+
+def _fixed207_format_stage_rows_for_pdf(report: dict, cols: list[str]) -> list[dict[str, str]]:
+    rows = report.get('second_metrics', [])
+    if not isinstance(rows, list):
+        return []
+    out: list[dict[str, str]] = []
+    for raw in rows:
+        if not isinstance(raw, dict):
+            continue
+        line: dict[str, str] = {}
+        for c in cols:
+            v = raw.get(c, 0.0)
+            if c == 'crashes':
+                try:
+                    line[c] = str(int(v or 0))
+                except Exception:
+                    line[c] = '0'
+            elif c == 't_s':
+                try:
+                    line[c] = f"{float(v or 0.0):.1f}"
+                except Exception:
+                    line[c] = "0.0"
+            else:
+                try:
+                    line[c] = f"{float(v or 0.0):.4f}"
+                except Exception:
+                    line[c] = "0.0000"
+        out.append(line)
+    return out
+
+
+def _fixed207_table_col_widths_one_page(cols: list[str], page_width: float) -> list[float]:
+    # Fit the whole table into one landscape A4 page width.
+    weight_by_col = {
+        't_s': 0.95,
+        'crashes': 0.95,
+        'x_cm': 1.0, 'y_cm': 1.0, 'z_deg': 1.0,
+        'goal_x': 1.0, 'goal_y': 1.0, 'goal_z': 1.0,
+        'crash_x': 1.0, 'crash_y': 1.0, 'crash_z': 1.0,
+        'vx': 0.95, 'vy': 0.95, 'vz': 0.95,
+        'v_current': 1.05, 'v_control_x': 1.05, 'v_control_y': 1.05, 'v_control_z': 1.05, 'v_control_total': 1.1,
+        'lambda_x': 0.95, 'lambda_y': 0.95, 'lambda_z': 0.95, 'lambda_total': 1.0,
+        's_x': 0.95, 's_y': 0.95, 's_z': 0.95,
+        'h_current': 0.95, 'h_sigma_x': 1.0, 'h_sigma_y': 1.0, 'h_sigma_z': 1.0, 'h_sigma': 0.95,
+        'y_pred': 1.0, 'n_dop_t': 1.0,
+    }
+    weights = [float(weight_by_col.get(c, 1.0)) for c in cols]
+    total = max(1e-6, sum(weights))
+    widths = [(w / total) * page_width for w in weights]
+    return [max(15.0, x) for x in widths]
+
+
+def _fixed207_export_pdf_all_results_text(self, payload: dict) -> str:
+    try:
+        from reportlab.lib import colors
+        from reportlab.lib.pagesizes import A4, landscape
+        from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
+        from reportlab.platypus import LongTable, Paragraph, SimpleDocTemplate, Spacer, TableStyle
+    except Exception:
+        return ''
+
+    reports = _fixed207_resolve_method_a_reports(payload, self.base_dir)
+    if not reports:
+        return ''
+
+    session_id = str(payload.get('session_id', 'session') or 'session')
+    ts = datetime.now().strftime('%Y%m%d_%H%M%S')
+    pdf_path = _results_dir(self.base_dir) / f'method_a_all_results_{session_id}_{ts}.pdf'
+
+    font_name = _fixed207_try_register_cyrillic_font()
+    styles = getSampleStyleSheet()
+    h1 = ParagraphStyle('h1_ru', parent=styles['Heading1'], fontName=font_name, fontSize=13, leading=16)
+    h2 = ParagraphStyle('h2_ru', parent=styles['Heading2'], fontName=font_name, fontSize=10, leading=12)
+    normal = ParagraphStyle('n_ru', parent=styles['Normal'], fontName=font_name, fontSize=8, leading=10)
+    note = ParagraphStyle('note_ru', parent=styles['Normal'], fontName=font_name, fontSize=7, leading=9, textColor=colors.HexColor('#4d617d'))
+    cell_style = ParagraphStyle('cell_ru', parent=styles['Normal'], fontName=font_name, fontSize=5.0, leading=5.8)
+    head_style = ParagraphStyle('head_ru', parent=styles['Normal'], fontName=font_name, fontSize=5.2, leading=6.0)
+
+    story = []
+    story.append(Paragraph('Тест A · Полный отчёт по этапам (текстовый PDF)', h1))
+    story.append(Paragraph('Таблицы выводятся текстом и принудительно ужимаются по ширине в одну страницу A4 (landscape).', note))
+    story.append(Spacer(1, 8))
+
+    ordered_reports = sorted([r for r in reports if isinstance(r, dict)], key=lambda x: int(x.get('stage_no', 0) or 0))
+    for rep in ordered_reports:
+        stage_no = int(rep.get('stage_no', 0) or 0)
+        cols, heads = _fixed207_stage_table_schema(stage_no)
+        row_maps = _fixed207_format_stage_rows_for_pdf(rep, cols)
+        chunk = cols[:]
+
+        story.append(Paragraph(f'Этап {stage_no} · {str(rep.get("active_axes", ""))}', h2))
+        story.append(Paragraph('Ширина: одна страница. Высота: перенос на следующие страницы при необходимости.', note))
+        story.append(Spacer(1, 4))
+
+        table_data = [[Paragraph(heads.get(c, c), head_style) for c in chunk]]
+        for row in row_maps:
+            table_data.append([Paragraph(str(row.get(c, '')), cell_style) for c in chunk])
+
+        avail_w = landscape(A4)[0] - 32.0
+        col_widths = _fixed207_table_col_widths_one_page(chunk, avail_w)
+        scale = avail_w / max(1e-6, sum(col_widths))
+        col_widths = [w * scale for w in col_widths]
+
+        tbl = LongTable(table_data, colWidths=col_widths, repeatRows=1)
+        tbl.setStyle(
+            TableStyle(
+                [
+                    ('GRID', (0, 0), (-1, -1), 0.25, colors.HexColor('#c8d4e4')),
+                    ('BACKGROUND', (0, 0), (-1, 0), colors.HexColor('#eef4fb')),
+                    ('TEXTCOLOR', (0, 0), (-1, 0), colors.HexColor('#102744')),
+                    ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
+                    ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
+                    ('LEFTPADDING', (0, 0), (-1, -1), 1),
+                    ('RIGHTPADDING', (0, 0), (-1, -1), 1),
+                    ('TOPPADDING', (0, 0), (-1, -1), 0.6),
+                    ('BOTTOMPADDING', (0, 0), (-1, -1), 0.6),
+                ]
+            )
+        )
+        story.append(tbl)
+        story.append(Spacer(1, 8))
+
+        avg = rep.get('second_metrics_avg', {}) if isinstance(rep.get('second_metrics_avg', {}), dict) else {}
+        if avg:
+            story.append(Paragraph('Средние значения по столбцам (выборочно):', note))
+            avg_cols = ['v_current', 'lambda_total', 'h_current', 'h_sigma', 'crashes']
+            avg_line = []
+            for c in avg_cols:
+                try:
+                    avg_line.append(f"{heads.get(c, c)}={float(avg.get(c, 0.0) or 0.0):.4f}")
+                except Exception:
+                    avg_line.append(f"{heads.get(c, c)}=0.0000")
+            story.append(Paragraph(' · '.join(avg_line), normal))
+        story.append(Spacer(1, 10))
+
+    try:
+        doc = SimpleDocTemplate(
+            str(pdf_path),
+            pagesize=landscape(A4),
+            leftMargin=16,
+            rightMargin=16,
+            topMargin=16,
+            bottomMargin=14,
+            title='Method A Full Results',
+            author='BR Project',
+        )
+        doc.build(story)
+        return str(pdf_path)
+    except Exception:
+        return ''
+
+
+def _fixed207_export_pdf_all_results_bitmap(self, top: tk.Toplevel, payload: dict) -> str:
     try:
         from PIL import ImageGrab as _fixed207_imagegrab
     except Exception:
@@ -29275,6 +29503,13 @@ def _fixed207_export_pdf_all_results(self, top: tk.Toplevel, payload: dict) -> s
         return str(pdf_path)
     except Exception:
         return ''
+
+
+def _fixed207_export_pdf_all_results(self, top: tk.Toplevel, payload: dict) -> str:
+    pdf_text = _fixed207_export_pdf_all_results_text(self, payload)
+    if pdf_text:
+        return pdf_text
+    return _fixed207_export_pdf_all_results_bitmap(self, top, payload)
 
 
 def _fixed207_show_method_a_results(self, payload: dict):
