@@ -1,7 +1,11 @@
 ﻿import random
 import tkinter as tk
+import csv
+import time
 from dataclasses import dataclass
+from datetime import datetime
 from itertools import permutations
+from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
 ALPHABET = "ABCD"
@@ -27,16 +31,9 @@ POCKET_COLORS: Dict[str, str] = {
 
 POS_PATTERNS = {
     2: ["11", "12"],
-    3: ["123", "121", "122", "112"],
-    4: ["1122", "1221", "1123", "1223", "1323", "1233", "1213", "1234"],
+    3: ["111", "123", "121", "122", "112"],
+    4: ["1111", "1122", "1221", "1123", "1223", "1323", "1233", "1213", "1234"],
 }
-
-POS_TAPE_PATTERNS_X = [
-    "11",
-    "12",
-    "121",
-    "123",
-]
 
 NONPOS_PATTERNS_Y = {
     1: ["112", "121", "211"],
@@ -71,17 +68,6 @@ class RuleSpec:
     kind: str
     pattern: Optional[str] = None
     nonpos_type: Optional[int] = None
-    z_mode: Optional[str] = None
-    z_shift: Optional[int] = None
-
-
-def shift_letter(letter: str, delta: int) -> str:
-    idx = ALPHABET.index(letter)
-    return ALPHABET[(idx + delta) % len(ALPHABET)]
-
-
-def random_letters(count: int) -> List[str]:
-    return random.sample(list(ALPHABET), count)
 
 
 def shuffled_alphabet() -> List[str]:
@@ -93,19 +79,14 @@ def shuffled_alphabet() -> List[str]:
 def choose_methods(L: int) -> List[str]:
     methods = [random.choice(["x", "y"])]
     for _ in range(1, L):
-        if L == 2:
-            methods.append(random.choice(["x", "y"]))
-        else:
-            methods.append(random.choice(["x", "y", "z"]))
-    if all(m == "z" for m in methods):
-        methods[0] = random.choice(["x", "y"])
+        methods.append(random.choice(["x", "y"]))
     return methods
 
 
 def _pick_nonpos_pattern(axis: str, nonpos_type: int) -> str:
     if axis == "x":
         pool = [p for p in NONPOS_PATTERNS_X[nonpos_type] if p not in FORBIDDEN_X_PATTERNS]
-        positional_pool = set(POS_PATTERNS[4]) | set(POS_TAPE_PATTERNS_X)
+        positional_pool = set(POS_PATTERNS[4])
     else:
         pool = NONPOS_PATTERNS_Y[nonpos_type]
         positional_pool = set(POS_PATTERNS[3])
@@ -133,15 +114,12 @@ def _pick_nonpos_variants(pattern: str, count: int) -> List[str]:
     return out
 
 
-def choose_rule_for_axis(axis: str, forced_z_shift: Optional[int] = None) -> RuleSpec:
+def choose_rule_for_axis(axis: str) -> RuleSpec:
     if axis == "x":
-        mode = random.choice(["positional", "positional_tape", "nonpositional"])
+        mode = random.choice(["positional", "nonpositional"])
         if mode == "positional":
-            pool = [p for p in POS_PATTERNS[4] if p not in FORBIDDEN_X_PATTERNS]
+            pool = [p for p in POS_PATTERNS[4] if len(p) == 4 and p not in FORBIDDEN_X_PATTERNS]
             return RuleSpec(axis="x", kind="positional", pattern=random.choice(pool))
-        if mode == "positional_tape":
-            pool = [p for p in POS_TAPE_PATTERNS_X if p not in FORBIDDEN_X_PATTERNS]
-            return RuleSpec(axis="x", kind="positional_tape", pattern=random.choice(pool))
         nonpos_type = random.choice(sorted(NONPOS_PATTERNS_X.keys()))
         return RuleSpec(
             axis="x",
@@ -161,20 +139,12 @@ def choose_rule_for_axis(axis: str, forced_z_shift: Optional[int] = None) -> Rul
             nonpos_type=nonpos_type,
         )
 
-    mode = random.choice(["shift_prev", "copy_left_prev", "copy_top_prev"])
-    shift = forced_z_shift if forced_z_shift is not None else random.choice([-2, -1, 0, 1, 2])
-    return RuleSpec(axis="z", kind="z_op", z_mode=mode, z_shift=shift)
+    raise ValueError(f"Unsupported axis: {axis}")
 
 
 def _build_signature_plane_for_rule(rule: RuleSpec) -> List[List[str]]:
     sig = [["" for _ in range(COLS)] for _ in range(ROWS)]
     assert rule.pattern is not None
-    if rule.axis == "x" and rule.kind == "positional_tape":
-        flat = [rule.pattern[i % len(rule.pattern)] for i in range(ROWS * COLS)]
-        for idx, token in enumerate(flat):
-            r, c = divmod(idx, COLS)
-            sig[r][c] = token
-        return sig
     if rule.axis == "x" and rule.kind == "nonpositional":
         row_patterns = _pick_nonpos_variants(rule.pattern, ROWS)
         for r in range(ROWS):
@@ -214,33 +184,6 @@ def _signature_to_plane_letters(signature: List[List[str]], alphabet_order: List
     return out
 
 
-def _signature_from_plane_letters(plane: List[List[str]]) -> List[List[str]]:
-    sig = [["" for _ in range(COLS)] for _ in range(ROWS)]
-    for r in range(ROWS):
-        for c in range(COLS):
-            sig[r][c] = str(LETTER_TO_DIGIT[plane[r][c]])
-    return sig
-
-
-def generate_z_plane(prev_plane: List[List[str]], rule: RuleSpec) -> List[List[str]]:
-    plane = [["" for _ in range(COLS)] for _ in range(ROWS)]
-    total = ROWS * COLS
-    for r in range(ROWS):
-        for c in range(COLS):
-            if rule.z_mode == "shift_prev":
-                plane[r][c] = shift_letter(prev_plane[r][c], rule.z_shift or 0)
-            elif rule.z_mode == "copy_left_prev":
-                src_idx = (r * COLS + c - 1) % total
-                src_r, src_c = divmod(src_idx, COLS)
-                plane[r][c] = shift_letter(prev_plane[src_r][src_c], rule.z_shift or 0)
-            elif rule.z_mode == "copy_top_prev":
-                src_r = (r - 1) % ROWS
-                plane[r][c] = shift_letter(prev_plane[src_r][c], rule.z_shift or 0)
-            else:
-                plane[r][c] = random.choice(ALPHABET)
-    return plane
-
-
 def compose_cells(planes: List[List[List[str]]]) -> List[List[str]]:
     cells = [["" for _ in range(COLS)] for _ in range(ROWS)]
     for r in range(ROWS):
@@ -251,26 +194,81 @@ def compose_cells(planes: List[List[List[str]]]) -> List[List[str]]:
 
 def _format_rule(idx: int, rule: RuleSpec, axis: str) -> str:
     if axis in ("x", "y"):
-        if rule.kind == "positional_tape":
-            return f"k{idx}: {axis} pos_tape({rule.pattern})"
         if rule.kind == "positional":
             return f"k{idx}: {axis} pos({rule.pattern})"
         return f"k{idx}: {axis} nonpos({rule.pattern})"
-    if rule.z_mode == "shift_prev":
-        return f"k{idx}: z shift({rule.z_shift:+d})"
-    if rule.z_shift:
-        return f"k{idx}: z {rule.z_mode}({rule.z_shift:+d})"
-    return f"k{idx}: z {rule.z_mode}"
+    return f"k{idx}: {axis} {rule.kind}({rule.pattern})"
 
 
-def generate_tensor(selected_l: Optional[int] = None) -> Tuple[int, List[List[str]], List[str], Dict[str, object]]:
+def _axis_signature_complexity(rule: RuleSpec) -> int:
+    pattern = rule.pattern or ""
+    uniq = len(set(pattern)) if pattern else 0
+    if rule.axis == "x":
+        if rule.kind == "positional":
+            if uniq == 1:
+                return 1
+            if uniq in (2, 4):
+                return 2
+            if uniq == 3:
+                return 3
+        if rule.kind == "nonpositional":
+            if uniq in (2, 4):
+                return 3
+            if uniq == 3:
+                return 4
+            return 3
+    if rule.axis == "y":
+        if rule.kind == "positional":
+            if uniq == 1:
+                return 1
+            if uniq in (2, 3):
+                return 2
+        if rule.kind == "nonpositional":
+            if uniq == 3:
+                return 3
+            if uniq == 2:
+                return 4
+            return 3
+    return 2
+
+
+def _calculate_set_complexity(L: int, methods: List[str], rules_specs: List[RuleSpec]) -> Dict[str, object]:
+    per_pocket = [_axis_signature_complexity(rule) for rule in rules_specs]
+    total = int(sum(per_pocket))
+    elements_bonus = 0
+    if L == 3:
+        elements_bonus = 1
+    elif L == 4:
+        elements_bonus = 2
+    total += elements_bonus
+    mix_bonus = 1 if ("x" in methods and "y" in methods) else 0
+    total += mix_bonus
+    four_pockets_single_axis_bonus = 0
+    if L == 4:
+        x_count = methods.count("x")
+        y_count = methods.count("y")
+        if (x_count == 1 and y_count == 3) or (y_count == 1 and x_count == 3):
+            four_pockets_single_axis_bonus = 2
+    total += four_pockets_single_axis_bonus
+    total = max(2, min(20, total))
+    return {
+        "total": total,
+        "per_pocket": per_pocket,
+        "elements_bonus": elements_bonus,
+        "mix_bonus_xy": mix_bonus,
+        "four_pockets_single_axis_bonus": four_pockets_single_axis_bonus,
+        "methods": methods[:],
+    }
+
+
+def _generate_tensor_once(selected_l: Optional[int] = None) -> Tuple[int, List[List[str]], List[str], Dict[str, object]]:
     L = selected_l if selected_l in (2, 3, 4) else random.choice([2, 3, 4])
     methods = choose_methods(L)
     letter_planes: List[List[List[str]]] = []
     signature_planes: List[List[List[str]]] = []
     pocket_alphabets: List[List[str]] = []
     rule_descriptions: List[str] = []
-    shared_z_shift: Optional[int] = None
+    rules_specs: List[RuleSpec] = []
 
     # 1) Всегда начинаем с первого кармана.
     # 2) Для него задаем значение через случайную перестановку A/B/C/D.
@@ -280,6 +278,7 @@ def generate_tensor(selected_l: Optional[int] = None) -> Tuple[int, List[List[st
     first_signature = _build_signature_plane_for_rule(first_rule)
     first_alphabet = shuffled_alphabet()
     first_plane = _signature_to_plane_letters(first_signature, first_alphabet)
+    rules_specs.append(first_rule)
     signature_planes.append(first_signature)
     letter_planes.append(first_plane)
     pocket_alphabets.append(first_alphabet)
@@ -288,34 +287,58 @@ def generate_tensor(selected_l: Optional[int] = None) -> Tuple[int, List[List[st
     # 4) Генерируем вторые карманы и далее.
     for idx in range(1, L):
         method = methods[idx]
-        if method in ("x", "y"):
-            rule = choose_rule_for_axis(method)
-            sig_plane = _build_signature_plane_for_rule(rule)
-            alphabet_order = shuffled_alphabet()
-            plane = _signature_to_plane_letters(sig_plane, alphabet_order)
-            signature_planes.append(sig_plane)
-            letter_planes.append(plane)
-            pocket_alphabets.append(alphabet_order)
-            rule_descriptions.append(_format_rule(idx + 1, rule, method) + f"; alphabet={''.join(alphabet_order)}")
-        else:
-            rule = choose_rule_for_axis("z", forced_z_shift=shared_z_shift)
-            if shared_z_shift is None:
-                shared_z_shift = rule.z_shift
-            plane = generate_z_plane(letter_planes[-1], rule)
-            sig_plane = _signature_from_plane_letters(plane)
-            signature_planes.append(sig_plane)
-            letter_planes.append(plane)
-            pocket_alphabets.append([])
-            rule_descriptions.append(_format_rule(idx + 1, rule, "z"))
+        rule = choose_rule_for_axis(method)
+        sig_plane = _build_signature_plane_for_rule(rule)
+        alphabet_order = shuffled_alphabet()
+        plane = _signature_to_plane_letters(sig_plane, alphabet_order)
+        rules_specs.append(rule)
+        signature_planes.append(sig_plane)
+        letter_planes.append(plane)
+        pocket_alphabets.append(alphabet_order)
+        rule_descriptions.append(_format_rule(idx + 1, rule, method) + f"; alphabet={''.join(alphabet_order)}")
+
+    complexity_info = _calculate_set_complexity(L, methods, rules_specs)
+    rule_descriptions.append(
+        "complexity: "
+        f"{complexity_info['total']} "
+        f"(per_pocket={complexity_info['per_pocket']}, "
+        f"L_bonus={complexity_info['elements_bonus']}, "
+        f"xy_mix_bonus={complexity_info['mix_bonus_xy']}, "
+        f"L4_1v3_bonus={complexity_info['four_pockets_single_axis_bonus']})"
+    )
 
     debug_info: Dict[str, object] = {
         "methods": methods,
+        "rules_specs": rules_specs,
         "letter_planes": letter_planes,
         "signature_planes": signature_planes,
         "pocket_alphabets": pocket_alphabets,
-        "shared_z_shift": shared_z_shift,
+        "complexity_info": complexity_info,
     }
     return L, compose_cells(letter_planes), rule_descriptions, debug_info
+
+
+def generate_tensor(selected_l: Optional[int] = None, target_difficulty: Optional[int] = None) -> Tuple[int, List[List[str]], List[str], Dict[str, object]]:
+    if target_difficulty is None:
+        return _generate_tensor_once(selected_l)
+    target = max(2, min(20, int(target_difficulty)))
+    best: Optional[Tuple[int, List[List[str]], List[str], Dict[str, object]]] = None
+    best_score: Tuple[int, int, int] = (10**9, 10**9, 10**9)
+    attempts = 2500 if target <= 5 else 450
+    for _ in range(attempts):
+        candidate = _generate_tensor_once(selected_l)
+        info = candidate[3].get("complexity_info", {})
+        actual = int(info.get("total", 2)) if isinstance(info, dict) else 2
+        diff = abs(actual - target)
+        direction_penalty = 0 if actual >= target else 1
+        score = (diff, direction_penalty, random.randint(0, 10**6))
+        if score < best_score:
+            best = candidate
+            best_score = score
+        if diff == 0:
+            break
+    assert best is not None
+    return best
 
 
 def code_to_color_names(code: str) -> str:
@@ -340,11 +363,18 @@ class TensorMatrixApp:
         self.user_answer: List[Optional[str]] = []
         self.selected_slot: Optional[int] = None
         self.current_debug_info: Dict[str, object] = {}
+        self.current_target_difficulty = random.randint(2, 5)
+        self.current_actual_difficulty = 2
+        self.current_errors = 0
+        self.current_started_at = time.monotonic()
+        self.task_counter = 0
+        self.results_file = Path(__file__).resolve().parent / "data" / "tensor_matrix_results.csv"
+        self._ensure_results_file()
 
         l_frame = tk.Frame(master, bg="#f2f2f2")
         l_frame.pack(pady=(12, 10))
         tk.Label(l_frame, text="Число карманов L:", font=("Arial", 12, "bold"), bg="#f2f2f2").pack(side="left", padx=(0, 10))
-        self.l_var = tk.IntVar(value=3)
+        self.l_var = tk.IntVar(value=2)
         for l_value in (2, 3, 4):
             radio = tk.Radiobutton(
                 l_frame,
@@ -532,6 +562,52 @@ class TensorMatrixApp:
         popup.geometry(f"+{x}+{y}")
         popup.after(duration_ms, popup.destroy)
 
+    def _ensure_results_file(self) -> None:
+        self.results_file.parent.mkdir(parents=True, exist_ok=True)
+        if self.results_file.exists():
+            return
+        with self.results_file.open("w", encoding="utf-8-sig", newline="") as f:
+            writer = csv.writer(f, delimiter=";")
+            writer.writerow(
+                [
+                    "timestamp",
+                    "task_no",
+                    "L",
+                    "target_difficulty",
+                    "actual_difficulty",
+                    "is_correct",
+                    "elapsed_seconds",
+                    "errors_count",
+                    "correct_answer",
+                    "attempt_answer",
+                    "methods",
+                    "rules",
+                ]
+            )
+
+    def _log_result(self, is_correct: bool, attempt_answer: str, elapsed_s: float) -> None:
+        methods = self.current_debug_info.get("methods", [])
+        method_text = ",".join(str(m) for m in methods) if isinstance(methods, list) else ""
+        rules_text = str(self.current_debug_info.get("rules_text", ""))
+        with self.results_file.open("a", encoding="utf-8-sig", newline="") as f:
+            writer = csv.writer(f, delimiter=";")
+            writer.writerow(
+                [
+                    datetime.now().isoformat(timespec="seconds"),
+                    self.task_counter,
+                    self.current_l,
+                    int(self.current_target_difficulty),
+                    int(self.current_actual_difficulty),
+                    int(bool(is_correct)),
+                    f"{float(elapsed_s):.3f}",
+                    int(self.current_errors),
+                    self.correct_answer,
+                    attempt_answer,
+                    method_text,
+                    rules_text,
+                ]
+            )
+
     def _slot_positions(self, count: int, width: int = CELL_WIDTH, height: int = CELL_HEIGHT) -> Tuple[List[Tuple[float, float]], int]:
         square = 28
         h_gap = 10
@@ -660,17 +736,22 @@ class TensorMatrixApp:
             return
 
         attempt = "".join(ch for ch in self.user_answer if ch is not None)
+        elapsed_s = max(0.0, time.monotonic() - self.current_started_at)
         if attempt == self.correct_answer:
+            self._log_result(is_correct=True, attempt_answer=attempt, elapsed_s=elapsed_s)
+            self.current_target_difficulty = min(20, int(self.current_target_difficulty) + random.choice([2, 3]))
             self.status_label.config(text="Верно", fg="#1e7f3f")
             self._show_popup("Верно", bg="#2eb872", fg="white", duration_ms=1200)
             self.master.after(1250, self.start_test)
         else:
+            self.current_errors += 1
+            self._log_result(is_correct=False, attempt_answer=attempt, elapsed_s=elapsed_s)
             text = f"Неверно. Правильно: {self.correct_answer} ({code_to_color_names(self.correct_answer)})"
             self.status_label.config(text=text, fg="#a94442")
             self.correct_preview_label.config(text="Правильный ответ:")
             self._draw_correct_preview(self.correct_answer)
-            self._show_popup("Неверно. Показан правильный ответ.", bg="#f0ad4e", fg="#333333", duration_ms=2200)
-            self._reveal_correct_answer()
+            self._show_popup("Неверно. Сложность сохраняется.", bg="#f0ad4e", fg="#333333", duration_ms=2200)
+            self.master.after(2250, self.start_test)
 
     def _format_cells_letters(self, cells: List[List[str]]) -> str:
         rows = [" ".join(cells[r][c] for c in range(COLS)) for r in range(ROWS)]
@@ -688,6 +769,18 @@ class TensorMatrixApp:
         mapping_colors = ", ".join(f"{ch}→{COLOR_NAMES[ch]} ({POCKET_COLORS[ch]})" for ch in ALPHABET)
 
         lines: List[str] = []
+        complexity_info = debug_info.get("complexity_info", {})
+        if isinstance(complexity_info, dict):
+            lines.append("0) Сложность задачи:")
+            lines.append(
+                f"target={self.current_target_difficulty}; "
+                f"actual={complexity_info.get('total', '?')}; "
+                f"per_pocket={complexity_info.get('per_pocket', [])}; "
+                f"L_bonus={complexity_info.get('elements_bonus', 0)}; "
+                f"xy_mix_bonus={complexity_info.get('mix_bonus_xy', 0)}; "
+                f"L4_1v3_bonus={complexity_info.get('four_pockets_single_axis_bonus', 0)}"
+            )
+            lines.append("")
         lines.append("1) Вид в буквах (матрица кодов):")
         lines.append(self._format_cells_letters(cells))
         lines.append("")
@@ -715,10 +808,19 @@ class TensorMatrixApp:
         self.debug_text.configure(state="disabled")
 
     def start_test(self) -> None:
-        L, cells, rules, debug_info = generate_tensor(self.l_var.get())
+        L, cells, rules, debug_info = generate_tensor(self.l_var.get(), target_difficulty=self.current_target_difficulty)
         self.current_l = L
         self.current_cells = cells
+        self.task_counter += 1
+        self.current_errors = 0
+        self.current_started_at = time.monotonic()
         self.current_debug_info = debug_info
+        self.current_debug_info["rules_text"] = " | ".join(rules)
+        complexity_info = debug_info.get("complexity_info", {})
+        if isinstance(complexity_info, dict):
+            self.current_actual_difficulty = int(complexity_info.get("total", self.current_target_difficulty))
+        else:
+            self.current_actual_difficulty = int(self.current_target_difficulty)
         self.missing_r, self.missing_c = random.choice(WHITE_ALLOWED_CELLS)
         self.correct_answer = cells[self.missing_r][self.missing_c]
         self.user_answer = [None] * len(self.correct_answer)
@@ -732,7 +834,13 @@ class TensorMatrixApp:
                 self._draw_code(self.cell_canvases[r][c], cells[r][c])
         self._draw_missing_cell()
 
-        self.status_label.config(text="Выбери карман кликом и закрась его цветом из палитры.", fg="#1f3b73")
+        self.status_label.config(
+            text=(
+                "Выбери карман кликом и закрась его цветом из палитры. "
+                f"Сложность: цель {self.current_target_difficulty}, факт {self.current_actual_difficulty}."
+            ),
+            fg="#1f3b73",
+        )
         self._update_debug_block(cells, rules, debug_info)
 
     def on_l_change(self) -> None:
