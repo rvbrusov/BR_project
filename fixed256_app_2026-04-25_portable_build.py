@@ -30704,12 +30704,7 @@ StartPageApp.show_method_a_results = _fixed208_show_method_a_results
 
 # ====== FIXED212: Method A thresholds and settings cleanup ======
 def _fixed212_force_method_a_cfg(cfg: MethodAConfig) -> MethodAConfig:
-    # Use fixed document thresholds for test A stages 1-3:
-    # RцелиX/Y=3, RаварX/Y=18, RцелиZ=18, RаварZ=90.
-    cfg.target_half_cm = 3.0
-    cfg.work_extension_cm = 15.0
-    cfg.target_roll_deg = 18.0
-    cfg.work_roll_deg = 90.0
+    # Keep user-defined limits from settings; do not hard override R thresholds.
     try:
         cfg.speedup_interval_s = _fixed227_speedup_interval_s(cfg)
     except Exception:
@@ -31019,30 +31014,12 @@ def _fixed257_read_raw_json(path: str | Path) -> dict:
 
 def _fixed257_apply_axis_limits(cfg: MethodAConfigFixed257, raw: dict | None = None) -> MethodAConfigFixed257:
     raw = raw if isinstance(raw, dict) else {}
-    has_explicit = any(
-        key in raw
-        for key in ('r_goal_x_cm', 'r_crash_x_cm', 'r_goal_y_cm', 'r_crash_y_cm', 'r_goal_z_deg', 'r_crash_z_deg')
-    )
-
-    legacy_goal_xy = float(getattr(cfg, 'target_half_cm', 3.0) or 3.0)
-    legacy_crash_xy = legacy_goal_xy + float(getattr(cfg, 'work_extension_cm', 15.0) or 15.0)
-    legacy_goal_z = float(getattr(cfg, 'target_roll_deg', 18.0) or 18.0)
-    legacy_crash_z = float(getattr(cfg, 'work_roll_deg', 90.0) or 90.0)
-
-    if not has_explicit:
-        cfg.r_goal_x_cm = legacy_goal_xy
-        cfg.r_goal_y_cm = legacy_goal_xy
-        cfg.r_crash_x_cm = legacy_crash_xy
-        cfg.r_crash_y_cm = legacy_crash_xy
-        cfg.r_goal_z_deg = legacy_goal_z
-        cfg.r_crash_z_deg = legacy_crash_z
-    else:
-        cfg.r_goal_x_cm = float(raw.get('r_goal_x_cm', getattr(cfg, 'r_goal_x_cm', legacy_goal_xy)) or legacy_goal_xy)
-        cfg.r_goal_y_cm = float(raw.get('r_goal_y_cm', getattr(cfg, 'r_goal_y_cm', legacy_goal_xy)) or legacy_goal_xy)
-        cfg.r_crash_x_cm = float(raw.get('r_crash_x_cm', getattr(cfg, 'r_crash_x_cm', legacy_crash_xy)) or legacy_crash_xy)
-        cfg.r_crash_y_cm = float(raw.get('r_crash_y_cm', getattr(cfg, 'r_crash_y_cm', legacy_crash_xy)) or legacy_crash_xy)
-        cfg.r_goal_z_deg = float(raw.get('r_goal_z_deg', getattr(cfg, 'r_goal_z_deg', legacy_goal_z)) or legacy_goal_z)
-        cfg.r_crash_z_deg = float(raw.get('r_crash_z_deg', getattr(cfg, 'r_crash_z_deg', legacy_crash_z)) or legacy_crash_z)
+    cfg.r_goal_x_cm = float(raw.get('r_goal_x_cm', getattr(cfg, 'r_goal_x_cm', 3.0)) or 3.0)
+    cfg.r_goal_y_cm = float(raw.get('r_goal_y_cm', getattr(cfg, 'r_goal_y_cm', 3.0)) or 3.0)
+    cfg.r_crash_x_cm = float(raw.get('r_crash_x_cm', getattr(cfg, 'r_crash_x_cm', 18.0)) or 18.0)
+    cfg.r_crash_y_cm = float(raw.get('r_crash_y_cm', getattr(cfg, 'r_crash_y_cm', 18.0)) or 18.0)
+    cfg.r_goal_z_deg = float(raw.get('r_goal_z_deg', getattr(cfg, 'r_goal_z_deg', 18.0)) or 18.0)
+    cfg.r_crash_z_deg = float(raw.get('r_crash_z_deg', getattr(cfg, 'r_crash_z_deg', 90.0)) or 90.0)
 
     cfg.r_goal_x_cm = max(1e-6, float(cfg.r_goal_x_cm))
     cfg.r_goal_y_cm = max(1e-6, float(cfg.r_goal_y_cm))
@@ -31127,12 +31104,12 @@ StartPageApp.load_researcher_cfg = _fixed257_load_researcher_cfg
 def _fixed257_axis_snapshot(self, state: DriftState, stage_no: int) -> dict[str, float]:
     stage = self.stage_defs[int(stage_no)]
     px_per_cm = max(1e-6, float(getattr(self.cfg, 'px_per_cm', 38.0) or 38.0))
-    goal_x = max(1e-6, float(getattr(self.cfg, 'r_goal_x_cm', getattr(self.cfg, 'target_half_cm', 3.0)) or 3.0))
-    goal_y = max(1e-6, float(getattr(self.cfg, 'r_goal_y_cm', getattr(self.cfg, 'target_half_cm', 3.0)) or 3.0))
-    crash_x = max(goal_x + 1e-6, float(getattr(self.cfg, 'r_crash_x_cm', goal_x + float(getattr(self.cfg, 'work_extension_cm', 15.0) or 15.0)) or (goal_x + 15.0)))
-    crash_y = max(goal_y + 1e-6, float(getattr(self.cfg, 'r_crash_y_cm', goal_y + float(getattr(self.cfg, 'work_extension_cm', 15.0) or 15.0)) or (goal_y + 15.0)))
-    goal_z = max(1e-6, float(getattr(self.cfg, 'r_goal_z_deg', getattr(self.cfg, 'target_roll_deg', 18.0)) or 18.0))
-    crash_z = max(goal_z + 1e-6, float(getattr(self.cfg, 'r_crash_z_deg', getattr(self.cfg, 'work_roll_deg', 90.0)) or 90.0))
+    goal_x = max(1e-6, float(getattr(self.cfg, 'r_goal_x_cm', 3.0) or 3.0))
+    goal_y = max(1e-6, float(getattr(self.cfg, 'r_goal_y_cm', 3.0) or 3.0))
+    crash_x = max(goal_x + 1e-6, float(getattr(self.cfg, 'r_crash_x_cm', 18.0) or 18.0))
+    crash_y = max(goal_y + 1e-6, float(getattr(self.cfg, 'r_crash_y_cm', 18.0) or 18.0))
+    goal_z = max(1e-6, float(getattr(self.cfg, 'r_goal_z_deg', 18.0) or 18.0))
+    crash_z = max(goal_z + 1e-6, float(getattr(self.cfg, 'r_crash_z_deg', 90.0) or 90.0))
 
     x_cm = abs(float(getattr(state, 'x_px', 0.0))) / px_per_cm if stage.get('x') else 0.0
     y_cm = abs(float(getattr(state, 'y_px', 0.0))) / px_per_cm if stage.get('y') else 0.0
