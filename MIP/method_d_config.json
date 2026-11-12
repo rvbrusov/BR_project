@@ -1,0 +1,11 @@
+{
+  "total_test_s": 540.0,
+  "normative_success_coef": 1.0,
+  "etap1_norm_cycle_time_s": 6.25,
+  "etap2_norm_cycle_time_s": 8.75,
+  "etap3_norm_cycle_time_s": 11.25,
+  "etap1_norm_speed": 0.16,
+  "etap2_norm_speed": 0.11428571428571428,
+  "etap3_norm_speed": 0.08888888888888889,
+  "training_time_s": 10.0
+}

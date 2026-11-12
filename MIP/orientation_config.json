@@ -1,0 +1,8 @@
+{
+  "stage_1_time_s": 120.0,
+  "stage_2_time_s": 120.0,
+  "stage_3_time_s": 120.0,
+  "training_stage_1_time_s": 60.0,
+  "training_stage_2_time_s": 60.0,
+  "training_stage_3_time_s": 60.0
+}

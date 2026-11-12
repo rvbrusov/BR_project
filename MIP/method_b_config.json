@@ -1,0 +1,25 @@
+{
+  "total_test_s": 300.0,
+  "grid_size": 4,
+  "max_items": 16,
+  "normative_times": [
+    5.0,
+    8.0,
+    11.0,
+    14.0,
+    17.0,
+    20.0,
+    23.0,
+    26.0,
+    29.0,
+    32.0,
+    35.0,
+    38.0,
+    41.0,
+    44.0,
+    47.0,
+    50.0
+  ],
+  "normative_success_coef": 1.0,
+  "training_time_s": 10.0
+}

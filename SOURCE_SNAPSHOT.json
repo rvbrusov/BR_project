@@ -1,0 +1,1205 @@
+{
+  "date": "2026-11-12",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 394,
+      "sha256": "e677bec5acde7c10120957085be9b2a5a8408c734e954e8ff7f8da9a1771d9da"
+    },
+    {
+      "path": "MGPU/accounts.py",
+      "bytes": 5785,
+      "sha256": "13e97f98d0794804b57f6e167d85fb677cc6b449b5a1dcca8d708fd29dfa1b13"
+    },
+    {
+      "path": "MGPU/approved_surface.py",
+      "bytes": 17326,
+      "sha256": "fc80374820dd52179bc3eede46f446b1546b3e8a5c453086a488fcf51cf0d20e"
+    },
+    {
+      "path": "MGPU/assets/airplane_sprite.png",
+      "bytes": 6190,
+      "sha256": "e1b39a9ec8f8e5c860dcf9077f1ac772862ead7bc63e1f3429f01eed42132485"
+    },
+    {
+      "path": "MGPU/assets/circle.png",
+      "bytes": 961310,
+      "sha256": "d6bda26f631fdcc4bdb0d8fcaa476ef4e33887aa8d5d3d28b7aa3967143b997a"
+    },
+    {
+      "path": "MGPU/assets/cockpit.png",
+      "bytes": 966698,
+      "sha256": "e05d82708ff9780ed4b15ecd5f3a0316f83461dce18ca94bffa63464ab620e2c"
+    },
+    {
+      "path": "MGPU/assets/desktop_mark.png",
+      "bytes": 114732,
+      "sha256": "5ab09ce960f021fa07ebf0f2dbb7f6e50bdf0372e95b3717b4576449a7d5c4a2"
+    },
+    {
+      "path": "MGPU/assets/intro_exit_label.png",
+      "bytes": 11798,
+      "sha256": "d59d60a82b657dc2a77156c302b0b0eb363df3ddd978c9b2c12e6db98058a6ca"
+    },
+    {
+      "path": "MGPU/assets/intro_next_label.png",
+      "bytes": 6056,
+      "sha256": "8269e0593ccb2844c90ee26556b8388fd17a6a5b63e2a1b145a57df1a43dc3d7"
+    },
+    {
+      "path": "MGPU/assets/login_background.png",
+      "bytes": 1175499,
+      "sha256": "0044d9a2bb78ed64243b7f0bc24fb2d46b48d943fe520868a41d97fcc15a85dc"
+    },
+    {
+      "path": "MGPU/assets/login_circle.png",
+      "bytes": 80865,
+      "sha256": "09aa1b24d2e333d8735f2156655f323c6d566fc78a3813ea4dcaee13903e6e03"
+    },
+    {
+      "path": "MGPU/assets/login_institution.png",
+      "bytes": 8973,
+      "sha256": "a5a65cdf7c4cfd5bc9e016530e47147a5c23f86fa6fea735c42a498df83cdbc5"
+    },
+    {
+      "path": "MGPU/assets/login_shield.png",
+      "bytes": 48272,
+      "sha256": "9031024c8e151d725e844e030e3f64db560777e340ffc4173894f8d2db361da5"
+    },
+    {
+      "path": "MGPU/assets/login_triangle.png",
+      "bytes": 5214,
+      "sha256": "db9049703de81a03058e9e8d89672b510f77df7279bc97f15df87432ed8175df"
+    },
+    {
+      "path": "MGPU/assets/method_a_instruction_slezh.pdf",
+      "bytes": 125681,
+      "sha256": "f4cd88b98bf4938425e9a3e22b590811e403f710dcedd8204cda1cd9d3492c53"
+    },
+    {
+      "path": "MGPU/assets/method_a_instruction_slezh_page1.png",
+      "bytes": 309525,
+      "sha256": "51d943797f66be5d631dfa658f248c332adfddae678f583860da5ea0a5175cf3"
+    },
+    {
+      "path": "MGPU/assets/method_a_instruction_slezh_page1_fixed412.png",
+      "bytes": 253225,
+      "sha256": "caae1190df28611200dd7055019cb6827596ee2ab23d778314f153c26387b396"
+    },
+    {
+      "path": "MGPU/assets/method_d_archive/2x1.jpg",
+      "bytes": 143355,
+      "sha256": "74437a224493ecdf5c606ad752bb6b2fe9b1ba7927877626a1bba84b69ba476f"
+    },
+    {
+      "path": "MGPU/assets/method_d_archive/2x2.jpg",
+      "bytes": 154973,
+      "sha256": "f82e4a5ac790783c3a530fe56d807842cf24191ae05f9cbf1bae6516e11c77ca"
+    },
+    {
+      "path": "MGPU/assets/method_d_archive/3x1.jpg",
+      "bytes": 141953,
+      "sha256": "ada0f470d824e57a95c73220ca7119bdf938a27bc41f947063dea36c7f13e33a"
+    },
+    {
+      "path": "MGPU/assets/method_d_archive/3x2.jpg",
+      "bytes": 148782,
+      "sha256": "904766f083af05971cc37cc1f46a75fa7a0c6a6dc6f8ce9fe247ec6ae40dab7c"
+    },
+    {
+      "path": "MGPU/assets/method_d_archive/4x1.jpg",
+      "bytes": 165468,
+      "sha256": "8b604f3c591a6e84465a3f39ec0e5744702b8e306740c4f28df71caece294615"
+    },
+    {
+      "path": "MGPU/assets/method_d_archive/4x2.jpg",
+      "bytes": 152360,
+      "sha256": "633bd65bf1e1f0e27add5c1f44cac2b641a9327016a7bb5ce6c4ac5015486dc5"
+    },
+    {
+      "path": "MGPU/assets/orient_instruction.pdf",
+      "bytes": 235680,
+      "sha256": "6584010b9d9d7e1dc2f659725db38bb0667cf3b7a2df6b5c433ea830706ec29d"
+    },
+    {
+      "path": "MGPU/assets/orient_instruction.png",
+      "bytes": 609080,
+      "sha256": "85e0e40e58119cf83eb77d1fd695ff8e5d5c2a6745905022b872bb53f1e70a60"
+    },
+    {
+      "path": "MGPU/assets/tracking_background_doc.png",
+      "bytes": 1274,
+      "sha256": "2b29f8f3aad9aff1b15b1e908c70c3685635c9da29e7d13cc056351c1f101b11"
+    },
+    {
+      "path": "MGPU/assets/vector_pentagon_set/01_left_top_trapezoid.png",
+      "bytes": 8944,
+      "sha256": "053093be3b4a4dcfc3cd1954df06b413c13a73a3df86b99df0a27a7f5b1bbdc2"
+    },
+    {
+      "path": "MGPU/assets/vector_pentagon_set/01_left_top_trapezoid.svg",
+      "bytes": 412,
+      "sha256": "e1ebfdc16f0f0912091da6caaa3e36fe3ae617c3bc400f984ce80cfadab8480c"
+    },
+    {
+      "path": "MGPU/assets/vector_pentagon_set/02_right_top_triangle.png",
+      "bytes": 9154,
+      "sha256": "b12eeb0c53b1c175d8300e359714a2a06c6f8cd6878b8e0b0c56fc042af9a3eb"
+    },
+    {
+      "path": "MGPU/assets/vector_pentagon_set/02_right_top_triangle.svg",
+      "bytes": 405,
+      "sha256": "049aaba81e0a1e2ff74dbbbc5bf9542ca578579e212f1910c82e5908b52a77d8"
+    },
+    {
+      "path": "MGPU/assets/vector_pentagon_set/03_left_bottom_trapezoid.png",
+      "bytes": 8843,
+      "sha256": "ad739b2c693137dbe286c354a5157d0d616b567e1e8c62fc8fd3b7832cfd69f1"
+    },
+    {
+      "path": "MGPU/assets/vector_pentagon_set/03_left_bottom_trapezoid.svg",
+      "bytes": 412,
+      "sha256": "cac530adf108d520060444d23be8ed022a2488b0780b1d8437892e4a92a2d0df"
+    },
+    {
+      "path": "MGPU/assets/vector_pentagon_set/04_right_bottom_empty.png",
+      "bytes": 5474,
+      "sha256": "926c8c220999e71a3bb1d637c42279d1311a7d2fb230f0729082a13cc1a129dd"
+    },
+    {
+      "path": "MGPU/assets/vector_pentagon_set/04_right_bottom_empty.svg",
+      "bytes": 288,
+      "sha256": "8249e53b586c5b3a8ea23c7137c5989bb05c78af9937a2bea7d410011102019d"
+    },
+    {
+      "path": "MGPU/Aviatest-v4.21-MGPU-Setup.spec",
+      "bytes": 801,
+      "sha256": "5bdc69b5224be78fb6e849359810e9fd485adce89c98f4b5d84a7ece27129dbd"
+    },
+    {
+      "path": "MGPU/aviatest_v2.py",
+      "bytes": 90999,
+      "sha256": "f98475e0698b033c1cc2c645211968e09cbe34e35ecca2188e0d0a8bbdc9bd7b"
+    },
+    {
+      "path": "MGPU/aviatest_v4.py",
+      "bytes": 31219,
+      "sha256": "ccc6227638084739bf724c2c2b412bf34720c7310d3aea44dcb61e798c99ccc3"
+    },
+    {
+      "path": "MGPU/aviatest_v4_21.py",
+      "bytes": 1657,
+      "sha256": "4ec676b9cba82bdd59c4e7ed3d99e86a8079a5df698e8261523f42170eb8caae"
+    },
+    {
+      "path": "MGPU/aviatest_v4_portable.spec",
+      "bytes": 3957,
+      "sha256": "348e84bd27fd27f8d695737426bfe955e0bd058676878d9263c52701e9118820"
+    },
+    {
+      "path": "MGPU/build-release.ps1",
+      "bytes": 1857,
+      "sha256": "53bba45fd0a16d4441b40f0a902f1090a7c9f1f2a93e54ffc5f66f3693256cb0"
+    },
+    {
+      "path": "MGPU/check_button_layout.py",
+      "bytes": 2506,
+      "sha256": "036c593336c22d5d714cd5d2f5c3c29fbb3e4bf154fab35d68c7eda6cd1887e5"
+    },
+    {
+      "path": "MGPU/check_chkt_layout.py",
+      "bytes": 4525,
+      "sha256": "d21837423dd4f748b34b2064f86edeaa5e59c716b1dd93d9b7605dca25c5d8d4"
+    },
+    {
+      "path": "MGPU/check_demo_browser.py",
+      "bytes": 2515,
+      "sha256": "73dda4ef3edf57a1b9557da90f3b79c04c1cd95d8a44d2c08f0d53281f971491"
+    },
+    {
+      "path": "MGPU/check_group_flow.py",
+      "bytes": 9831,
+      "sha256": "cb9887fe9470bcf58675f802fef210e41919d1e940a169fe8cd7be6cedbe1740"
+    },
+    {
+      "path": "MGPU/check_installer.ps1",
+      "bytes": 3948,
+      "sha256": "928bfd049b5b438083464778a91448c653532568f8bff27524dc5baf344c881a"
+    },
+    {
+      "path": "MGPU/check_installer_only.ps1",
+      "bytes": 3450,
+      "sha256": "3507dfb1fe4c00063942369f2d267c2e0819269cd70d429be0a2a3aa847ae1cb"
+    },
+    {
+      "path": "MGPU/check_login_layout.py",
+      "bytes": 4725,
+      "sha256": "486f5d4d2188e3b76d0c8bc8edb7456d2d0939f2b043068ba6de4d92ee7c3ff0"
+    },
+    {
+      "path": "MGPU/check_method_windows.py",
+      "bytes": 4589,
+      "sha256": "c7475d74b572e7d1bc658aa49ddd8e42383ba19086b4ed186d4574e5c05797ef"
+    },
+    {
+      "path": "MGPU/check_modes.py",
+      "bytes": 124,
+      "sha256": "7bec6bb3282bbe09d085e9e86048bf905f82d70d686aabec7f05b04eb048f86c"
+    },
+    {
+      "path": "MGPU/check_projection_colours.py",
+      "bytes": 2248,
+      "sha256": "da3572b4b862f4ecdc03e77603c7506ebb1517ee0f863991ac7f82830ee17053"
+    },
+    {
+      "path": "MGPU/check_registration_menu.py",
+      "bytes": 5510,
+      "sha256": "98892071aff9e32bd687280be8572551045f9afde90132e792542aa05e032b7c"
+    },
+    {
+      "path": "MGPU/check_settings_layout.py",
+      "bytes": 1180,
+      "sha256": "eded5b4442722e3bd8946c45714b28557594198a19e50e50894e26487f6c12c2"
+    },
+    {
+      "path": "MGPU/check_surface_flow.py",
+      "bytes": 6873,
+      "sha256": "6870eedee26c78dc673b134e990514199b4908ce4ae1e03187ca721413549314"
+    },
+    {
+      "path": "MGPU/check_ui.py",
+      "bytes": 3388,
+      "sha256": "254730f1f20bc1abb5a9ccc50470fd5c3932e76aac0204b99ab3882cbc816249"
+    },
+    {
+      "path": "MGPU/config_schema_version.txt",
+      "bytes": 36,
+      "sha256": "f4569305eaf091658c8c3b3c3371be751b96e9e42d2dcbf54c4775bf90fea42c"
+    },
+    {
+      "path": "MGPU/counting.png",
+      "bytes": 144215,
+      "sha256": "acdbece654955d2a6a2d48f5b51ec3a7fe051b6a027cf51a019604fa09909f86"
+    },
+    {
+      "path": "MGPU/demo_accounts.py",
+      "bytes": 7531,
+      "sha256": "77fbe941cc68e73ff0f90f8245247b7328256179d3e0ee753c7d4aad08fa740f"
+    },
+    {
+      "path": "MGPU/demo_results.py",
+      "bytes": 2932,
+      "sha256": "4dbdda48bdbc6f1e809460543661b6601305f07bddbe66a16f44f5eb4f953c67"
+    },
+    {
+      "path": "MGPU/display_names.py",
+      "bytes": 7462,
+      "sha256": "d90395db7f0de7cd6fac762cb8c6a18c5bc63a3cd0d7d3038f78d8bd6472989f"
+    },
+    {
+      "path": "MGPU/fixed421_tk_runtime_hook.py",
+      "bytes": 230,
+      "sha256": "8a5e5ff90a01a8c7c0eb0f84e27787945368d2409aa16cd7a185963a242a0cd4"
+    },
+    {
+      "path": "MGPU/fixed427_app_2026-04-25_portable_build.py",
+      "bytes": 1225455,
+      "sha256": "73ae2c132c324d20590920ae3d2740a5a7e3b6fb7edd2ec3092a8370e6289fda"
+    },
+    {
+      "path": "MGPU/fixed428_app_2026-04-25_portable_build.py",
+      "bytes": 1229693,
+      "sha256": "f526a01c72f98db7e9b635dcb38f20971eaabd9be2ca2fa1965f0fb7f240728c"
+    },
+    {
+      "path": "MGPU/group_manager.py",
+      "bytes": 8332,
+      "sha256": "dbd34112180f4adbe503ed3ae466f638fc6b10a84282a0e59ccef0dfbb693098"
+    },
+    {
+      "path": "MGPU/groups.py",
+      "bytes": 8401,
+      "sha256": "96d1e4177d51e70814851aca2b42c9da56e52cabb93b3e1a41ada240b5f89046"
+    },
+    {
+      "path": "MGPU/icon.jpg",
+      "bytes": 123382,
+      "sha256": "e56df22fd529ab4eb44eccf93376c4ca39768d1c31ad6993051eca5261f6e11f"
+    },
+    {
+      "path": "MGPU/installer.py",
+      "bytes": 5426,
+      "sha256": "8433713aadb92619e1cacd7bd82abeffdc33f85e59e6b51a79b89b084df21875"
+    },
+    {
+      "path": "MGPU/Integrated Data_methods_tracking_header_final.xlsx",
+      "bytes": 10256,
+      "sha256": "85b5e3f2ac3353d4d8e47da91c05640e95712703f5f8303da2fec05fd9536968"
+    },
+    {
+      "path": "MGPU/intro_reference.py",
+      "bytes": 6671,
+      "sha256": "4f9c365da47298144b6ddca23841024fe9b672c1ae600df4cfcd838ae289addd"
+    },
+    {
+      "path": "MGPU/method_a_config.json",
+      "bytes": 2331,
+      "sha256": "88207bc8a65ef26475a10147eab89426e59fe8a8312e5314d0f057123955728b"
+    },
+    {
+      "path": "MGPU/method_b_config.json",
+      "bytes": 333,
+      "sha256": "4f5dc02c9df18bbbbeed2df9993bbb9892da16d87bc011ed70e1882fdbcaad91"
+    },
+    {
+      "path": "MGPU/method_c_config.json",
+      "bytes": 501,
+      "sha256": "2844f0afa665f4fa3db721467d2f2a449220054ca59a5088e76919ece24ec7d7"
+    },
+    {
+      "path": "MGPU/method_d_config.json",
+      "bytes": 317,
+      "sha256": "dc6ef6eb49e840967d8f2b6dfe9f7394d0bb3897bbcead4f4f55f776c8f4507a"
+    },
+    {
+      "path": "MGPU/mode_ui.py",
+      "bytes": 41888,
+      "sha256": "390ac05d38c6dad4981a9630615ea2308fa53f2abc702006a480ecaa829fa312"
+    },
+    {
+      "path": "MGPU/orient_final.py",
+      "bytes": 26637,
+      "sha256": "9fc7c781a065379573a94171c5fa14e75900410d6a11b18864b6ffd462a05aa9"
+    },
+    {
+      "path": "MGPU/orient_new_v1.py",
+      "bytes": 29665,
+      "sha256": "433de3523ef3571bb4e98bac2e4ff88b4faf2dd8622bbeb5c10a87d5cfa43cfd"
+    },
+    {
+      "path": "MGPU/orient_new_v1_1.py",
+      "bytes": 15150,
+      "sha256": "eec21c0ac32ce28f05307708a39d89b6197ea26cfedd41c7c91e2d07e1749ec8"
+    },
+    {
+      "path": "MGPU/orient_new_v2.py",
+      "bytes": 37606,
+      "sha256": "9d5b0db9ac958196da4dd08b88f92d9a25074f7733d573c2d0461f6b17978484"
+    },
+    {
+      "path": "MGPU/orient_new_v2_1.py",
+      "bytes": 5894,
+      "sha256": "59b54bda6540d9d91af957b66b9c3234615dd087f5ff1d51d9234ae0e595b57b"
+    },
+    {
+      "path": "MGPU/orient_new_v3_1.py",
+      "bytes": 5486,
+      "sha256": "3a8e95acbf47297b637b0e55b10f38e7b1cdef4e1a330ddca54e9dee7841d77d"
+    },
+    {
+      "path": "MGPU/orientation_config.json",
+      "bytes": 195,
+      "sha256": "3495b217cfbda563a74d7cf9583d79fdf41c5fe878ee5710042c209dccfa6532"
+    },
+    {
+      "path": "MGPU/package_release.py",
+      "bytes": 1761,
+      "sha256": "9b4ae76c2bf557ebdec035a1ad8384e805f876585f6e8e703b191743ad158831"
+    },
+    {
+      "path": "MGPU/password_toggle.py",
+      "bytes": 1567,
+      "sha256": "3c230a59e19d9808879f2df8fa68e4c377f047f2cccc17394ea1e7da09f92590"
+    },
+    {
+      "path": "MGPU/preview_v441.py",
+      "bytes": 3256,
+      "sha256": "a00f2e06fd2c30c2454629f857c96a287afa108a76b57b1d4c99c360d9ad2209"
+    },
+    {
+      "path": "MGPU/program_icon.ico",
+      "bytes": 53236,
+      "sha256": "7c3a9134b5f03c3dc94061e592f1e2997ef6cefc01b7809e8563a421da5aa08c"
+    },
+    {
+      "path": "MGPU/program_icon.png",
+      "bytes": 93275,
+      "sha256": "aece5a5211667ae33d36077396679cfc437addc92def271cadeda58d28b1cfb9"
+    },
+    {
+      "path": "MGPU/red_black_data/settings.json",
+      "bytes": 394,
+      "sha256": "c1e488d008e14cdf466756786453396d25892c0c02b51399059ede6b6128a6d4"
+    },
+    {
+      "path": "MGPU/red_black_numbers.py",
+      "bytes": 34272,
+      "sha256": "69bc15fdee21796febf0552409d19fce202f33a232dc16463c57ed5fa75c02dd"
+    },
+    {
+      "path": "MGPU/release_acceptance.py",
+      "bytes": 11580,
+      "sha256": "342f61308607103f59ee112ce2dbe0195275241160430175569b08660e592aa3"
+    },
+    {
+      "path": "MGPU/requirements-build.txt",
+      "bytes": 103,
+      "sha256": "66cbed458879b142a2443bf68814b687597d06e03faed835ae661242d35038b9"
+    },
+    {
+      "path": "MGPU/storage.py",
+      "bytes": 3842,
+      "sha256": "c2e5542d0928abe5b47d3e2503e546821813da83db65701b1c11ec4eba903454"
+    },
+    {
+      "path": "MGPU/surface_geometry.py",
+      "bytes": 1427,
+      "sha256": "8d22ebc34bd346e7dfbb4bca548453c877bb573a462b1e5fcaa052ba5785c5f1"
+    },
+    {
+      "path": "MGPU/surface_labels.py",
+      "bytes": 829,
+      "sha256": "ac59146e2f2508e76db5b938b89c7dd4f7f69672e717e9c6b1e9a7f860a7ae3e"
+    },
+    {
+      "path": "MGPU/surface_norms.json",
+      "bytes": 53,
+      "sha256": "fa7292ec2c6c43ad0345b77f0690ef7d9afcd9fd9e6b2475a5f84eb40cb853ba"
+    },
+    {
+      "path": "MGPU/surface_norms.py",
+      "bytes": 5867,
+      "sha256": "ae5cccc6221c1716f57c0ae2e76fddaa9063b0716d54c367aaf08a6ba84c3cff"
+    },
+    {
+      "path": "MGPU/surface_view.py",
+      "bytes": 8975,
+      "sha256": "8cc6ff91a74eb0205a5abd87529db7e3557bd0659d97674d0a1983a6dba1becc"
+    },
+    {
+      "path": "MGPU/tensor_matrix_test_2026_04_23_v14.py",
+      "bytes": 53343,
+      "sha256": "fe4ba9da770f25ea64be93da7593eb9266f08efa242b519d68a23ee6c1c828c9"
+    },
+    {
+      "path": "MGPU/test_accounts.py",
+      "bytes": 6677,
+      "sha256": "55e5ed443e40ef4044cbd6d53656f3e9c3ecf55eab8921a743e17d61672f9b03"
+    },
+    {
+      "path": "MGPU/test_approved_surface.py",
+      "bytes": 3898,
+      "sha256": "dcca6602fbd65490f13b89ff3ec9c626b2055c6aed7e246b7453ade43051332c"
+    },
+    {
+      "path": "MGPU/test_aviatest_v2_persistence.py",
+      "bytes": 1549,
+      "sha256": "77485face58cc3b309c9f1b0aa124ce84977d417a056576126ab0ec469b3b8df"
+    },
+    {
+      "path": "MGPU/test_aviatest_v4.py",
+      "bytes": 4513,
+      "sha256": "eecb4902d6548669e3c71413e174a82873d85ba87766e0f033014642914683ba"
+    },
+    {
+      "path": "MGPU/test_boris_user7.py",
+      "bytes": 3327,
+      "sha256": "0b5ed08df3def896fa9543abb9b5529b7bf61c8736cb3cd43e5f9037ad3daf3d"
+    },
+    {
+      "path": "MGPU/test_demo_accounts.py",
+      "bytes": 3814,
+      "sha256": "52d54749776376162c5d9c50f7290d715ad94ec97de7dcde7311b00ddd242b9a"
+    },
+    {
+      "path": "MGPU/test_demo_display.py",
+      "bytes": 3987,
+      "sha256": "30375015b6ebe30f3e4b735f85f100619d25db26f2fdebfda29a20f07e8b1934"
+    },
+    {
+      "path": "MGPU/test_feedback.py",
+      "bytes": 3255,
+      "sha256": "55de7cc3057bd44dc5144a6088a4abd9d241f5b06f29cbdbec43a7ec19f98a7b"
+    },
+    {
+      "path": "MGPU/test_groups.py",
+      "bytes": 4734,
+      "sha256": "3b8328f6df03f8adacc67f2c6862ef44b870938046f7a694b9c225891cadec87"
+    },
+    {
+      "path": "MGPU/test_method_a_formula_rules.py",
+      "bytes": 6291,
+      "sha256": "7b77c77094025909143bbd6148073ccf1131d099c131f856730c6f47a2cfc72a"
+    },
+    {
+      "path": "MGPU/test_method_c_integral.py",
+      "bytes": 1240,
+      "sha256": "c026ed34bbccdf758c1f5f18fc771fdbd5a1abcb5b1e7188544ab0f35dbe1c1c"
+    },
+    {
+      "path": "MGPU/test_method_d_shields.py",
+      "bytes": 1809,
+      "sha256": "988c36c79c5cfb406d90dbe35e2f35bc9805e3062bafb4086e64875ffa1ad502"
+    },
+    {
+      "path": "MGPU/test_numbered_demo_release.py",
+      "bytes": 5394,
+      "sha256": "2f31367fc5339988c897016d5b581875d9c36c2bbdfe25942585ad1a7de75905"
+    },
+    {
+      "path": "MGPU/test_orientation_pitch_limits.py",
+      "bytes": 973,
+      "sha256": "f17e53fd3c7571c0e325f4e1b79eb9073199ead7262286336410a35ea18ac069"
+    },
+    {
+      "path": "MGPU/test_orientation_roll_answer.py",
+      "bytes": 1319,
+      "sha256": "4717850499c4521c19804accc045ee20cfef8f4ee80320cdc265f2a2dae5e497"
+    },
+    {
+      "path": "MGPU/test_red_black_numbers.py",
+      "bytes": 3772,
+      "sha256": "3046f18c514dfc3f6c3bb912024f2fcbe1d62b1cc9e07aff4185befb96647d7d"
+    },
+    {
+      "path": "MGPU/test_registration_short.py",
+      "bytes": 2439,
+      "sha256": "820779046e5b2759d619d40f25a184e22e1351a8d0bb9371ba6499d2054ac199"
+    },
+    {
+      "path": "MGPU/test_surface_norms.py",
+      "bytes": 4085,
+      "sha256": "4e986e719f5f89dc88cfe8ef635c65ce368fc583af6075a54aaf3c630c2b31b3"
+    },
+    {
+      "path": "MGPU/test_surface_reference.py",
+      "bytes": 1727,
+      "sha256": "653e7ef32aff7dbd6390cbc5c4d0bcb9dc63eadf13b494adb005464b04d00527"
+    },
+    {
+      "path": "MGPU/testB_instr.png",
+      "bytes": 122637,
+      "sha256": "0616f6907af59ff87cccd80d59c23442962813a951c9d5dd649998319b597dec"
+    },
+    {
+      "path": "MGPU/testD_inst.png",
+      "bytes": 111467,
+      "sha256": "d4b112a1e342205376879248ec8863790460da268b23c95ad1ecc1a40fada77c"
+    },
+    {
+      "path": "MGPU/welcome_ui.py",
+      "bytes": 5671,
+      "sha256": "72c485516f287465d81e7b36ab38fc290f43c5bd663003e47f9128af9651ad5b"
+    },
+    {
+      "path": "MGPU/ИНСТРУКЦИЯ-v4.21.txt",
+      "bytes": 1812,
+      "sha256": "ef087daefafcf76b9b353ecdbd056ff52c383458dea47e6449485de72d62eff3"
+    },
+    {
+      "path": "MGPU/ОТЧЁТ-ПРОВЕРКИ-v4.21.txt",
+      "bytes": 843,
+      "sha256": "1ba6fc5ac6918ce9b8adc70e552ea8d2492704b7a949481b319ee443e6e1ab4d"
+    },
+    {
+      "path": "MIP/accounts.py",
+      "bytes": 5785,
+      "sha256": "13e97f98d0794804b57f6e167d85fb677cc6b449b5a1dcca8d708fd29dfa1b13"
+    },
+    {
+      "path": "MIP/approved_surface.py",
+      "bytes": 17326,
+      "sha256": "fc80374820dd52179bc3eede46f446b1546b3e8a5c453086a488fcf51cf0d20e"
+    },
+    {
+      "path": "MIP/assets/airplane_sprite.png",
+      "bytes": 6190,
+      "sha256": "e1b39a9ec8f8e5c860dcf9077f1ac772862ead7bc63e1f3429f01eed42132485"
+    },
+    {
+      "path": "MIP/assets/circle.png",
+      "bytes": 961310,
+      "sha256": "d6bda26f631fdcc4bdb0d8fcaa476ef4e33887aa8d5d3d28b7aa3967143b997a"
+    },
+    {
+      "path": "MIP/assets/cockpit.png",
+      "bytes": 966698,
+      "sha256": "e05d82708ff9780ed4b15ecd5f3a0316f83461dce18ca94bffa63464ab620e2c"
+    },
+    {
+      "path": "MIP/assets/desktop_mark.png",
+      "bytes": 114732,
+      "sha256": "5ab09ce960f021fa07ebf0f2dbb7f6e50bdf0372e95b3717b4576449a7d5c4a2"
+    },
+    {
+      "path": "MIP/assets/intro_exit_label.png",
+      "bytes": 11798,
+      "sha256": "d59d60a82b657dc2a77156c302b0b0eb363df3ddd978c9b2c12e6db98058a6ca"
+    },
+    {
+      "path": "MIP/assets/intro_next_label.png",
+      "bytes": 6056,
+      "sha256": "8269e0593ccb2844c90ee26556b8388fd17a6a5b63e2a1b145a57df1a43dc3d7"
+    },
+    {
+      "path": "MIP/assets/login_background.png",
+      "bytes": 1175499,
+      "sha256": "0044d9a2bb78ed64243b7f0bc24fb2d46b48d943fe520868a41d97fcc15a85dc"
+    },
+    {
+      "path": "MIP/assets/login_circle.png",
+      "bytes": 80865,
+      "sha256": "09aa1b24d2e333d8735f2156655f323c6d566fc78a3813ea4dcaee13903e6e03"
+    },
+    {
+      "path": "MIP/assets/login_institution.png",
+      "bytes": 5214,
+      "sha256": "db9049703de81a03058e9e8d89672b510f77df7279bc97f15df87432ed8175df"
+    },
+    {
+      "path": "MIP/assets/login_shield.png",
+      "bytes": 48272,
+      "sha256": "9031024c8e151d725e844e030e3f64db560777e340ffc4173894f8d2db361da5"
+    },
+    {
+      "path": "MIP/assets/login_triangle.png",
+      "bytes": 5214,
+      "sha256": "db9049703de81a03058e9e8d89672b510f77df7279bc97f15df87432ed8175df"
+    },
+    {
+      "path": "MIP/assets/method_a_instruction_slezh.pdf",
+      "bytes": 125681,
+      "sha256": "f4cd88b98bf4938425e9a3e22b590811e403f710dcedd8204cda1cd9d3492c53"
+    },
+    {
+      "path": "MIP/assets/method_a_instruction_slezh_page1.png",
+      "bytes": 309525,
+      "sha256": "51d943797f66be5d631dfa658f248c332adfddae678f583860da5ea0a5175cf3"
+    },
+    {
+      "path": "MIP/assets/method_a_instruction_slezh_page1_fixed412.png",
+      "bytes": 253225,
+      "sha256": "caae1190df28611200dd7055019cb6827596ee2ab23d778314f153c26387b396"
+    },
+    {
+      "path": "MIP/assets/method_d_archive/2x1.jpg",
+      "bytes": 143355,
+      "sha256": "74437a224493ecdf5c606ad752bb6b2fe9b1ba7927877626a1bba84b69ba476f"
+    },
+    {
+      "path": "MIP/assets/method_d_archive/2x2.jpg",
+      "bytes": 154973,
+      "sha256": "f82e4a5ac790783c3a530fe56d807842cf24191ae05f9cbf1bae6516e11c77ca"
+    },
+    {
+      "path": "MIP/assets/method_d_archive/3x1.jpg",
+      "bytes": 141953,
+      "sha256": "ada0f470d824e57a95c73220ca7119bdf938a27bc41f947063dea36c7f13e33a"
+    },
+    {
+      "path": "MIP/assets/method_d_archive/3x2.jpg",
+      "bytes": 148782,
+      "sha256": "904766f083af05971cc37cc1f46a75fa7a0c6a6dc6f8ce9fe247ec6ae40dab7c"
+    },
+    {
+      "path": "MIP/assets/method_d_archive/4x1.jpg",
+      "bytes": 165468,
+      "sha256": "8b604f3c591a6e84465a3f39ec0e5744702b8e306740c4f28df71caece294615"
+    },
+    {
+      "path": "MIP/assets/method_d_archive/4x2.jpg",
+      "bytes": 152360,
+      "sha256": "633bd65bf1e1f0e27add5c1f44cac2b641a9327016a7bb5ce6c4ac5015486dc5"
+    },
+    {
+      "path": "MIP/assets/orient_instruction.pdf",
+      "bytes": 235680,
+      "sha256": "6584010b9d9d7e1dc2f659725db38bb0667cf3b7a2df6b5c433ea830706ec29d"
+    },
+    {
+      "path": "MIP/assets/orient_instruction.png",
+      "bytes": 609080,
+      "sha256": "85e0e40e58119cf83eb77d1fd695ff8e5d5c2a6745905022b872bb53f1e70a60"
+    },
+    {
+      "path": "MIP/assets/tracking_background_doc.png",
+      "bytes": 1274,
+      "sha256": "2b29f8f3aad9aff1b15b1e908c70c3685635c9da29e7d13cc056351c1f101b11"
+    },
+    {
+      "path": "MIP/assets/vector_pentagon_set/01_left_top_trapezoid.png",
+      "bytes": 8944,
+      "sha256": "053093be3b4a4dcfc3cd1954df06b413c13a73a3df86b99df0a27a7f5b1bbdc2"
+    },
+    {
+      "path": "MIP/assets/vector_pentagon_set/01_left_top_trapezoid.svg",
+      "bytes": 412,
+      "sha256": "e1ebfdc16f0f0912091da6caaa3e36fe3ae617c3bc400f984ce80cfadab8480c"
+    },
+    {
+      "path": "MIP/assets/vector_pentagon_set/02_right_top_triangle.png",
+      "bytes": 9154,
+      "sha256": "b12eeb0c53b1c175d8300e359714a2a06c6f8cd6878b8e0b0c56fc042af9a3eb"
+    },
+    {
+      "path": "MIP/assets/vector_pentagon_set/02_right_top_triangle.svg",
+      "bytes": 405,
+      "sha256": "049aaba81e0a1e2ff74dbbbc5bf9542ca578579e212f1910c82e5908b52a77d8"
+    },
+    {
+      "path": "MIP/assets/vector_pentagon_set/03_left_bottom_trapezoid.png",
+      "bytes": 8843,
+      "sha256": "ad739b2c693137dbe286c354a5157d0d616b567e1e8c62fc8fd3b7832cfd69f1"
+    },
+    {
+      "path": "MIP/assets/vector_pentagon_set/03_left_bottom_trapezoid.svg",
+      "bytes": 412,
+      "sha256": "cac530adf108d520060444d23be8ed022a2488b0780b1d8437892e4a92a2d0df"
+    },
+    {
+      "path": "MIP/assets/vector_pentagon_set/04_right_bottom_empty.png",
+      "bytes": 5474,
+      "sha256": "926c8c220999e71a3bb1d637c42279d1311a7d2fb230f0729082a13cc1a129dd"
+    },
+    {
+      "path": "MIP/assets/vector_pentagon_set/04_right_bottom_empty.svg",
+      "bytes": 288,
+      "sha256": "8249e53b586c5b3a8ea23c7137c5989bb05c78af9937a2bea7d410011102019d"
+    },
+    {
+      "path": "MIP/Aviatest-v4.21-MIP-Setup.spec",
+      "bytes": 799,
+      "sha256": "a97194a026a026a7280661e820e30aff685b0be51f99a2f08a226079eb9ef703"
+    },
+    {
+      "path": "MIP/aviatest_v2.py",
+      "bytes": 90999,
+      "sha256": "f98475e0698b033c1cc2c645211968e09cbe34e35ecca2188e0d0a8bbdc9bd7b"
+    },
+    {
+      "path": "MIP/aviatest_v4.py",
+      "bytes": 31219,
+      "sha256": "ccc6227638084739bf724c2c2b412bf34720c7310d3aea44dcb61e798c99ccc3"
+    },
+    {
+      "path": "MIP/aviatest_v4_21.py",
+      "bytes": 1657,
+      "sha256": "4ec676b9cba82bdd59c4e7ed3d99e86a8079a5df698e8261523f42170eb8caae"
+    },
+    {
+      "path": "MIP/aviatest_v4_portable.spec",
+      "bytes": 3956,
+      "sha256": "784a272f8bc8e511d3b6beb4d5ec72466a6d501bff1413c1f3ebdb3d366489ba"
+    },
+    {
+      "path": "MIP/build-release.ps1",
+      "bytes": 1854,
+      "sha256": "1cad0a634e5d84bbce95c1f549285d844ee2a3f1394fc2ffc39c320d2936fd22"
+    },
+    {
+      "path": "MIP/check_button_layout.py",
+      "bytes": 2506,
+      "sha256": "036c593336c22d5d714cd5d2f5c3c29fbb3e4bf154fab35d68c7eda6cd1887e5"
+    },
+    {
+      "path": "MIP/check_chkt_layout.py",
+      "bytes": 4525,
+      "sha256": "d21837423dd4f748b34b2064f86edeaa5e59c716b1dd93d9b7605dca25c5d8d4"
+    },
+    {
+      "path": "MIP/check_demo_browser.py",
+      "bytes": 2515,
+      "sha256": "73dda4ef3edf57a1b9557da90f3b79c04c1cd95d8a44d2c08f0d53281f971491"
+    },
+    {
+      "path": "MIP/check_group_flow.py",
+      "bytes": 9831,
+      "sha256": "cb9887fe9470bcf58675f802fef210e41919d1e940a169fe8cd7be6cedbe1740"
+    },
+    {
+      "path": "MIP/check_installer.ps1",
+      "bytes": 3941,
+      "sha256": "503da2598d09bc246f1a7046c5212ff7e932c006e2ccf5e8290cc78aa89a9dba"
+    },
+    {
+      "path": "MIP/check_installer_only.ps1",
+      "bytes": 3443,
+      "sha256": "db3c8a31f2ee927cd2308ce34101deef725fb5f27888107da7756d04394015ca"
+    },
+    {
+      "path": "MIP/check_login_layout.py",
+      "bytes": 4725,
+      "sha256": "486f5d4d2188e3b76d0c8bc8edb7456d2d0939f2b043068ba6de4d92ee7c3ff0"
+    },
+    {
+      "path": "MIP/check_method_windows.py",
+      "bytes": 4589,
+      "sha256": "c7475d74b572e7d1bc658aa49ddd8e42383ba19086b4ed186d4574e5c05797ef"
+    },
+    {
+      "path": "MIP/check_modes.py",
+      "bytes": 124,
+      "sha256": "7bec6bb3282bbe09d085e9e86048bf905f82d70d686aabec7f05b04eb048f86c"
+    },
+    {
+      "path": "MIP/check_projection_colours.py",
+      "bytes": 2248,
+      "sha256": "da3572b4b862f4ecdc03e77603c7506ebb1517ee0f863991ac7f82830ee17053"
+    },
+    {
+      "path": "MIP/check_registration_menu.py",
+      "bytes": 5510,
+      "sha256": "98892071aff9e32bd687280be8572551045f9afde90132e792542aa05e032b7c"
+    },
+    {
+      "path": "MIP/check_settings_layout.py",
+      "bytes": 1180,
+      "sha256": "eded5b4442722e3bd8946c45714b28557594198a19e50e50894e26487f6c12c2"
+    },
+    {
+      "path": "MIP/check_surface_flow.py",
+      "bytes": 6873,
+      "sha256": "6870eedee26c78dc673b134e990514199b4908ce4ae1e03187ca721413549314"
+    },
+    {
+      "path": "MIP/check_ui.py",
+      "bytes": 3388,
+      "sha256": "254730f1f20bc1abb5a9ccc50470fd5c3932e76aac0204b99ab3882cbc816249"
+    },
+    {
+      "path": "MIP/config_schema_version.txt",
+      "bytes": 36,
+      "sha256": "f4569305eaf091658c8c3b3c3371be751b96e9e42d2dcbf54c4775bf90fea42c"
+    },
+    {
+      "path": "MIP/counting.png",
+      "bytes": 144215,
+      "sha256": "acdbece654955d2a6a2d48f5b51ec3a7fe051b6a027cf51a019604fa09909f86"
+    },
+    {
+      "path": "MIP/demo_accounts.py",
+      "bytes": 7531,
+      "sha256": "77fbe941cc68e73ff0f90f8245247b7328256179d3e0ee753c7d4aad08fa740f"
+    },
+    {
+      "path": "MIP/demo_results.py",
+      "bytes": 2883,
+      "sha256": "195f70c5dd9101f3be9702bac538ee49803fda7e06f24aa68837787f0144f5a6"
+    },
+    {
+      "path": "MIP/display_names.py",
+      "bytes": 7462,
+      "sha256": "d90395db7f0de7cd6fac762cb8c6a18c5bc63a3cd0d7d3038f78d8bd6472989f"
+    },
+    {
+      "path": "MIP/fixed421_tk_runtime_hook.py",
+      "bytes": 230,
+      "sha256": "8a5e5ff90a01a8c7c0eb0f84e27787945368d2409aa16cd7a185963a242a0cd4"
+    },
+    {
+      "path": "MIP/fixed427_app_2026-04-25_portable_build.py",
+      "bytes": 1225455,
+      "sha256": "73ae2c132c324d20590920ae3d2740a5a7e3b6fb7edd2ec3092a8370e6289fda"
+    },
+    {
+      "path": "MIP/fixed428_app_2026-04-25_portable_build.py",
+      "bytes": 1229693,
+      "sha256": "f526a01c72f98db7e9b635dcb38f20971eaabd9be2ca2fa1965f0fb7f240728c"
+    },
+    {
+      "path": "MIP/group_manager.py",
+      "bytes": 8332,
+      "sha256": "dbd34112180f4adbe503ed3ae466f638fc6b10a84282a0e59ccef0dfbb693098"
+    },
+    {
+      "path": "MIP/groups.py",
+      "bytes": 8401,
+      "sha256": "96d1e4177d51e70814851aca2b42c9da56e52cabb93b3e1a41ada240b5f89046"
+    },
+    {
+      "path": "MIP/icon.jpg",
+      "bytes": 123382,
+      "sha256": "e56df22fd529ab4eb44eccf93376c4ca39768d1c31ad6993051eca5261f6e11f"
+    },
+    {
+      "path": "MIP/installer.py",
+      "bytes": 5414,
+      "sha256": "d277a83c0e5e04e5ad02e3ea5307ff965e89ac1437b91eef3f8d43831714e1b2"
+    },
+    {
+      "path": "MIP/Integrated Data_methods_tracking_header_final.xlsx",
+      "bytes": 10256,
+      "sha256": "85b5e3f2ac3353d4d8e47da91c05640e95712703f5f8303da2fec05fd9536968"
+    },
+    {
+      "path": "MIP/intro_reference.py",
+      "bytes": 6671,
+      "sha256": "4f9c365da47298144b6ddca23841024fe9b672c1ae600df4cfcd838ae289addd"
+    },
+    {
+      "path": "MIP/method_a_config.json",
+      "bytes": 2331,
+      "sha256": "88207bc8a65ef26475a10147eab89426e59fe8a8312e5314d0f057123955728b"
+    },
+    {
+      "path": "MIP/method_b_config.json",
+      "bytes": 333,
+      "sha256": "4f5dc02c9df18bbbbeed2df9993bbb9892da16d87bc011ed70e1882fdbcaad91"
+    },
+    {
+      "path": "MIP/method_c_config.json",
+      "bytes": 501,
+      "sha256": "2844f0afa665f4fa3db721467d2f2a449220054ca59a5088e76919ece24ec7d7"
+    },
+    {
+      "path": "MIP/method_d_config.json",
+      "bytes": 317,
+      "sha256": "dc6ef6eb49e840967d8f2b6dfe9f7394d0bb3897bbcead4f4f55f776c8f4507a"
+    },
+    {
+      "path": "MIP/mode_ui.py",
+      "bytes": 41882,
+      "sha256": "74d3753c09775d0051d99cd56bc0dd0e537b5b1e69119766630264189aeec23a"
+    },
+    {
+      "path": "MIP/orient_final.py",
+      "bytes": 26637,
+      "sha256": "9fc7c781a065379573a94171c5fa14e75900410d6a11b18864b6ffd462a05aa9"
+    },
+    {
+      "path": "MIP/orient_new_v1.py",
+      "bytes": 29665,
+      "sha256": "433de3523ef3571bb4e98bac2e4ff88b4faf2dd8622bbeb5c10a87d5cfa43cfd"
+    },
+    {
+      "path": "MIP/orient_new_v1_1.py",
+      "bytes": 15150,
+      "sha256": "eec21c0ac32ce28f05307708a39d89b6197ea26cfedd41c7c91e2d07e1749ec8"
+    },
+    {
+      "path": "MIP/orient_new_v2.py",
+      "bytes": 37606,
+      "sha256": "9d5b0db9ac958196da4dd08b88f92d9a25074f7733d573c2d0461f6b17978484"
+    },
+    {
+      "path": "MIP/orient_new_v2_1.py",
+      "bytes": 5894,
+      "sha256": "59b54bda6540d9d91af957b66b9c3234615dd087f5ff1d51d9234ae0e595b57b"
+    },
+    {
+      "path": "MIP/orient_new_v3_1.py",
+      "bytes": 5486,
+      "sha256": "3a8e95acbf47297b637b0e55b10f38e7b1cdef4e1a330ddca54e9dee7841d77d"
+    },
+    {
+      "path": "MIP/orientation_config.json",
+      "bytes": 195,
+      "sha256": "3495b217cfbda563a74d7cf9583d79fdf41c5fe878ee5710042c209dccfa6532"
+    },
+    {
+      "path": "MIP/package_release.py",
+      "bytes": 1759,
+      "sha256": "33f9066f610587e50768184c9d9075d9144b1ccad8360e07016d117e88a2acdd"
+    },
+    {
+      "path": "MIP/password_toggle.py",
+      "bytes": 1567,
+      "sha256": "3c230a59e19d9808879f2df8fa68e4c377f047f2cccc17394ea1e7da09f92590"
+    },
+    {
+      "path": "MIP/preview_v441.py",
+      "bytes": 3256,
+      "sha256": "a00f2e06fd2c30c2454629f857c96a287afa108a76b57b1d4c99c360d9ad2209"
+    },
+    {
+      "path": "MIP/program_icon.ico",
+      "bytes": 53236,
+      "sha256": "7c3a9134b5f03c3dc94061e592f1e2997ef6cefc01b7809e8563a421da5aa08c"
+    },
+    {
+      "path": "MIP/program_icon.png",
+      "bytes": 93275,
+      "sha256": "aece5a5211667ae33d36077396679cfc437addc92def271cadeda58d28b1cfb9"
+    },
+    {
+      "path": "MIP/red_black_data/settings.json",
+      "bytes": 394,
+      "sha256": "c1e488d008e14cdf466756786453396d25892c0c02b51399059ede6b6128a6d4"
+    },
+    {
+      "path": "MIP/red_black_numbers.py",
+      "bytes": 34272,
+      "sha256": "69bc15fdee21796febf0552409d19fce202f33a232dc16463c57ed5fa75c02dd"
+    },
+    {
+      "path": "MIP/release_acceptance.py",
+      "bytes": 11396,
+      "sha256": "a16128c29a83c9bc4c3a106e54e23fadf5c703d5eef6990afbe642e020dea097"
+    },
+    {
+      "path": "MIP/requirements-build.txt",
+      "bytes": 103,
+      "sha256": "66cbed458879b142a2443bf68814b687597d06e03faed835ae661242d35038b9"
+    },
+    {
+      "path": "MIP/storage.py",
+      "bytes": 3842,
+      "sha256": "c2e5542d0928abe5b47d3e2503e546821813da83db65701b1c11ec4eba903454"
+    },
+    {
+      "path": "MIP/surface_geometry.py",
+      "bytes": 1427,
+      "sha256": "8d22ebc34bd346e7dfbb4bca548453c877bb573a462b1e5fcaa052ba5785c5f1"
+    },
+    {
+      "path": "MIP/surface_labels.py",
+      "bytes": 829,
+      "sha256": "ac59146e2f2508e76db5b938b89c7dd4f7f69672e717e9c6b1e9a7f860a7ae3e"
+    },
+    {
+      "path": "MIP/surface_norms.json",
+      "bytes": 53,
+      "sha256": "fa7292ec2c6c43ad0345b77f0690ef7d9afcd9fd9e6b2475a5f84eb40cb853ba"
+    },
+    {
+      "path": "MIP/surface_norms.py",
+      "bytes": 5867,
+      "sha256": "ae5cccc6221c1716f57c0ae2e76fddaa9063b0716d54c367aaf08a6ba84c3cff"
+    },
+    {
+      "path": "MIP/surface_view.py",
+      "bytes": 8975,
+      "sha256": "8cc6ff91a74eb0205a5abd87529db7e3557bd0659d97674d0a1983a6dba1becc"
+    },
+    {
+      "path": "MIP/tensor_matrix_test_2026_04_23_v14.py",
+      "bytes": 53343,
+      "sha256": "fe4ba9da770f25ea64be93da7593eb9266f08efa242b519d68a23ee6c1c828c9"
+    },
+    {
+      "path": "MIP/test_accounts.py",
+      "bytes": 6677,
+      "sha256": "55e5ed443e40ef4044cbd6d53656f3e9c3ecf55eab8921a743e17d61672f9b03"
+    },
+    {
+      "path": "MIP/test_approved_surface.py",
+      "bytes": 3898,
+      "sha256": "dcca6602fbd65490f13b89ff3ec9c626b2055c6aed7e246b7453ade43051332c"
+    },
+    {
+      "path": "MIP/test_aviatest_v2_persistence.py",
+      "bytes": 1549,
+      "sha256": "77485face58cc3b309c9f1b0aa124ce84977d417a056576126ab0ec469b3b8df"
+    },
+    {
+      "path": "MIP/test_aviatest_v4.py",
+      "bytes": 4513,
+      "sha256": "eecb4902d6548669e3c71413e174a82873d85ba87766e0f033014642914683ba"
+    },
+    {
+      "path": "MIP/test_boris_user7.py",
+      "bytes": 3327,
+      "sha256": "0b5ed08df3def896fa9543abb9b5529b7bf61c8736cb3cd43e5f9037ad3daf3d"
+    },
+    {
+      "path": "MIP/test_demo_accounts.py",
+      "bytes": 3814,
+      "sha256": "52d54749776376162c5d9c50f7290d715ad94ec97de7dcde7311b00ddd242b9a"
+    },
+    {
+      "path": "MIP/test_demo_display.py",
+      "bytes": 3987,
+      "sha256": "30375015b6ebe30f3e4b735f85f100619d25db26f2fdebfda29a20f07e8b1934"
+    },
+    {
+      "path": "MIP/test_feedback.py",
+      "bytes": 3255,
+      "sha256": "55de7cc3057bd44dc5144a6088a4abd9d241f5b06f29cbdbec43a7ec19f98a7b"
+    },
+    {
+      "path": "MIP/test_groups.py",
+      "bytes": 4734,
+      "sha256": "3b8328f6df03f8adacc67f2c6862ef44b870938046f7a694b9c225891cadec87"
+    },
+    {
+      "path": "MIP/test_method_a_formula_rules.py",
+      "bytes": 6291,
+      "sha256": "7b77c77094025909143bbd6148073ccf1131d099c131f856730c6f47a2cfc72a"
+    },
+    {
+      "path": "MIP/test_method_c_integral.py",
+      "bytes": 1240,
+      "sha256": "c026ed34bbccdf758c1f5f18fc771fdbd5a1abcb5b1e7188544ab0f35dbe1c1c"
+    },
+    {
+      "path": "MIP/test_method_d_shields.py",
+      "bytes": 1809,
+      "sha256": "988c36c79c5cfb406d90dbe35e2f35bc9805e3062bafb4086e64875ffa1ad502"
+    },
+    {
+      "path": "MIP/test_numbered_demo_release.py",
+      "bytes": 5302,
+      "sha256": "162974321f58dd7e05bbd51fc9f6c118001c2dcea54ebbd8e8c41bc6edbb4f1d"
+    },
+    {
+      "path": "MIP/test_orientation_pitch_limits.py",
+      "bytes": 973,
+      "sha256": "f17e53fd3c7571c0e325f4e1b79eb9073199ead7262286336410a35ea18ac069"
+    },
+    {
+      "path": "MIP/test_orientation_roll_answer.py",
+      "bytes": 1319,
+      "sha256": "4717850499c4521c19804accc045ee20cfef8f4ee80320cdc265f2a2dae5e497"
+    },
+    {
+      "path": "MIP/test_red_black_numbers.py",
+      "bytes": 3772,
+      "sha256": "3046f18c514dfc3f6c3bb912024f2fcbe1d62b1cc9e07aff4185befb96647d7d"
+    },
+    {
+      "path": "MIP/test_registration_short.py",
+      "bytes": 2439,
+      "sha256": "820779046e5b2759d619d40f25a184e22e1351a8d0bb9371ba6499d2054ac199"
+    },
+    {
+      "path": "MIP/test_surface_norms.py",
+      "bytes": 4085,
+      "sha256": "4e986e719f5f89dc88cfe8ef635c65ce368fc583af6075a54aaf3c630c2b31b3"
+    },
+    {
+      "path": "MIP/test_surface_reference.py",
+      "bytes": 1727,
+      "sha256": "653e7ef32aff7dbd6390cbc5c4d0bcb9dc63eadf13b494adb005464b04d00527"
+    },
+    {
+      "path": "MIP/testB_instr.png",
+      "bytes": 122637,
+      "sha256": "0616f6907af59ff87cccd80d59c23442962813a951c9d5dd649998319b597dec"
+    },
+    {
+      "path": "MIP/testD_inst.png",
+      "bytes": 111467,
+      "sha256": "d4b112a1e342205376879248ec8863790460da268b23c95ad1ecc1a40fada77c"
+    },
+    {
+      "path": "MIP/welcome_ui.py",
+      "bytes": 5671,
+      "sha256": "72c485516f287465d81e7b36ab38fc290f43c5bd663003e47f9128af9651ad5b"
+    },
+    {
+      "path": "MIP/ИНСТРУКЦИЯ-v4.21.txt",
+      "bytes": 1810,
+      "sha256": "3278367ed0838c2980c9d0e3ac885caaac9587cd0e24333c2ccee84278e745ea"
+    },
+    {
+      "path": "MIP/ОТЧЁТ-ПРОВЕРКИ-v4.21.txt",
+      "bytes": 843,
+      "sha256": "1ba6fc5ac6918ce9b8adc70e552ea8d2492704b7a949481b319ee443e6e1ab4d"
+    },
+    {
+      "path": "README.md",
+      "bytes": 928,
+      "sha256": "5eba10d39d10d1072aad940ca3b9b475c613b749d56d1b033ecbe2fa133e4bb0"
+    }
+  ]
+}

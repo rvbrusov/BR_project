@@ -1,0 +1,21 @@
+{
+  "participant": "",
+  "stage_1": {
+    "cycle": 1.5,
+    "allowed_errors": 8,
+    "range_cycle": 1.5,
+    "range_allowed_errors": 3
+  },
+  "stage_2": {
+    "cycle": 1.8,
+    "allowed_errors": 8,
+    "range_cycle": 1.8,
+    "range_allowed_errors": 3
+  },
+  "stage_3": {
+    "cycle": 2.1,
+    "allowed_errors": 8,
+    "range_cycle": 2.1,
+    "range_allowed_errors": 3
+  }
+}
